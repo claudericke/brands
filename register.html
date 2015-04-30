@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands App- Mobile Application for iOS and Symbian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" media="screen" href="css/rv.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.pngFix.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="u-full-width header">
+            <div class="container">
+                <div class="row">
+                    <div class="three columns logo">
+                        <a href="index.html"><img src="images/logo.png" alt="Brands" />
+                        </a>
+                    </div>
+
+                    <div class="five columns menu">
+                        <nav>
+                            <ul>
+                                <li><a href="about.html">ABOUT BRANDS</a>
+                                </li>
+                                <li><a href="faq.html">FAQ</a>
+                                </li>
+                                <li><a href="legal.html">LEGAL</a>
+                                </li>
+                                <li><a href="contact.html">CONTACT</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="two columns login">
+                        <a href="control/login.html" class="login_btn">
+                            Login
+                        </a>
+                    </div>
+                    <div class="two columns register">
+                        <a href="register.html" class="register_btn">
+                            Register
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms List -->
+        <div class="container">
+            <div class="twelve columns">
+               <div class="spacer"></div>
+                <h1 class="left large ">REGISTER<strong class="red left bold"> ON BRANDS</strong></h1>
+                <p>If you are a company that wished to register on Brands please complete the form below. Users wanting to browes the directory can download the app from the <a href="#">Google Play</a>
+                </p>
+            </div>
+            <form class="registerForm" method="post" name="RegistrationForm">
+                <div class="twelve columns">
+                    <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
+                    <div class="four columns noMargin">
+                        <label>COMPANY NAME:</label>
+                        <input type="text" class="u-full-width" placeholder="e.g. ACME Private Limited" name="CompanyName" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>TRADING NAME:</label>
+                        <input type="text" class="u-full-width" placeholder="e.g. ABC Private Limited" name="TradingName" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>PRODUCTS OR SERVICES OFFERED (MAX OF 6)</label>
+                        <input type="text" class="u-full-width" placeholder="Type Product Name and Press Enter" name="ProductsAndServices" />
+                    </div>
+                </div>
+                <div class="twelve columns">
+                    <h2 class="left large ">COMPANY<strong class="left bold"> ADDRESS</strong></h2>
+                    <div class="four columns noMargin">
+                        <label>COMPANY NAME:</label>
+                        <input type="text" class="u-full-width" placeholder="e.g. Suite 13, Cellery Street, Harare" name="CompanyAddress" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>POSTAL ADDRESS:</label>
+                        <input type="text" class="u-full-width" placeholder="e.g. P.O. BOX 658755 Causeway, Harare" name="postalAddress" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>PREFERED LANGUAGE(S)</label>
+                        <input type="checkbox" name="english" value="English" />&nbsp;English&nbsp;
+                        <input type="checkbox" name="shona" value="Shona" />&nbsp;Shona&nbsp;
+                        <input type="checkbox" name="ndebele" value="Ndebele" />&nbsp;Ndebele&nbsp;
+                    </div>
+                    <div class="twelve columns">
+                        <div class="four columns noMargin">
+                            <label>EXISITING BRANDS SUBSCRIBER NUMBER: </label>
+                            <input type="text" class="u-full-width" placeholder="e.g. 0775889662" name="BrandsNumber" />
+                        </div>
+                        <div class="four columns noMargin">
+                            <label>ACCOUNT NUMBER:</label>
+                            <input type="text" class="u-full-width" placeholder="e.g. TR5458861234" name="accountNumber" />
+                        </div>
+                        <div class="four columns noMargin">
+                            &nbsp;
+                        </div>
+                        <div class="twelve columns">
+                            <h2 class="left large ">CORRESPONDENCE<strong class="left bold"> WITH BRANDS</strong></h2>
+                            <p>OUR PREFERRED METHOD OF CORRESPONDENCE FROM BRANDS IS BY:</p>
+                            <input type="checkbox" name="preferedCorrespondence" value="MobilePhone" />&nbsp;Mobile Phone (Voice and SMS)
+                            <br/>
+                            <input type="checkbox" name="preferedCorrespondence" value="eMail" />&nbsp;E-Mail
+                            <br/>
+                            <input type="checkbox" name="preferedCorrespondence" value="Post" />&nbsp;Post
+                            <p>WOULD YOU LIKE TO SUBSCRIBE TO OUR MAGAZINE</p>
+                            <input type="checkbox" name="subscription" value="Yes" />&nbsp;Yes
+                            <br/>
+                            <input type="checkbox" name="subscription" value="eMail" />&nbsp;No
+                            <br/>
+                        </div>
+                        <div class="twelve columns">
+                            <h2 class="left large ">THIRD-PARTY MARKETING<strong class="left bold"> OPT-OUT</strong></h2>
+                            <p class="uppercase">We do not consent to Massive Dynamics disclosing our information to third party marketing. (place your company initial in this box if you do not wish to receive third party marketing)</p>
+                            <input type="checkbox" name="preferedCorrespondence" value="MobilePhone" />&nbsp;Mobile Phone (Voice and SMS)
+                            <br/>
+                            <input type="checkbox" name="thirdPartMarketing" value="eMail" />&nbsp;Yes&nbsp;
+                            <input type="checkbox" name="thirdPartMarketing" value="Post" />&nbsp;No
+                            <br />
+                        </div><br/><br/><br/><br/>
+                        <div class="twelve columns">
+                            <h2 class="left large ">APPLICATION<strong class="left bold"> CONFIRMATION</strong></h2>
+                            <ol>
+                                <li>We agree that Massive Dynamics may communicate with us electronically or by post (including by E-mail, by SMS through our Company lines or on screen messaging through subscriber Interface for purposes of payment arrears notifications, announcements or otherwise for the purpose of processing my requests for access to Massive Dynamics services and or administering to agreement between us and Massive Dynamics.
+                                    <li>Unless and until we notify Massive Dynamics in writing that we withdraw our consent thereto, we agree that Massive Dynamics may communicate with us for the purpose of marketing or promoting its services or the services of its suppliers or affiliates (“Direct Marketing Communications”)
+                                    </li>
+                                    <li>Unless and until we notify Massive Dynamics in writing that we withdraw our consent thereto, we agree that Massive Dynamics may disclose our personal information to its designers or affiliates for purposes of marketing of their services (“third party marketing designers”)</li>
+                                    <li>By requesting a Digital Care Plan, we agree to be bound by the applicable terms and conditions and to pay the fee stipulated by the administration, as amended by the administration from time to time. </li>
+                                    <li>You afree to both the <a href="terms.html" target="_blank">terms of service</a>, <a href="privacy.html" target="_blank">privacy policy</a> and <a href="dup.html" target="_blank">data usage policy</a></li>
+                            </ol>
+
+                            <div class="spacer"></div>
+                        </div>
+                    <div class="twelve columns">
+                            <h2 class="left large ">SPAM<strong class="left bold"> CHECK</strong></h2>
+                        <div class="g-recaptcha" data-sitekey="6Lec3QMTAAAAAMwXk_ATFT1SN-Z9qlaFyfAO_EXc"></div>
+                    </div>
+                    <div class="twelve columns">
+                        <input type="submit" class="u-width-full redBackground" value="AGREE AND REGISTER" />
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- CALL TO ACTION 1 -->
+
+
+
+    <div class="footer u-full-width center">
+        <a class="center" href="terms.html">TERMS OF USE</a> | <a href="privacy.html">PRIVACY POLICY</a> | <a href="dup.html">DATA USE POLICY</a>
+        <p class="small uppercase center">&copy; Massive Dynamics 2015 | Designed by <a href="http://www.etceter.co.zw" target="_blank">Et Cetera Creative</a>
+        </p>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <script type="text/javascript">
+        $('.menu nav').slicknav();
+    </script>
+    <!-- End Mobile Navigation -->
+
+</body>
+
+</html>
