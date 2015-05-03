@@ -1,0 +1,62 @@
+.sub-menu {
+    height: 0px;
+    overflow: hidden;
+    list-style: none;
+
+	transition: height ease-in-out 500ms; /* css3 transition */
+	-o-transition: height ease-in-out 500ms;
+	-moz-transition: height ease-in-out 500ms;
+	-webkit-transition: height ease-in-out 500ms;
+}
+
+
+.mybusiness_icon:hover > .sub-menu {
+     height:320px;
+    border-bottom:1px #efefef solid;
+    }
+
+
+.nav {
+    display: block;
+    width:100%;
+}
+
+.menu_item {
+    list-style: none;
+    padding: 7px;
+    background:#fff;
+    box-shadow: 0.8px 0.8px 0.7px;
+    width: 100%;
+    margin-left: -10px;
+    display: block;
+}
+
+
+.menu_item a  {
+    text-transform: uppercase;
+    font-family: "Source Sans Pro", sans-serif;
+    text-decoration: none;
+    color: #1e1e1e;
+    margin-left: 30px;
+}
+
+/* Icons for Menu Items */
+.dash_icon {
+    background: url(../images/menu_icons.png) 10px 11px no-repeat #fff;
+}
+
+.settings_icon {
+    background: url(../images/menu_icons.png) 10px -41px no-repeat #fff;
+}
+
+.mybusiness_icon {
+    background: url(../images/mybusiness_icon.png) no-repeat #fff;
+}
+
+.stats_icon {
+    background: url(../images/menu_icons.png) 10px -140px no-repeat #fff;
+}
+
+.messages_icon {
+    background: url(../images/menu_icons.png) 10px -190px no-repeat #fff;
+}
