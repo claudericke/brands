@@ -63,6 +63,7 @@
         <div class="container">
             <div class="twelve columns">
                <div class="spacer"></div>
+               <div class="spacer"></div>
                 <h1 class="left large ">REGISTER<strong class="red left bold"> ON BRANDS</strong></h1>
                 <p>If you are a company that wished to register on Brands please complete the form below. Users wanting to browes the directory can download the app from the <a href="#">Google Play</a>
                 </p>
@@ -72,45 +73,43 @@
                     <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
                     <div class="four columns noMargin">
                         <label>COMPANY NAME:</label>
-                        <input type="text" class="u-full-width" placeholder="e.g. ACME Private Limited" name="CompanyName" />
+                        <input type="text" class="u-full-width" name="companyName" placeholder="Registered Name of Company" name="CompanyName" />
                     </div>
                     <div class="four columns noMargin">
                         <label>TRADING NAME:</label>
-                        <input type="text" class="u-full-width" placeholder="e.g. ABC Private Limited" name="TradingName" />
+                        <input type="text" class="u-full-width" name="tradingName" placeholder="Name used when Trading" name="TradingName" />
                     </div>
                     <div class="four columns noMargin">
-                        <label>PRODUCTS OR SERVICES OFFERED (MAX OF 6)</label>
-                        <input type="text" class="u-full-width" placeholder="Type Product Name and Press Enter" name="ProductsAndServices" />
+                        <label>REGISTRATION NUMBER</label>
+                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number" name="ProductsAndServices" />
                     </div>
-                </div>
-                <div class="twelve columns">
-                    <h2 class="left large ">COMPANY<strong class="left bold"> ADDRESS</strong></h2>
                     <div class="four columns noMargin">
-                        <label>COMPANY NAME:</label>
-                        <input type="text" class="u-full-width" placeholder="e.g. Suite 13, Cellery Street, Harare" name="CompanyAddress" />
+                        <label>COMPANY PHONE NUMBER 1</label>
+                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number" name="ProductsAndServices" />
                     </div>
                     <div class="four columns noMargin">
                         <label>POSTAL ADDRESS:</label>
-                        <input type="text" class="u-full-width" placeholder="e.g. P.O. BOX 658755 Causeway, Harare" name="postalAddress" />
+                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" name="postalAddress" />
                     </div>
                     <div class="four columns noMargin">
+                        <label>PHYSICAL ADDRESS:</label>
+                        <input type="text" class="u-full-width" name="companyAddress" placeholder="Address of where company trades from" name="physicalAddress" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>COMPANY PHONE NUMBER 1:</label>
+             <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" name="companyPhone1" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>COMPANY PHONE NUMBER 2:</label>
+                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" name="companyPhone2" />
+                    </div>
+        <div class="four columns noMargin">
                         <label>PREFERED LANGUAGE(S)</label>
                         <input type="checkbox" name="english" value="English" />&nbsp;English&nbsp;
                         <input type="checkbox" name="shona" value="Shona" />&nbsp;Shona&nbsp;
                         <input type="checkbox" name="ndebele" value="Ndebele" />&nbsp;Ndebele&nbsp;
                     </div>
-                    <div class="twelve columns">
-                        <div class="four columns noMargin">
-                            <label>EXISITING BRANDS SUBSCRIBER NUMBER: </label>
-                            <input type="text" class="u-full-width" placeholder="e.g. 0775889662" name="BrandsNumber" />
-                        </div>
-                        <div class="four columns noMargin">
-                            <label>ACCOUNT NUMBER:</label>
-                            <input type="text" class="u-full-width" placeholder="e.g. TR5458861234" name="accountNumber" />
-                        </div>
-                        <div class="four columns noMargin">
-                            &nbsp;
-                        </div>
+                </div>
                         <div class="twelve columns">
                             <h2 class="left large ">CORRESPONDENCE<strong class="left bold"> WITH BRANDS</strong></h2>
                             <p>OUR PREFERRED METHOD OF CORRESPONDENCE FROM BRANDS IS BY:</p>
@@ -119,6 +118,33 @@
                             <input type="checkbox" name="preferedCorrespondence" value="eMail" />&nbsp;E-Mail
                             <br/>
                             <input type="checkbox" name="preferedCorrespondence" value="Post" />&nbsp;Post
+                            <p>WOULD YOU LIKE TO SUBSCRIBE TO OUR MAGAZINE</p>
+                            <input type="checkbox" name="subscription" value="Yes" />&nbsp;Yes
+                            <br/>
+                            <input type="checkbox" name="subscription" value="eMail" />&nbsp;No
+                            <br/>
+                        </div>
+                        <div class="twelve columns">
+                            <h2 class="left large ">THIRD-PARTY MARKETING<strong class="left bold"> OPT-OUT</strong></h2>
+                            <p class="uppercase">We do not consent to Massive Dynamics disclosing our information to third party marketing. (place your company initial in this box if you do not wish to receive third party marketing)</p>
+                            <input type="checkbox" name="preferedCorrespondence" value="MobilePhone" />&nbsp;Mobile Phone (Voice and SMS)
+                            <br/>
+                            <input type="checkbox" name="thirdPartMarketing" value="eMail" />&nbsp;Yes&nbsp;
+                            <input type="checkbox" name="thirdPartMarketing" value="Post" />&nbsp;No
+                            <br />
+                        </div><br/><br/><br/><br/>
+                <div class="twelve columns">
+                            <h2 class="left large ">SELECTOIN OF<strong class="left bold"> SERVICES</strong></h2>
+                            <p>WE ASK THAT YOU AUTHORIZE ACCESS TO THE FOLLOWING MASSIVE DYNAMICS SERVICE(S):</p>
+                            <input type="checkbox" name="brandsServices" value="brandsPremium" />Brands Premium
+                            <br/>
+                            <input type="checkbox" name="brandsServices" value="brandsScrollAdvert" />&nbsp;Brands Scroll Advert
+                            <br/>
+                            <input type="checkbox" name="brandsServices" value="brandsPromotionalAdvert" />&nbsp;Brands Promotional Advert
+                            <br/>
+                            <input type="checkbox" name="brandsServices" value="brandsPromotionalAdvert" />&nbsp;Brands Magazine
+                            <br/>
+                            <input type="checkbox" name="brandsServices" value="Post" />&nbsp;Post
                             <p>WOULD YOU LIKE TO SUBSCRIBE TO OUR MAGAZINE</p>
                             <input type="checkbox" name="subscription" value="Yes" />&nbsp;Yes
                             <br/>
