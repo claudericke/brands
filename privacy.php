@@ -5,60 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brands App- Mobile Application for iOS and Symbian</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" media="screen" href="css/rv.css">
+   <?php include('includes/links.php'); ?>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.pngFix.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
 </head>
 
 <body>
 <div class="wrapper">
-        <div class="u-full-width header">
-            <div class="container">
-            <div class="row">
-            <div class="three columns logo">
-                <a href="index.html"><img src="images/logo.png" alt="Brands" /></a>
-            </div>
-
-           <div class="five columns menu">
-                <nav>
-                    <ul>
-                        <li><a href="about.html">ABOUT BRANDS</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="legal.html">LEGAL</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="two columns login">
-                <a href="control/login.html"  class="login_btn">Log In</a>
-            </div>
-            <div class="two columns register">
-                <a href="register.html"  class="register_btn">Register</a>
-            </div>
-            <div class="twelve columns right">
-            <div class="three columns offset-by-nine social">
-                <span>SOCIAL MEDIA</span>
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com/" target="_blank"><img src="images/fb.png" alt="FB" /></a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/" target="_blank"><img src="images/tw.png" alt="TW" /></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        </div></div></div>
+          <?php include('includes/header.php'); ?>
 
     <!-- Terms List -->
     <div class="container">
@@ -397,14 +350,7 @@ You are obliged to the following:<br/>
 
 
 
-<div class="footer u-full-width center">
-    <a class="center" href="terms.html">TERMS OF USE</a> | <a href="privacy.html">PRIVACY POLICY</a> | <a href="dup.html">DATA USE POLICY</a>
-<p class="small uppercase center" >&copy; Massive Dynamics 2015 | Designed by <a href="http://www.etceter.co.zw" target="_blank">Et Cetera Creative</a></p>
-</div>
-<!-- Mobile Navigation -->
-         <script type="text/javascript">
-                  $('.menu nav').slicknav();
-        </script>
-<!-- End Mobile Navigation -->
+   <?php include('includes/footer.php'); ?>
+
 </body>
 </html>
