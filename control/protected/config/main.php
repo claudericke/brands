@@ -35,6 +35,7 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'showScriptName' => false,
+            'caseSensitive' => false,
             'rules' => array(
                 '' => 'site/dashboard',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',

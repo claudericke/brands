@@ -74,9 +74,10 @@ class SiteController extends Controller {
           $this->render("profile", $oCompany);
           } */
 
+        $oCompanyContacts = CompanyContacts::model();
         $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => 1));
 
-        $this->render("profile", array("oCompany" => $oCompany));
+        $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts));
     }
 
     /**

@@ -3,35 +3,79 @@
 <div class="row">
     <h2>PROFILE</h2>
 </div>
+
+<h3>Basic Information</h3>
 <?php
-echo "<pre>" . print_r($oCompany, true);
+$form = $this->beginWidget('CActiveForm', array(
+    'id' => 'login-form',
+    'enableAjaxValidation' => true,
+        )
+);
 ?>
 
 <div class="row">
-    <div class="three columns linker vacancies">
-        <a href="#"> <h2>VACANCIES</h2>
-            <p>Update your existing vacancies</p></a>
-    </div>
-    <div class="three columns linker promos">
-        <a href="#"><h2>PROMOTIONS</h2>
-            <p>See statistics about who has been viewing your profile</p></a>
-    </div>
-    <div class="three columns linker qoutes">
-        <a href="#"> <h2>QOUTATIONS</h2>
-            <p>Update your exisiting product catalog</p></a>
-    </div>
+    <?php
+    echo $form->labelEx($oCompany, 'CompanyName') .
+    $form->textField($oCompany, 'CompanyName', array('class' => 'left u-full-width')) .
+    $form->error($oCompany, 'CompanyName');
+    ?>
 </div>
+
 <div class="row">
-    <div class="three columns linker management">
-        <a href="#"> <h2>MANAGEMENT</h2>
-            <p>Update management profiles here</p></a>
-    </div>
-    <div class="three columns linker calendar">
-        <a href="#"> <h2>CALENDAR</h2>
-            <p>Update your corporate calendar here</p></a>
-    </div>
-    <div class="three columns linker events">
-        <a href="#"> <h2>EVENTS</h2>
-            <p>Schedule events related to your business here</p>
-    </div></a>
+    <?php
+    echo $form->labelEx($oCompany, 'TradingName') .
+    $form->textField($oCompany, 'TradingName', array('class' => 'left u-full-width')) .
+    $form->error($oCompany, 'TradingName');
+    ?>
 </div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oCompany, 'ProductsAndServices') .
+    $form->textField($oCompany, 'ProductsAndServices', array('class' => 'left u-full-width')) .
+    $form->error($oCompany, 'ProductsAndServices');
+    ?>
+</div>
+
+
+<h3>Contact Information</h3>
+<?php
+$this->endWidget();
+
+$oContactInfoForm = $this->beginWidget('CActiveForm', array(
+    'id' => 'login-form',
+    'enableAjaxValidation' => true,
+        )
+);
+?>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'PhysicalAddress') .
+    $form->textField($oContacts, 'PhysicalAddress', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'PhysicalAddress');
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'PostalAddress') .
+    $form->textField($oContacts, 'PostalAddress', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'PostalAddress');
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'PreferredLanguage') .
+    $form->textField($oContacts, 'PostalAddress', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'PostalAddress');
+    ?>
+</div>
+
+<?php
+echo "<pre>" . $oCompany->ID;
+print_r($oContacts);
+
+$this->endWidget();
+?>

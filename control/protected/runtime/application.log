@@ -182,3 +182,29 @@ Stack trace:
 #9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
 REQUEST_URI=/control/index.php?r=site/viewprofile
+2015/05/04 15:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/index.php?r=site/profile
+---
+2015/05/04 15:19:06 [error] [exception.CException] exception 'CException' with message 'SiteController contains improperly nested widget tags in its view "C:\xampp\htdocs\brands\control\protected\views\site\profile.php". A CActiveForm widget does not have an endWidget() call.' in C:\xampp\htdocs\brands\control\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(79): CController->render('profile', Array)
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionViewProfile()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('viewprofile')
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/viewprofil...')
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#11 {main}
+REQUEST_URI=/control/index.php?r=site/viewprofile
+---
