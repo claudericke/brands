@@ -62,6 +62,23 @@ class SiteController extends Controller {
         $this->render('contact', array('model' => $model));
     }
 
+    public function actionDashboard() {
+        $this->render("dashboard");
+    }
+
+    public function actionViewProfile() {
+        /* if (Yii::app()->user->isGuest) {
+          $this->redirect("login/");
+          } else {
+          $oCompany = new CompanyDetails();
+          $this->render("profile", $oCompany);
+          } */
+
+        $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => 1));
+
+        $this->render("profile", array("oCompany" => $oCompany));
+    }
+
     /**
      * Logs out the current user and redirect to homepage.
      */

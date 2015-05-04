@@ -26,7 +26,7 @@ return array(
             'username' => 'root',
             'password' => '28326084',
             'charset' => 'utf8',
-            'tablePrefix' => '',
+            'tablePrefix' => 'BR_',
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
@@ -34,8 +34,9 @@ return array(
         ),
         'urlManager' => array(
             'urlFormat' => 'path',
+            'showScriptName' => false,
             'rules' => array(
-                '<action:\w+>' => 'site/<action>',
+                '' => 'site/dashboard',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',

@@ -5,7 +5,7 @@
  *
  * @author Lebogang Ratsoana <lebogang.ratsoana@yahoo.com>
  */
-class LoginController extends Controller {
+class LoginController extends CController {
 
     public $layout = 'login';
 

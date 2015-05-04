@@ -5,12 +5,12 @@ $form = $this->beginWidget('CActiveForm', array(
         ));
 
 echo $form->labelEx($model, 'username') .
- $form->textField($model, 'username') .
+ $form->textField($model, 'username', array('class' => 'left u-full-width')) .
  $form->error($model, 'username');
 
 
 echo $form->labelEx($model, 'password') .
- $form->passwordField($model, 'password') .
+ $form->passwordField($model, 'password', array('class' => 'left u-full-width')) .
  $form->error($model, 'password');
 ?>
 
@@ -21,5 +21,8 @@ echo $form->labelEx($model, 'password') .
 </div>
 
 <div class="five columns">
-    <?php echo CHtml::submitButton('LOGIN'); ?>
+    <?php echo CHtml::submitButton('LOGIN', array('class' => 'login_btn')); ?>
+    <a href="../register.html"><input type="button" class="register_btn" value="Register" /></a>
 </div>
+
+<?php $this->endWidget(); ?>
