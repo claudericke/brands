@@ -56,54 +56,90 @@ text-align: center;
 }
 
 
-.nav {
-    display: block;
-    width:100%;
-}
 
-.menu_item {
-    list-style: none;
-    padding: 7px;
-    background:#fff;
-    box-shadow: 0.8px 0.8px 0.7px;
-    width: 100%;
-    margin-left: -10px;
-    display: block;
-}
-
-
-.menu_item a  {
-    text-transform: uppercase;
-    font-family: "Source Sans Pro", sans-serif;
-    text-decoration: none;
-    color: #1e1e1e;
-    margin-left: 30px;
-}
 
 .main {
     padding:10px;
     background: #f9f9f9;
     min-height: 500px;
 }
-.dash_icon {
-    background: url(../images/menu_icons.png) 10px 11px no-repeat #fff;
+
+.linker {
+    height: 93px;
+    min-width: 200px;
+    border-bottom: 10px;
+    border-bottom-color: #3f3f3f;
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    color: #fff;
+    padding:5px 5px 5px 55px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 2px #cecece;
 }
 
-.settings_icon {
-    background: url(../images/menu_icons.png) 10px -41px no-repeat #fff;
+.linker a {
+    text-decoration: none;
+    color: #fff;
 }
 
-.mybusiness_icon {
-    background: url(../images/menu_icons.png) 10px -91px no-repeat #fff;
+.linker a:hover {
+    color: #cecece;
 }
 
-.stats_icon {
-    background: url(../images/menu_icons.png) 10px -140px no-repeat #fff;
+.linker:hover {
+    border-bottom-color: red;
 }
 
-.messages_icon {
-    background: url(../images/menu_icons.png) 10px -190px no-repeat #fff;
+.linker h2 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size:13px;
+    margin-bottom: 0px;
 }
+
+.linker p {
+    font-family: "Source Sans Pro",sans-serif;
+    font-size:12px;
+    font-style: italic;
+}
+
+/* Background Icons for Dashboard Elements */
+.profile {
+    background:url(../images/profile_icon.png) no-repeat center left  #363435;
+}
+
+.products {
+    background:url(../images/products_icon.png) no-repeat center left  #363435;
+}
+
+.services {
+    background:url(../images/services_icon.png) no-repeat center left  #363435;
+}
+
+.vacancies {
+    background:url(../images/vacancies_icon.png) no-repeat center left  #363435;
+}
+
+.promos {
+    background:url(../images/promo_icon.png) no-repeat center left  #363435;
+}
+
+.qoutes {
+    background:url(../images/qoutations_icon.png) no-repeat center left  #363435;
+}
+
+.management {
+    background:url(../images/management_icon.png) no-repeat center left  #363435;
+}
+
+.calendar {
+    background:url(../images/cal_icon.png) no-repeat center left  #363435;
+}
+
+.events {
+    background:url(../images/events_icon.png) no-repeat center left  #363435;
+}
+
+
 
 /* text variations */
 .thin {
