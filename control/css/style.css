@@ -1,0 +1,267 @@
+/* Template Stylesheet */
+body {
+    background: #ebebeb;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+.login {
+    text-align: left;
+    padding: 15px;
+    background: #fff;
+    height: 420px;
+}
+
+.login_container {
+    margin-top:100px;
+    background: url(../images/shadow.png) 56% bottom no-repeat;
+    text-align: center;
+    padding-bottom: 15px;
+    height: 450px;
+}
+
+/* Dashboard */
+.header {
+    margin:10px;
+}
+
+.sidebar {
+    background: #f9f9f9;
+    min-height: 500px;
+}
+
+.user_profile {
+    display: block;
+    list-style: none;
+    text-align: center;
+}
+
+.user_profile li {
+}
+
+.user {
+    color:#787878;
+    font-size: 12px;
+    font-family: "Source Sans Pro", sans-serif;
+text-align: center;
+}
+
+.welcome {
+    color:#787878;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+
+.nav {
+    display: block;
+    width:100%;
+}
+
+.menu_item {
+    list-style: none;
+    padding: 7px;
+    background:#fff;
+    box-shadow: 0.8px 0.8px 0.7px;
+    width: 100%;
+    margin-left: -10px;
+    display: block;
+}
+
+
+.menu_item a  {
+    text-transform: uppercase;
+    font-family: "Source Sans Pro", sans-serif;
+    text-decoration: none;
+    color: #1e1e1e;
+    margin-left: 30px;
+}
+
+.main {
+    padding:10px;
+    background: #f9f9f9;
+    min-height: 500px;
+}
+.dash_icon {
+    background: url(../images/menu_icons.png) 10px 11px no-repeat #fff;
+}
+
+.settings_icon {
+    background: url(../images/menu_icons.png) 10px -41px no-repeat #fff;
+}
+
+.mybusiness_icon {
+    background: url(../images/menu_icons.png) 10px -91px no-repeat #fff;
+}
+
+.stats_icon {
+    background: url(../images/menu_icons.png) 10px -140px no-repeat #fff;
+}
+
+.messages_icon {
+    background: url(../images/menu_icons.png) 10px -190px no-repeat #fff;
+}
+
+/* text variations */
+.thin {
+    font-family: "Open Sans Light", "Helvitica", sans-serif;
+    font-weight: 100 !important;
+}
+
+.condense {
+    font-family: "Open Sans Condensed", "Helvitica", sans-serif;
+    font-weight: 100 !important;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.large {
+    font-size: 1.9em;
+}
+
+.small {
+    font-size: 0.7em;
+}
+
+.medium {
+    font-size: 1.1em;
+}
+
+.bold {
+    font-weight: 800 !important;
+}
+
+h2 {
+    font-size: 1.2em !important;
+}
+
+p {
+    font-size: .9em;
+    text-align: left;
+}
+
+
+/* Colours */
+.red {
+    color: #eb3136 !important;
+}
+
+.black {
+    color: #010101;
+}
+
+/* Size & Positioning */
+.center {
+    text-align: center !important;
+}
+
+.left {
+    text-align: left !important;;
+}
+
+.right {
+    text-align: right !important;;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.width10 {
+    width: 10%;
+}
+.width20 {
+    width: 20%;
+}
+.width30 {
+    width: 30%;
+}
+.width40 {
+    width: 40%;
+}
+.width50 {
+    width: 50%;
+}
+.width60 {
+    width: 70%;
+}
+.width80 {
+    width: 80%;
+}
+.width90 {
+    width: 90%;
+}
+.width100 {
+    width: 100%;
+}
+
+
+/* Buttons */
+
+input[type="button"], input[type="submit"] {
+    border:none;
+    color: #fff;
+    font-size: 11px;
+    padding-left: 40px;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    font-family: "Open Sans", "Helvitica", sans-serif;
+    text-transform: uppercase;
+}
+
+input[type="button"]:hover {
+    font-weight: 800;
+}
+
+.login_btn  {
+    background: url(../images/user_icon.png) 10px center no-repeat #eb3136;
+    width:100%;
+    display: block;
+    height: 20px;
+    margin-top: 10px;
+    padding:8px 5px 5px 5px;
+    text-indent: 30px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.settings_btn  {
+    background: url(../images/settings_icon.png) 10px center no-repeat #eb3136;
+    width:100%;
+    display: block;
+    height: 20px;
+    margin-top: 10px;
+    padding:8px 5px 5px 5px;
+    text-indent: 30px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.mail_btn  {
+    background: url(../../images/mail_icon.png) 10% 50% no-repeat #eb3136;
+}
+
+
+.register_btn  {
+    background: url(../../images/register_icon.png) 10% 50% no-repeat #1e1e1e;
+}
+
+.register_btn  {
+    background: url(../../images/settings_icon.png) 10% 50% no-repeat #1e1e1e;
+}

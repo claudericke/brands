@@ -1,0 +1,30 @@
+2015/05/03 23:04:54 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "main".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('main', NULL, true)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(9): CController->render('main')
+#2 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#10 {main}
+REQUEST_URI=/brands/control/
+---
+2015/05/03 23:34:16 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "login/login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('login/login', NULL, true)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(9): CController->render('login/login')
+#2 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#10 {main}
+REQUEST_URI=/brands/control/
+---
