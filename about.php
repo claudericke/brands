@@ -34,7 +34,7 @@
             </div>
             <div class="twelve columns">
                 <h1 class="left">ABOUT<strong class="red left"> TRENDMEND SYSTEMS</strong></h1>
-                <p>Trendment Systems is a service provider which works under Ericson and cisco system (BP 250, MD110, and AXE). We also do installation, test, commission and maintenance of networks in both public and private sector:</p>
+                <p>Trendmend Systems is a service provider which works under Ericson and cisco system (BP 250, MD110, and AXE). We also do installation, test, commission and maintenance of networks in both public and private sector:</p>
                 <ul>
                     <li>Radio communications</li>
                     <li>GSM networks</li>
@@ -55,7 +55,7 @@
                         <li>Miss L Govere</li>
                     </ul>
 
-                <p>Companies working in conjunction with Trendments Systems: </p>
+                <p>Companies working in conjunction with Trendmend Systems: </p>
                     <ul>
                         <li>Digital Communication</li>
                         <li>Maranatha Preparatory Schools</li>
