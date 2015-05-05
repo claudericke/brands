@@ -44,6 +44,7 @@
         </div>
 
     <div class="offset-by-four five columns">
+        <p class="center small"><img src="images/massive_logo.png" width="200px" /></p>
             <p class="center small">©2001–2014 All Rights Reserved. Brands ® is a registered trademark of Massive Dynamics. <br />
 <a href="../terms.html">Privacy and Terms</a></p>
     </div>

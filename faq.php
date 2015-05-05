@@ -27,8 +27,8 @@
                 <p class="left"><strong class="red">What is Brands App?</strong><br /><i>Brands App is a self-service marketing and advertising solution to drive demand for products accessed on the platform.</i></p>
 
                 <p class="left">
-                Who can Register for Brands App Services?
-                Brands App can be used by Small, Medium and corporate Enterprise vendors.
+                <strong class="red">Who can Register for Brands App Services?</strong>
+                    <br/><i>Brands App can be used by Small, Medium and corporate Enterprise vendors.</i>
                 </p>
 
                 <p class="left"><strong class="red">How much does it cost to get started?</strong><br />
@@ -99,7 +99,7 @@
                     <input  class="u-full-width"  type="text" name="email" placeholder="Enter Your e-mail Address Here" />
                     <input class="u-full-width"  type="text" name="subject" hidden="hidden" value="Support Question" />
                     <textarea  class="u-full-width"  name="message" placeholder="Enter your question here" ></textarea>
-                    <p>Google Captcha Here</p>
+                    <div class="g-recaptcha" data-sitekey="6Lec3QMTAAAAAMwXk_ATFT1SN-Z9qlaFyfAO_EXc"></div>
                     <input type="submit" class="mail_btn" value="SEND QUESTION" />
                 </form>
             </div>

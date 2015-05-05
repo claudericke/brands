@@ -34,11 +34,11 @@
                     <span>SOCIAL MEDIA</span>
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/" target="_blank"><img src="images/fb.png" alt="FB" />
+                            <a href="https://www.facebook.com/pages/Massive-Dynamics-Pvt-Ltd/800195253365252?fref=ts" target="_blank"><img src="images/fb.png" alt="FB" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.twitter.com/" target="_blank"><img src="images/tw.png" alt="TW" />
+                            <a href="https://www.twitter.com/brandsapp" target="_blank"><img src="images/tw.png" alt="TW" />
                             </a>
                         </li>
                     </ul>

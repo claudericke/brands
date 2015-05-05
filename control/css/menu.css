@@ -2,6 +2,7 @@
     height: 0px;
     overflow: hidden;
     list-style: none;
+    text-transform: uppercase;
 
 	transition: height ease-in-out 500ms; /* css3 transition */
 	-o-transition: height ease-in-out 500ms;

@@ -19,43 +19,47 @@
                 <div class="spacer"></div>
                 <div class="spacer"></div>
                 <h1 class="left large ">REGISTER<strong class="red left bold"> ON BRANDS</strong></h1>
-                <p>If you are a company that wished to register on Brands please complete the form below. Users wanting to browes the directory can download the app from the <a href="#">Google Play</a>
+                <p>If you are a company that wishes to register on Brands please complete the form below. Users wanting to browse the directory can download the app from the <a href="#">Google Play App Store</a>
                 </p>
             </div>
             <form class="registerForm" method="post" name="RegistrationForm">
                 <div class="twelve columns">
                     <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
                     <div class="four columns noMargin">
-                        <label>COMPANY NAME:</label>
-                        <input type="text" class="u-full-width" name="companyName" placeholder="Registered Name of Company" name="CompanyName" />
+                        <label>COMPANY NAME</label>
+                        <input type="text" class="u-full-width" name="companyName" placeholder="Registered Name of Company"  />
                     </div>
                     <div class="four columns noMargin">
-                        <label>TRADING NAME:</label>
+                        <label>TRADING NAME</label>
                         <input type="text" class="u-full-width" name="tradingName" placeholder="Name used when Trading" name="TradingName" />
                     </div>
                     <div class="four columns noMargin">
                         <label>REGISTRATION NUMBER</label>
-                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number" name="ProductsAndServices" />
+                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number"  />
                     </div>
                     <div class="four columns noMargin">
                         <label>COMPANY PHONE NUMBER 1</label>
-                        <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company registration number" name="ProductsAndServices" />
+                        <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company registration number"  />
                     </div>
                     <div class="four columns noMargin">
-                        <label>POSTAL ADDRESS:</label>
-                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" name="postalAddress" />
+                        <label>POSTAL ADDRESS</label>
+                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail"  />
                     </div>
                     <div class="four columns noMargin">
-                        <label>PHYSICAL ADDRESS:</label>
-                        <input type="text" class="u-full-width" name="companyAddress" placeholder="Address of where company trades from" name="physicalAddress" />
+                        <label>PHYSICAL ADDRESS</label>
+                        <input type="text" class="u-full-width" name="physicalAddress" placeholder="Address of where company trades from" />
                     </div>
                     <div class="four columns noMargin">
-                        <label>COMPANY PHONE NUMBER 2:</label>
-                        <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" name="companyPhone1" />
+                        <label>COMPANY PHONE NUMBER 2</label>
+                        <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" />
                     </div>
                     <div class="four columns noMargin">
-                        <label>COMPANY PHONE NUMBER 3:</label>
-                        <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" name="companyPhone2" />
+                        <label>COMPANY PHONE NUMBER 3</label>
+                        <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" />
+                    </div>
+                    <div class="four columns noMargin">
+                        <label>E-MAIL ADDRESS *</label>
+                        <input type="email" class="u-full-width" name="emailAddress" placeholder="Your e-mail address"  />
                     </div>
                     <div class="four columns noMargin">
                         <label>PREFERED LANGUAGE(S)</label>
@@ -66,7 +70,7 @@
                 </div>
                 <div class="twelve columns">
                     <h2 class="left large ">CORRESPONDENCE<strong class="left bold"> WITH BRANDS</strong></h2>
-                    <p>OUR PREFERRED METHOD OF CORRESPONDENCE FROM BRANDS IS BY:</p>
+                    <p>OUR PREFERRED METHOD OF CORRESPONDENCE FROM BRANDS IS BY</p>
                     <input type="checkbox" name="preferedCorrespondence" value="MobilePhone" />&nbsp;Mobile Phone (Voice and SMS)
                     <br/>
                     <input type="checkbox" name="preferedCorrespondence" value="eMail" />&nbsp;E-Mail
@@ -92,8 +96,8 @@
                 <br/>
                 <br/>
                 <div class="twelve columns">
-                    <h2 class="left large ">SELECTOIN OF<strong class="left bold"> SERVICES</strong></h2>
-                    <p>WE ASK THAT YOU AUTHORIZE ACCESS TO THE FOLLOWING MASSIVE DYNAMICS SERVICE(S):</p>
+                    <h2 class="left large ">SELECTION OF<strong class="left bold"> SERVICES</strong></h2>
+                    <p>WE ASK THAT YOU AUTHORIZE ACCESS TO THE FOLLOWING MASSIVE DYNAMICS SERVICE(S)</p>
                     <input type="checkbox" name="brandsServices" value="brandsPremium" />Brands Premium
                     <br/>
                     <input type="checkbox" name="brandsServices" value="brandsScrollAdvert" />&nbsp;Brands Scroll Advert
@@ -130,7 +134,7 @@
                             </li>
                             <li>Unless and until we notify Massive Dynamics in writing that we withdraw our consent thereto, we agree that Massive Dynamics may disclose our personal information to its designers or affiliates for purposes of marketing of their services (“third party marketing designers”)</li>
                             <li>By requesting a Digital Care Plan, we agree to be bound by the applicable terms and conditions and to pay the fee stipulated by the administration, as amended by the administration from time to time. </li>
-                            <li>You afree to both the <a href="terms.html" target="_blank">terms of service</a>, <a href="privacy.html" target="_blank">privacy policy</a> and <a href="dup.html" target="_blank">data usage policy</a>
+                            <li>You agree to both the <a href="terms.html" target="_blank">terms of service</a>, <a href="privacy.html" target="_blank">privacy policy</a> and <a href="dup.html" target="_blank">data usage policy</a>
                             </li>
                     </ol>
 
