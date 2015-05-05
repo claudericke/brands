@@ -4,7 +4,9 @@
     <h2>PROFILE</h2>
 </div>
 
-<h3>Basic Information</h3>
+<div class="row">
+    <h3>Basic Information</h3>
+</div>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'login-form',
@@ -41,8 +43,9 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php echo CHtml::submitButton('UPDATE', array('class' => 'login_btn')); ?>
 </div>
 
-
-<h3>Contact Information</h3>
+<div class="row">
+    <h3>Contact Information</h3>
+</div>
 <?php
 $this->endWidget();
 
@@ -75,6 +78,10 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     $form->textField($oContacts, 'PostalAddress', array('class' => 'left u-full-width')) .
     $form->error($oContacts, 'PostalAddress');
     ?>
+</div>
+
+<div class="row">
+    <?php echo CHtml::submitButton('UPDATE', array('class' => 'login_btn')); ?>
 </div>
 
 <?php
