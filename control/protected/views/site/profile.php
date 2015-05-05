@@ -37,6 +37,10 @@ $form = $this->beginWidget('CActiveForm', array(
     ?>
 </div>
 
+<div class="row">
+    <?php echo CHtml::submitButton('UPDATE', array('class' => 'login_btn')); ?>
+</div>
+
 
 <h3>Contact Information</h3>
 <?php

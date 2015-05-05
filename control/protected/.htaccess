@@ -1,8 +1,16 @@
-RewriteEngine on
-
-# if a directory or a file exists, use it directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# otherwise forward it to index.php
-RewriteRule . index.php
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    # Options +SymLinksIfOwnerMatch
+    RewriteEngine On
+    # RewriteBase /
+    # If you are in a sub folder of your web root you
+    # might have to enable something like this:
+    #
+    # RewriteBase /~pascal-brewing/app/frontend/www
+ 
+    # Yii rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+ 
+    RewriteRule . index.php
+</IfModule>
