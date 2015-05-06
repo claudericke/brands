@@ -113,15 +113,6 @@
                     <input type="checkbox" name="subscription" value="eMail" />&nbsp;No
                     <br/>
                 </div>
-                <div class="twelve columns">
-                    <h2 class="left large ">THIRD-PARTY MARKETING<strong class="left bold"> OPT-OUT</strong></h2>
-                    <p class="uppercase">We do not consent to Massive Dynamics disclosing our information to third party marketing. (place your company initial in this box if you do not wish to receive third party marketing)</p>
-                    <input type="checkbox" name="preferedCorrespondence" value="MobilePhone" />&nbsp;Mobile Phone (Voice and SMS)
-                    <br/>
-                    <input type="checkbox" name="thirdPartMarketing" value="thirdPartyeMail" />&nbsp;Yes&nbsp;
-                    <input type="checkbox" name="thirdPartMarketing" value="thirdPartyPost" />&nbsp;No
-                    <br />
-                </div>
                 <br/>
                 <br/>
                 <br/>
