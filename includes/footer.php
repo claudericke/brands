@@ -6,6 +6,10 @@
         </div>
     </footer>
 
+
+  <!-- Recaptcha Initialization -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Recaptcha Initialization End -->
   <!-- Mobile Navigation -->
     <script type="text/javascript">
         $('.menu nav').slicknav();
