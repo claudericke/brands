@@ -58,7 +58,7 @@ class Setup {
         if (!is_array($this->aTables) || empty($this->aTables) || $this->bHasError) {
             $this->bHasError = true;
             $this->aErrorMessages[] = "Tables could not be created because there were errors before createtables().";
-            LogErrors::logError("PHP", "Tables could not be created because there were errors before createtables().");
+            //LogErrors::logError("PHP", "Tables could not be created because there were errors before createtables().");
         } else {
             foreach ($this->aTables as $sTableName => $aTable) {
 
@@ -72,11 +72,12 @@ class Setup {
                 } catch (PDOException $oPdoException) {
                     $this->bHasError = true;
                     $this->aErrorMessages[] = $oPdoException->getMessage();
-                    LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
+                    //LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
                 }
 
                 if (!$this->bHasError) {
                     foreach ($aTable as $aTableFields) {
+                        //echo "$sTableName -> $aTableFields[0], $aTableFields[2], $aTableFields[3] <br/><br/>";
                         $this->addColumn($sTableName, $aTableFields[0], $aTableFields[2], $aTableFields[3]);
                     }
                 }
@@ -91,10 +92,11 @@ class Setup {
         if (!$this->bHasError && !$bExists) {
             if ($sType == "int") {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) UNSIGNED NOT NULL";
-            }if ($sType == "tinyint") {
+            } else if ($sType == "tinyint") {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) NOT NULL";
-            } elseif (($sType == "text") || ($sType == "date" || $sType == "datetime")) {
-                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType NOT NULL";
+            } elseif (($sType == "text") || ($sType == "date" || $sType == "datetime" || $sType == "timestamp")) {
+                $sDefault = $sType == "timestamp" ? " DEFAULT NOW()" : "";
+                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType NOT NULL$sDefault";
             } elseif ($sType == "enum") {
                 $sDefault = trim(strstr($iLength, ',', true));
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType($iLength) NOT NULL DEFAULT $sDefault";
@@ -102,12 +104,15 @@ class Setup {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) NOT NULL DEFAULT ''";
             }
 
+            echo $sQuery . "<br/><br/>";
+
+
             try {
                 $this->oPdo->query($sQuery);
             } catch (PDOException $oPdoException) {
                 $this->bHasError = true;
                 $this->aErrorMessages[] = $oPdoException->getMessage();
-                LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
+                //LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
             }
         }
     }
@@ -123,7 +128,7 @@ class Setup {
             } catch (PDOException $oPdoException) {
                 $this->bHasError = true;
                 $this->aErrorMessages[] = $oPdoException->getMessage();
-                LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
+                //LogErrors::logError($oPdoException->getCode(), $oPdoException->getMessage());
             }
         }
     }

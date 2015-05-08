@@ -17,9 +17,7 @@ class DatabaseConnection {
 
     private function __construct() {
 
-        $this->aDatabaseConnectionDetails["localhost"] = array("host" => "localhost", "username" => "root", "password" => "28326084", "db" => "twissdata");
-        $this->aDatabaseConnectionDetails["twiss"] = array("host" => "localhost", "username" => "twissfid_manager", "password" => "28326084@Lebo", "db" => "twissfid_manager");
-        $this->aDatabaseConnectionDetails["other"] = array("host" => "localhost", "username" => "root", "password" => "", "db" => "twissdata");
+        $this->aDatabaseConnectionDetails["localhost"] = array("host" => "localhost", "username" => "root", "password" => "28326084", "db" => "brands");
 
         $sCurrentHost = $this->determineHost();
 

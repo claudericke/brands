@@ -480,3 +480,49 @@ Stack trace:
 REQUEST_URI=/control/register.html
 HTTP_REFERER=http://brands.local/control/login/
 ---
+2015/05/08 14:47:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/profile
+---
+2015/05/08 14:48:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/login/
+---
+2015/05/08 14:48:48 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\brands\control\framework\web\CController.php:793) (C:\xampp\htdocs\brands\control\framework\web\CHttpRequest.php:789)
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(10): SiteController->redirect()
+#1 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#2 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site
+2015/05/08 14:50:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/profile
+---
+2015/05/08 14:50:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/profile
+---

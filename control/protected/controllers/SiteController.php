@@ -6,13 +6,13 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         $this->render("index");
-        /* if (Yii::app()->user->isGuest) {
-          $this->redirect("login/");
-          } else {
-          $this->pageTitle = ": Home";
-          //echo "Getting to this point";
-          $this->render("index");
-          } */
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("../login/");
+        } else {
+            $this->pageTitle = ": Home";
+            //echo "Getting to this point";
+            $this->render("dashboard");
+        }
     }
 
     /**
@@ -66,18 +66,27 @@ class SiteController extends Controller {
         $this->render("dashboard");
     }
 
-    public function actionViewProfile() {
-        /* if (Yii::app()->user->isGuest) {
-          $this->redirect("login/");
-          } else {
-          $oCompany = new CompanyDetails();
-          $this->render("profile", $oCompany);
-          } */
+    public function actionProfile() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("../login/");
+        } else {
 
-        $oCompanyContacts = CompanyContacts::model();
-        $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => 1));
+            $oCompanyContacts = CompanyContacts::model();
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => 1));
 
-        $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts));
+            if (isset($_POST['ContactForm'])) {
+                $model->attributes = $_POST['ContactForm'];
+                if ($model->validate()) {
+                    $headers = "From: {$model->email}\r\nReply-To: {$model->email}";
+                    mail(Yii::app()->params['adminEmail'], $model->subject, $model->body, $headers);
+                    Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                    $this->refresh();
+                }
+            }
+
+
+            $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts));
+        }
     }
 
     /**

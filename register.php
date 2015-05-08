@@ -9,6 +9,7 @@
                 <script type="text/javascript">
                     $("form").submit(function (e) {
                         e.preventDefault();
+                        var iFadeSpeed = 15000;
                         var oCurrentForm = $(this);
                         sContent = oCurrentForm.serialize();
 
@@ -41,6 +42,7 @@
                                 <p>If you are a company that wishes to register on Brands please complete the form below. Users wanting to browse the directory can download the app from the <a href="#">Google Play App Store</a>
                                 </p>
                             </div>
+                            <br style="clear: both;"/>
                             <div class="errorMessage red"></div>
                             <form class="registerForm" method="post" name="RegistrationForm">
                                 <div class="twelve columns">
@@ -126,9 +128,9 @@
                                     <br/>
                                     <input type="checkbox" name="brandsServices" value="Post" />&nbsp;Post
                                     <p>WOULD YOU LIKE TO SUBSCRIBE TO OUR MAGAZINE</p>
-                                    <input type="checkbox" name="subscription" value="Yes" />&nbsp;Yes
+                                    <input type="radio" name="subscription" value="Yes" />&nbsp;Yes
                                     <br/>
-                                    <input type="checkbox" name="subscription" value="No" />&nbsp;No
+                                    <input type="radio" name="subscription" value="No" />&nbsp;No
                                     <br/>
                                 </div>
                                 <br/>
