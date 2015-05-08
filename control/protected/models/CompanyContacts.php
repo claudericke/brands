@@ -5,6 +5,7 @@ class CompanyContacts extends CActiveRecord {
      * The followings are the available columns in table 'BR_CompanyDetails':
      * @var integer $ID
      * @var integer $CompanyID
+     * @var string $Email
      * @var string $PhysicalAddress
      * @var string $PostalAddress
      * @var string $PreferredLanguage
@@ -36,7 +37,8 @@ class CompanyContacts extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('PhysicalAddress, PostalAddress, BrandsNumber, AccountNumber', 'length', 'max' => 255),
+            array('Email', 'required'),
+            array('Email, PhysicalAddress, PostalAddress, BrandsNumber, AccountNumber', 'length', 'max' => 255),
         );
     }
 
@@ -58,13 +60,14 @@ class CompanyContacts extends CActiveRecord {
         return array(
             'ID' => 'Id',
             'CompanyID' => 'User Id',
+            'Email' => 'Email',
             'PhysicalAddress' => 'Physical Address',
             'PostalAddress' => 'Postal Address',
             'PreferredLanguage' => 'Preferred Language',
             'BrandsNumber' => 'Brand Number',
             'AccountNumber' => 'Account Number',
             'PreferredCorrespondence' => 'Preferred Correspondence',
-            'Subscription' => 'Subscribe?',
+            'Subscription' => 'Subscribe to our magazine?',
             'ThirdpartyMarketing' => 'Receive third party marketing?',
         );
     }

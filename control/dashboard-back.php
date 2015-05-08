@@ -22,7 +22,7 @@
                 <div class="row header">
                     <div class="eight columns"><img src="images/logo.png" /></div>
                     <div class="two columns "><a href="settings.html" class="settings_btn">Settings</a> </div>
-                    <div class="two columns "><a href="login.html" class="login_btn">Log Off</a></div>
+                    <div class="two columns "><a href="login-back.html" class="login_btn">Log Off</a></div>
                 </div>
 
                 <div class="row">

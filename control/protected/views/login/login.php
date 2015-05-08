@@ -2,6 +2,7 @@
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'login-form',
     'enableAjaxValidation' => true,
+    'clientOptions' => array('validateOnSubmit' => true),
         ));
 
 echo $form->labelEx($model, 'username') .

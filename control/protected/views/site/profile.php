@@ -5,11 +5,11 @@
 </div>
 
 <div class="row">
-    <h3>Basic Information</h3>
+    <h5>Basic Information</h5>
 </div>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
-    'id' => 'login-form',
+    'id' => 'company-details-form',
     'enableAjaxValidation' => true,
         )
 );
@@ -39,22 +39,31 @@ $form = $this->beginWidget('CActiveForm', array(
     ?>
 </div>
 
+
+
 <div class="row">
     <?php echo CHtml::submitButton('UPDATE', array('class' => 'login_btn')); ?>
 </div>
 
-<div class="row">
-    <h3>Contact Information</h3>
-</div>
+<h5>Contact Information</h5>
+
 <?php
 $this->endWidget();
 
 $oContactInfoForm = $this->beginWidget('CActiveForm', array(
-    'id' => 'login-form',
+    'id' => 'company-contacts-form',
     'enableAjaxValidation' => true,
         )
 );
 ?>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'Email') .
+    $form->textField($oContacts, 'Email', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'Email');
+    ?>
+</div>
 
 <div class="row">
     <?php
@@ -71,14 +80,24 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     $form->error($oContacts, 'PostalAddress');
     ?>
 </div>
-
+<br/>
 <div class="row">
     <?php
     echo $form->labelEx($oContacts, 'PreferredLanguage') .
-    $form->textField($oContacts, 'PostalAddress', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'PostalAddress');
+    $form->checkboxList($oContacts, 'PreferredLanguage', array('English' => 'English', 'Shona' => 'Shona', 'Ndebele' => 'Ndebele'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',)) .
+    $form->error($oContacts, 'PreferredLanguage');
     ?>
 </div>
+<br/>
+<div class="row">
+
+    <?php
+    echo $form->labelEx($oContacts, 'PreferredCorrespondence');
+    echo $form->radioButtonList($oContacts, 'PreferredCorrespondence', array('MobilePhone' => 'Mobile Phone', 'eMail' => 'eMail', 'Post' => 'Post'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',));
+    echo $form->error($oContacts, 'PreferredCorrespondence');
+    ?>
+</div>
+<br/>
 
 <div class="row">
     <?php echo CHtml::submitButton('UPDATE', array('class' => 'login_btn')); ?>

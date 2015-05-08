@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/../css/animate.css"/>
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/menu.css"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'/>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.pngFix.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr.js"></script>
     </head>
@@ -20,7 +19,7 @@
         <div class="wrapper">
             <div class="container">
                 <div class="row header">
-                    <div class="eight columns"><img src="images/logo.png" /></div>
+                    <div class="eight columns"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" /></div>
                     <div class="two columns "><a href="settings.html" class="settings_btn">Settings</a> </div>
                     <div class="two columns "><a href="login.html" class="login_btn">Log Off</a></div>
                 </div>
@@ -28,7 +27,7 @@
                 <div class="row">
                     <div class="three columns sidebar">
                         <ul class="user_profile">
-                            <li class="user_image"><img src="images/user.png" /></li>
+                            <li class="user_image"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/user.png" /></li>
                             <li>
                                 <p class="welcome">Welcome</p>
                                 <p class="user" >Barclays Bank</p>

@@ -21,7 +21,7 @@
                 <div class="row login_container">
                     <div class="offset-by-four five columns center">
                         <div class="login">
-                            <p class="center"><a href="../index.html"><img  src="images/logo_icon.png" alt="" /></a></p>
+                            <p class="center"><a href="../index.html"><img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_icon.png" alt="" /></a></p>
                             <?php echo $content; ?>
                         </div>
                     </div>
