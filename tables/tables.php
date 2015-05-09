@@ -84,3 +84,26 @@ $aTables['br_products'] = array(
     array("DateCreated", "Date on which user details were stored", "timestamp", 0),
     array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
 );
+
+
+$aTables['br_vacancies'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("CategoryID", "Link to vacancy category", "int", 11),
+    array("Title", "Product Name", "varchar", 255),
+    array("Description", "Details of the requirements and reponsibilities of the vacancy", "text", 0),
+    array("DocumentId", "Document attached to vacancy", "int", 11),
+    array("Active", "Whether product should be displayed or not", "tinyint", 2),
+    array("StartDate", "Date on vacancy will be available", "datetime", 0),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);
+
+
+$aTables['br_services'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("Service", "The service offered by the company", "varchar", 255),
+    array("Description", "Description of the service offered", "text", 0),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);
+
