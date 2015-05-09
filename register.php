@@ -17,7 +17,7 @@
                             $.post("phpscripts/registeruser.php", sContent, function (gData) {
                                 if (gData.indexOf("Successfully") > -1) {
                                     oCurrentForm.empty();
-                                    oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10;'>Registration Successful. An activate link has been sent to your email address.</span>");
+                                    oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10; font-weight: bold;'>Registration Successful. An activate link has been sent to your email address.</span>");
                                 } else {
                                     $(".errorMessage").empty().html(gData).show().fadeOut(iFadeSpeed);
                                 }
