@@ -23,6 +23,8 @@ require_once 'common.php';
                             </div>
                             <div class="row content">
                                 <?php Errors::getErrorDescription($_GET['errorCode']); ?>
+
+                                <?php echo $_GET["message"] ?>
                             </div>
 
                         </div>

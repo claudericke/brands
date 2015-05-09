@@ -7,22 +7,21 @@
                 <title>Brands App- Mobile Application for iOS and Symbian</title>
                 <?php include( 'includes/links.php'); ?>
                 <script type="text/javascript">
-                    $("form").submit(function (e) {
-                        e.preventDefault();
-                        var iFadeSpeed = 15000;
-                        var oCurrentForm = $(this);
-                        sContent = oCurrentForm.serialize();
+                    $(function () {
+                        $("#RegistrationForm").submit(function (e) {
+                            e.preventDefault();
+                            var iFadeSpeed = 15000;
+                            var oCurrentForm = $(this);
+                            sContent = oCurrentForm.serialize();
 
-                        $.post("phpscripts/registeruser.php", sContent, function (gData) {
-                            if (gData.indexOf("Successfully") > -1) {
-                                oCurrentForm.empty();
-                                oCurrentForm.append("Registration Successful. An activate link has been sent to your email address.");
-                            } else {
-                                $(".errorMessage").empty()
-                                        .html(gData)
-                                        .show()
-                                        .fadeOut(iFadeSpeed);
-                            }
+                            $.post("phpscripts/registeruser.php", sContent, function (gData) {
+                                if (gData.indexOf("Successfully") > -1) {
+                                    oCurrentForm.empty();
+                                    oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10;'>Registration Successful. An activate link has been sent to your email address.</span>");
+                                } else {
+                                    $(".errorMessage").empty().html(gData).show().fadeOut(iFadeSpeed);
+                                }
+                            });
                         });
                     });
                 </script>
@@ -44,7 +43,7 @@
                             </div>
                             <br style="clear: both;"/>
                             <div class="errorMessage red"></div>
-                            <form class="registerForm" method="post" name="RegistrationForm">
+                            <form class="registerForm" method="post" name="RegistrationForm" id="RegistrationForm" action="/phpscripts/registeruser.php">
                                 <div class="twelve columns">
                                     <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
                                     <div class="four columns noMargin">

@@ -23,7 +23,7 @@ class Registration {
     public function __construct($aPostData, $aDatabaseFields) {
         $this->oPDO = DatabaseConnection::getConnection()->getConnInstance();
         $this->aPostData = $aPostData;
-        $this->sUsersTable = "users";
+        $this->sUsersTable = "br_user";
         $this->bHasErrors = false;
         $this->aErrorMessage = array();
         foreach ($aDatabaseFields as $sTableName => $aTable) {
@@ -44,15 +44,13 @@ class Registration {
 
 
             $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$this->sUsersTable]) . "`";
-            $sTempValues = self::setTempValues(count($this->aPostData) + 1);
+
 
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
 
             $aUserDataStrip = array($_POST['companyName'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), date("Y-m-d"), date("Y-m-d"));
-
-            $aCompanyContactsDataStrip = array();
-
+            $sTempValues = self::setTempValues(count($aUserDataStrip));
             //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
 
@@ -68,7 +66,7 @@ class Registration {
                 $aCompanyContacts = array(
                     $iCompanyId,
                     $_POST["emailAddress"],
-                    $_POST["CompanyPhone1"],
+                    $_POST["companyPhone1"],
                     $_POST["companyPhone2"],
                     $_POST["companyPhone3"],
                     $_POST["physicalAddress"],
@@ -89,12 +87,13 @@ class Registration {
                 $sContenttype = "text/html";
                 $sDatabasefields = "`userid`, `subject`, `contenttype`, `emailfrom`, `emailsto`, `emailbody`, `datecreated`";
                 //$qQuery = "INSERT INTO msgout ($sDatabasefields) VALUES ('$iUserid','$sSubject','$sContenttype','$sFromemail','$s_email','$sEmailbody','$s_datecreated')";
-                $sqQuery = "INSERT INTO msgout ($sDatabasefields) VALUES (?,?,?,?,?,?,?)";
+                $sqQuery = "INSERT INTO br_messagessentout ($sDatabasefields) VALUES (?,?,?,?,?,?,?)";
 
-                $aMessageValues = array($iUserid, $sSubject, $sContenttype, $sFromemail, $s_email, $sEmailbody, $s_datecreated);
+                $aMessageValues = array($iUserid, $sSubject, $sContenttype, $sFromemail, $s_emailAddress, $sEmailbody, date("Y-m-d")
+                );
                 $iMailId = DatabaseConnection::insertData($sqQuery, $aMessageValues);
 
-                $oEmail = new Email(1.0, 'msgout', $iMailId);
+                $oEmail = new Email(1.0, 'br_messagessentout', $iMailId);
                 $oEmail->sendMail();
                 if ($oEmail->mailHasErrors()) {
                     $this->bHasErrors = true;
@@ -114,7 +113,7 @@ class Registration {
 
     public function createCompanyContacts($aCompanyContactsData) {
         $sTempValues = self::setTempValues(count($aCompanyContactsData));
-        $sCompanyContactsTable = "br_companydetails";
+        $sCompanyContactsTable = "br_companycontacts";
         $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$sCompanyContactsTable]) . "`";
         $qQuery = "INSERT INTO $sCompanyContactsTable ($sDatabaseFields) VALUES ($sTempValues)";
         return DatabaseConnection::insertData($qQuery, $aCompanyContactsData);

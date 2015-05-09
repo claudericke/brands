@@ -122,7 +122,7 @@ class DatabaseConnection {
             LogErrors::logError($oException->getCode(), $oException->getMessage());
             self::getConnection()->getConnInstance()->rollBack();
             //echo $oException->getMessage();
-            $sServerPage = "/error?errorCode=" . $oException->getCode();
+            $sServerPage = "/error?errorCode=" . $oException->getCode() . "&message=" . $oException->getMessage() . urlencode($sQuery . print_r($aData, true));
             header("Location: $sServerPage");
         }
 
