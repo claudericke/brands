@@ -72,3 +72,15 @@ $aTables['br_errorlog'] = array(
     array("errormessage", "Description of the error message returned", "text", 0),
     array("fixed", "Whether this error has been fixed or not", "enum", "'No','Yes'"),
 );
+
+
+$aTables['br_products'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("CategoryID", "Link to Product category", "int", 11),
+    array("ProductName", "Product Name", "varchar", 255),
+    array("Quantity", "Number of products available", "int", 11),
+    array("ProductImageId", "Link to product Image", "int", 11),
+    array("Active", "Whether product should be displayed or not", "tinyint", 2),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);

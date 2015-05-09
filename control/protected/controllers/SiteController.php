@@ -5,7 +5,6 @@ class SiteController extends Controller {
     public $layout = 'main';
 
     public function actionIndex() {
-        $this->render("index");
         if (Yii::app()->user->isGuest) {
             $this->redirect("../login/");
         } else {
@@ -63,7 +62,13 @@ class SiteController extends Controller {
     }
 
     public function actionDashboard() {
-        $this->render("dashboard");
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("../login/");
+        } else {
+            $this->pageTitle = ": Dashboard";
+            //echo "Getting to this point";
+            $this->render("dashboard");
+        }
     }
 
     public function actionProfile() {
