@@ -821,3 +821,12 @@ Stack trace:
 #15 {main}
 REQUEST_URI=/control/site/profile
 ---
+2015/05/10 12:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register.html".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('register.html')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/register.html
+HTTP_REFERER=http://brands.local/control/login/
+---

@@ -25,12 +25,12 @@ echo $form->error($model, 'password') .
 <div class="six columns">
     <a href="#">Forgot Password?</a><br/>
     <a href="#">Forgot Username?</a>
-    <p class="left"><a href="helpdesk.html">Trouble Logging In?</a></p>
+    <p class="left"><a href="/helpdesk">Trouble Logging In?</a></p>
 </div>
 
 <div class="five columns">
-<?php echo CHtml::submitButton('LOGIN', array('class' => 'login_btn')); ?>
-    <a href="../register.html"><input type="button" class="register_btn" value="Register" /></a>
+    <?php echo CHtml::submitButton('LOGIN', array('class' => 'login_btn')); ?>
+    <a href="/register"><input type="button" class="register_btn" value="Register" /></a>
 </div>
 
 <?php $this->endWidget(); ?>

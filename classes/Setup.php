@@ -104,8 +104,6 @@ class Setup {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) NOT NULL DEFAULT ''";
             }
 
-            echo $sQuery . "<br/><br/>";
-
 
             try {
                 $this->oPdo->query($sQuery);

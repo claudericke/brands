@@ -141,7 +141,7 @@ class Registration {
     }
 
     private function generateNotification($sEmail, $sPrefferedName, $sPassword, $sActivationScript, $sWebTitle) {
-        $sSalt = "twisseventsgenericemail+";
+        $sSalt = "smartgenericemail+";
         $sEncryptedEmail = base64_encode($sSalt . $sEmail);
         $sSiteUrl = $_SERVER['SERVER_NAME'] . "/";
 

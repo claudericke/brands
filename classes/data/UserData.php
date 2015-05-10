@@ -50,4 +50,28 @@ class UserData extends AbstractData {
         }
     }
 
+    public static function accountActivation() {
+        if (isset($_GET['authenticate']) && !empty($_GET['authenticate'])) {
+            $sSalt = "smartgenericemail+";
+            $sEmailAddress = str_replace($sSalt, '', base64_decode($_GET['authenticate']));
+
+            $oUser = new UserData();
+            $oUser->setUserDataByEmail($sEmailAddress);
+            $aUserData = $oUser->getData();
+            if (is_array($aUserData[0]) && count($aUserData) > 0) {
+                $aUserData = $aUserData[0];
+                if ($aUserData['Activated'] == 1) {
+                    echo '<span class="error red">Your account is already activated</span>';
+                } else {
+                    $oUser->activateAccount($sEmailAddress);
+                    echo '<span class="success">Your account was successfully activated. You can now log in.</span>';
+                }
+            } else {
+                echo "<span class='error red'>Seems like you clicked on an expired activation link. This data no longer exists on our system.</span>";
+            }
+        } else {
+            echo "Expired page. Please click on the proper link sent to you via mail.";
+        }
+    }
+
 }
