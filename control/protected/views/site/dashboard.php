@@ -1,6 +1,6 @@
 <div class="row">
     <div class="three columns linker profile">
-        <a href="#"><h2>PROFILE</h2>
+        <a href="/control/site/profile"><h2>PROFILE</h2>
             <p>View and update information about your business</p></a>
     </div>
     <div class="three columns linker products">

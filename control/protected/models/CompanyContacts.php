@@ -49,7 +49,7 @@ class CompanyContacts extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'CompanyID' => array(self::BELONGS_TO, 'CompanyDetails', 'ID'),
+            'CompanyID' => array(self::BELONGS_TO, 'CompanyDetails', 'id'),
         );
     }
 
@@ -58,12 +58,15 @@ class CompanyContacts extends CActiveRecord {
      */
     public function attributeLabels() {
         return array(
-            'ID' => 'Id',
-            'CompanyID' => 'User Id',
+            'id' => 'Id',
+            'CompanyID' => 'Company Id',
             'Email' => 'Email',
+            'CompanyPhone1' => 'Company Phone Number 1',
+            'CompanyPhone2' => 'Company Phone Number 2',
+            'CompanyPhone3' => 'Company Phone Number 3',
             'PhysicalAddress' => 'Physical Address',
             'PostalAddress' => 'Postal Address',
-            'PreferredLanguage' => 'Preferred Language',
+            'PreferredLanguage' => 'Preferred Language(s)',
             'BrandsNumber' => 'Brand Number',
             'AccountNumber' => 'Account Number',
             'PreferredCorrespondence' => 'Preferred Correspondence',

@@ -67,6 +67,30 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
+    echo $form->labelEx($oContacts, 'CompanyPhone1') .
+    $form->textField($oContacts, 'CompanyPhone1', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'CompanyPhone1');
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'CompanyPhone2') .
+    $form->textField($oContacts, 'CompanyPhone2', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'CompanyPhone2');
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'CompanyPhone3') .
+    $form->textField($oContacts, 'CompanyPhone3', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'CompanyPhone3');
+    ?>
+</div>
+
+<div class="row">
+    <?php
     echo $form->labelEx($oContacts, 'PhysicalAddress') .
     $form->textField($oContacts, 'PhysicalAddress', array('class' => 'left u-full-width')) .
     $form->error($oContacts, 'PhysicalAddress');
@@ -104,8 +128,5 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
 </div>
 
 <?php
-echo "<pre>" . $oCompany->ID;
-print_r($oContacts);
-
 $this->endWidget();
 ?>

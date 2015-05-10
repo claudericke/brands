@@ -37,6 +37,7 @@ $aTables['br_companycontacts'] = array(array("CompanyID", "Link to Company", "in
     array("PhysicalAddress", "Company Physical Address", "varchar", 255),
     array("PostalAddress", "Company Postal Address", "varchar", 255),
     array("RegistrationNumber", "Brand Number", "varchar", 255),
+    array("PreferredLanguage", "Preferred language of correspondence", "varchar", 255),
     array("AccountNumber", "Account Number", "varchar", 255),
     array("PreferredCorrespondence", "Preferred method of correspondence", "enum", "'MobilePhone','eMail','Post'"),
     array("Subscription", "Whether user subscribed to magazine or not", "tinyint", 2),

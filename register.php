@@ -84,9 +84,9 @@
                                     </div>
                                     <div class="four columns noMargin">
                                         <label>PREFERED LANGUAGE(S)</label>
-                                        <input type="checkbox" name="english" value="English" />&nbsp;English&nbsp;
-                                        <input type="checkbox" name="shona" value="Shona" />&nbsp;Shona&nbsp;
-                                        <input type="checkbox" name="ndebele" value="Ndebele" />&nbsp;Ndebele&nbsp;
+                                        <input type="checkbox" name="preferredLanguage" value="English" />&nbsp;English&nbsp;
+                                        <input type="checkbox" name="preferredLanguage" value="Shona" />&nbsp;Shona&nbsp;
+                                        <input type="checkbox" name="preferredLanguage" value="Ndebele" />&nbsp;Ndebele&nbsp;
                                     </div>
                                 </div>
                                 <div class="twelve columns">
@@ -117,13 +117,13 @@
                                 <div class="twelve columns">
                                     <h2 class="left large ">SELECTION OF<strong class="left bold"> SERVICES</strong></h2>
                                     <p>WE ASK THAT YOU AUTHORIZE ACCESS TO THE FOLLOWING MASSIVE DYNAMICS SERVICE(S)</p>
-                                    <input type="checkbox" name="brandsServices" value="brandsPremium" />Brands Premium
+                                    <input type="checkbox" name="brandsServices" value="Brands Premium" />Brands Premium
                                     <br/>
-                                    <input type="checkbox" name="brandsServices" value="brandsScrollAdvert" />&nbsp;Brands Scroll Advert
+                                    <input type="checkbox" name="brandsServices" value="Brands Scroll Advert" />&nbsp;Brands Scroll Advert
                                     <br/>
-                                    <input type="checkbox" name="brandsServices" value="brandsPromotionalAdvert" />&nbsp;Brands Promotional Advert
+                                    <input type="checkbox" name="brandsServices" value="Brands Promotional Advert" />&nbsp;Brands Promotional Advert
                                     <br/>
-                                    <input type="checkbox" name="brandsServices" value="brandsPromotionalAdvert" />&nbsp;Brands Magazine
+                                    <input type="checkbox" name="brandsServices" value="Brands Magazinet" />&nbsp;Brands Magazine
                                     <br/>
                                     <input type="checkbox" name="brandsServices" value="Post" />&nbsp;Post
                                     <p>WOULD YOU LIKE TO SUBSCRIBE TO OUR MAGAZINE</p>
