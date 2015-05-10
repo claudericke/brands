@@ -3,3 +3,7 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/control/.htaccess
+/.htaccess
+/control/protected/config/main.php
+/classes/DatabaseConnection.php
