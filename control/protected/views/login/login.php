@@ -2,17 +2,24 @@
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'login-form',
     'enableAjaxValidation' => true,
+    'enableClientValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
         ));
+?>
 
-echo $form->labelEx($model, 'username') .
- $form->textField($model, 'username', array('class' => 'left u-full-width')) .
- $form->error($model, 'username');
+<?php
+echo $form->error($model, 'activated');
+echo $form->error($model, 'unknown');
+
+echo $form->error($model, 'username') .
+ $form->labelEx($model, 'username') .
+ $form->textField($model, 'username', array('class' => 'left u-full-width'));
 
 
-echo $form->labelEx($model, 'password') .
- $form->passwordField($model, 'password', array('class' => 'left u-full-width')) .
- $form->error($model, 'password');
+
+echo $form->error($model, 'password') .
+ $form->labelEx($model, 'password') .
+ $form->passwordField($model, 'password', array('class' => 'left u-full-width'));
 ?>
 
 <div class="six columns">
@@ -22,8 +29,10 @@ echo $form->labelEx($model, 'password') .
 </div>
 
 <div class="five columns">
-    <?php echo CHtml::submitButton('LOGIN', array('class' => 'login_btn')); ?>
+<?php echo CHtml::submitButton('LOGIN', array('class' => 'login_btn')); ?>
     <a href="../register.html"><input type="button" class="register_btn" value="Register" /></a>
 </div>
 
 <?php $this->endWidget(); ?>
+
+<br style="clear: both;"/>

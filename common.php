@@ -21,5 +21,3 @@ spl_autoload_register(function ($sClassName) {
 function existsInClasses($sClassName) {
     return file_exists(ROOT . "classes/$sClassName.php");
 }
-
-$aContent[$i]['pic'] = "<a href='" . $sURL . "'><img alt='" . $sTitle . "' src='" . $imageURL . "' class='cat-thumb'></a>";

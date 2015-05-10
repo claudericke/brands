@@ -21,7 +21,7 @@
                 <div class="row login_container">
                     <div class="offset-by-four five columns center">
                         <div class="login">
-                            <p class="center"><a href="../index.html"><img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_icon.png" alt="" /></a></p>
+                            <p class="center"><a href="<?php echo Yii::app()->request->baseUrl; ?>/../index.html"><img  src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_icon.png" alt="" /></a></p>
                             <?php echo $content; ?>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
 
                 <div class="offset-by-four five columns">
                     <p class="center small">©2001–<?php echo date("Y"); ?> All Rights Reserved. Brands ® is a registered trademark of Massive Dynamics. <br />
-                        <a href="../terms.html">Privacy and Terms</a></p>
+                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/../terms.html">Privacy and Terms</a></p>
                 </div>
             </div>
         </div>

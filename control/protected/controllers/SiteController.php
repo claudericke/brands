@@ -6,7 +6,7 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         if (Yii::app()->user->isGuest) {
-            $this->redirect("../login/");
+            $this->redirect("/control/login/");
         } else {
             $this->pageTitle = ": Home";
             //echo "Getting to this point";
@@ -63,7 +63,7 @@ class SiteController extends Controller {
 
     public function actionDashboard() {
         if (Yii::app()->user->isGuest) {
-            $this->redirect("../login/");
+            $this->redirect("/control/login/");
         } else {
             $this->pageTitle = ": Dashboard";
             //echo "Getting to this point";
@@ -73,7 +73,7 @@ class SiteController extends Controller {
 
     public function actionProfile() {
         if (Yii::app()->user->isGuest) {
-            $this->redirect("../login/");
+            $this->redirect("/control/login/");
         } else {
 
             $oCompanyContacts = CompanyContacts::model();

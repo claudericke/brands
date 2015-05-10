@@ -1,6 +1,7 @@
 <?php
 
 class User extends CActiveRecord {
+
     /**
      * The followings are the available columns in table 'tbl_user':
      * @var integer $id
@@ -9,6 +10,11 @@ class User extends CActiveRecord {
      * @var string $email
      * @var string $profile
      */
+    protected function beforeLogin() {
+        //here could be your condition...
+        $this->returnUrl = array('/control/site/');
+        return true;
+    }
 
     /**
      * Returns the static model of the specified AR class.
@@ -32,9 +38,8 @@ class User extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('username, password, email', 'required'),
-            array('username, password, email', 'length', 'max' => 128),
-            array('profile', 'safe'),
+            array('Username, Password, Email', 'required'),
+            array('Username, Password, Email', 'length', 'max' => 128),
         );
     }
 
@@ -45,7 +50,7 @@ class User extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'posts' => array(self::HAS_MANY, 'Post', 'author_id'),
+            'id' => array(self::HAS_MANY, 'companydetails', 'UserID'),
         );
     }
 
@@ -55,10 +60,11 @@ class User extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'Id',
-            'username' => 'Username',
-            'password' => 'Password',
-            'email' => 'Email',
-            'profile' => 'Profile',
+            'Username' => 'Username',
+            'Password' => 'Password',
+            'Email' => 'Email',
+            'Online' => 'Online',
+            'lastLogin' => 'Last Login',
         );
     }
 
@@ -68,7 +74,7 @@ class User extends CActiveRecord {
      * @return boolean whether the password is valid
      */
     public function validatePassword($password) {
-        return crypt($password, $this->password) === $this->password;
+        return $this->hashPassword($password) === $this->Password;
     }
 
     /**
@@ -77,7 +83,11 @@ class User extends CActiveRecord {
      * @return string hash
      */
     public function hashPassword($password) {
-        return crypt($password, $this->generateSalt());
+
+        $oHashObj = HashKeys::getHashInstance($password);
+        $sPassword = $oHashObj->getHashedKey();
+        //return crypt($password, $this->generateSalt());
+        return (string) $sPassword;
     }
 
     /**
@@ -99,7 +109,7 @@ class User extends CActiveRecord {
         }
         // Get some pseudo-random data from mt_rand().
         $rand = '';
-        for ($i = 0; $i < 8;  ++$i)
+        for ($i = 0; $i < 8; ++$i)
             $rand.=pack('S', mt_rand(0, 0xffff));
         // Add the microtime for a little more entropy.
         $rand.=microtime();

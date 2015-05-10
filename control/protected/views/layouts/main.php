@@ -21,7 +21,7 @@
                 <div class="row header">
                     <div class="eight columns"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" /></div>
                     <div class="two columns "><a href="settings.html" class="settings_btn">Settings</a> </div>
-                    <div class="two columns "><a href="login.html" class="login_btn">Log Off</a></div>
+                    <div class="two columns "><a href="/control/login/logout" class="login_btn">Log Off</a></div>
                 </div>
 
                 <div class="row">
@@ -42,7 +42,7 @@
                                     </li>
                                     <li id="v_hm" class="menu_item mybusiness_icon"><a href="#">My Business</a>
                                         <ul class="sub-menu">
-                                            <li ><a href="#">Profile</a>
+                                            <li ><a href="/control/site/profile">Profile</a>
                                             </li>
                                             <li><a href="#">Products</a>
                                             </li>

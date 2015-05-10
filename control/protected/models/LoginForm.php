@@ -41,10 +41,20 @@ class LoginForm extends CFormModel {
      * Authenticates the password.
      * This is the 'authenticate' validator as declared in rules().
      */
-    public function authenticate($attribute, $params) {
+    public function authenticate() {
         $this->_identity = new UserIdentity($this->username, $this->password);
+
         if (!$this->_identity->authenticate()) {
-            $this->addError('password', 'Incorrect username or password.');
+            $bIsValid = $this->_identity->errorCode;
+            if ($bIsValid == UserIdentity::ERROR_USERNAME_INVALID) {
+                $this->addError('username', 'Username incorrect');
+            } elseif ($bIsValid == UserIdentity::ERROR_PASSWORD_INVALID) {
+                $this->addError('password', $bIsValid . 'Password incorrect');
+            } elseif ($bIsValid == UserIdentity::ERROR_ACCOUNT_NOT_ACTIVATED) {
+                $this->addError('activated', 'Account not activated');
+            } else {
+                $this->addError('unknown', 'Incorrect login Credentials.');
+            }
         }
     }
 
@@ -54,8 +64,7 @@ class LoginForm extends CFormModel {
      */
     public function login() {
         if ($this->_identity === null) {
-            $this->_identity = new UserIdentity($this->username, $this->password);
-            $this->_identity->authenticate();
+            $this->authenticate();
         }
         if ($this->_identity->errorCode === UserIdentity::ERROR_NONE) {
             $duration = $this->rememberMe ? 3600 * 24 * 30 : 0; // 30 days

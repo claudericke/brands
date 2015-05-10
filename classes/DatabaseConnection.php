@@ -18,6 +18,7 @@ class DatabaseConnection {
     private function __construct() {
 
         $this->aDatabaseConnectionDetails["localhost"] = array("host" => "localhost", "username" => "root", "password" => "28326084", "db" => "brands");
+        $this->aDatabaseConnectionDetails["brands"] = array("host" => "localhost", "brands" => "root", "password" => "brands3847ThG", "db" => "brands");
 
         $sCurrentHost = $this->determineHost();
 
@@ -45,8 +46,8 @@ class DatabaseConnection {
     private function determineHost() {
         if ($_SERVER["HTTP_HOST"] == "localhost" || stripos($_SERVER['SERVER_NAME'], ".local") !== false)
             $sHost = "localhost";
-        else if (stripos($_SERVER['SERVER_NAME'], "twiss.co.za") !== false)
-            $sHost = "twiss";
+        else if (stripos($_SERVER['SERVER_NAME'], "brand") !== false)
+            $sHost = "brands";
         else
             $sHost = "other";
 

@@ -37,7 +37,7 @@ class Registration {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
         if ($this->checkUserUsingEmail($s_POST['emailAddress'])) {
-            $this->setError("$s_firstname already exists on the system with email $s_email");
+            $this->setError("$s_firstname already exists on the system with email {$s_POST['emailAddress']}");
             $this->bHasErrors = true;
         } else {
             $sPassword = substr($_POST['companyName'], 0, 5) . "." . mt_rand(1111, 555555555);
@@ -49,7 +49,7 @@ class Registration {
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
 
-            $aUserDataStrip = array($_POST['companyName'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), date("Y-m-d"), date("Y-m-d"));
+            $aUserDataStrip = array($_POST['companyName'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
             $sTempValues = self::setTempValues(count($aUserDataStrip));
             //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
@@ -58,7 +58,7 @@ class Registration {
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST["brandsServices"], 0, strtotime("now"), date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
 
                 $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
@@ -76,12 +76,13 @@ class Registration {
                     $_POST["preferedCorrespondence"],
                     $sSubscribe,
                     $sThirdPartyMarketing,
-                    date("Y-m-d"), date("Y-m-d")
+                    "now()",
+                    date("Y-m-d H:i:s"),
                 );
 
                 $this->createCompanyContacts($aCompanyContacts);
 
-                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $s_username, $s_password, $sActivationScript, $sWebTitle), ENT_QUOTES);
+                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $_POST["companyName"], $sPassword, $sActivationScript, $sWebTitle), ENT_QUOTES);
                 $sSubject = "$s_username $sWebTitle account activation";
                 $sFromemail = "$sWebTitle <$sAdminMail>";
                 $sContenttype = "text/html";
@@ -89,7 +90,7 @@ class Registration {
                 //$qQuery = "INSERT INTO msgout ($sDatabasefields) VALUES ('$iUserid','$sSubject','$sContenttype','$sFromemail','$s_email','$sEmailbody','$s_datecreated')";
                 $sqQuery = "INSERT INTO br_messagessentout ($sDatabasefields) VALUES (?,?,?,?,?,?,?)";
 
-                $aMessageValues = array($iUserid, $sSubject, $sContenttype, $sFromemail, $s_emailAddress, $sEmailbody, date("Y-m-d")
+                $aMessageValues = array($iUserid, $sSubject, $sContenttype, $sFromemail, $s_emailAddress, $sEmailbody, date("Y-m-d H:i:s")
                 );
                 $iMailId = DatabaseConnection::insertData($sqQuery, $aMessageValues);
 

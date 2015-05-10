@@ -526,3 +526,175 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/control/profile
 ---
+2015/05/09 16:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login/inde...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/login/index
+---
+2015/05/09 16:05:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login/inde...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/login/index
+---
+2015/05/10 07:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login.php".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login.php')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/login.php
+HTTP_REFERER=http://brands.local/register.php
+---
+2015/05/10 08:31:22 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('password')
+#1 C:\xampp\htdocs\brands\control\protected\models\User.php(77): CActiveRecord->__get('password')
+#2 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(22): User->validatePassword('28326084@Lebo')
+#3 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(46): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
+#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#16 {main}
+REQUEST_URI=/control/login
+HTTP_REFERER=http://brands.local/control/login
+---
+2015/05/10 08:34:55 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('password')
+#1 C:\xampp\htdocs\brands\control\protected\models\User.php(77): CActiveRecord->__get('password')
+#2 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(22): User->validatePassword('28326084@Lebo')
+#3 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(46): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
+#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#16 {main}
+REQUEST_URI=/control/login
+HTTP_REFERER=http://brands.local/control/login
+---
+2015/05/10 08:46:04 [error] [php] Missing argument 2 for CActiveForm::error(), called in C:\xampp\htdocs\brands\control\protected\views\login\login.php on line 20 and defined (C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php:414)
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): LoginController->renderInternal()
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): LoginController->renderFile()
+#2 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): LoginController->renderPartial()
+#3 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(54): LoginController->render()
+#4 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): LoginController->runAction()
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): LoginController->runActionWithFilters()
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): LoginController->run()
+#9 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/login
+2015/05/10 10:41:58 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity.email" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(28): CComponent->__set('email', 'lebogang.ratsoa...')
+#1 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(47): UserIdentity->authenticate()
+#2 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
+#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#14 {main}
+REQUEST_URI=/control/login
+HTTP_REFERER=http://brands.local/control/login
+---
+2015/05/10 10:42:18 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity.email" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(28): CComponent->__set('email', 'lebogang.ratsoa...')
+#1 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(47): UserIdentity->authenticate()
+#2 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
+#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#14 {main}
+REQUEST_URI=/control/login
+HTTP_REFERER=http://brands.local/control/login
+---
+2015/05/10 11:11:22 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "getController".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\protected\views\layouts\main.php(72): CComponent->__call('getController', Array)
+#1 C:\xampp\htdocs\brands\control\protected\views\layouts\main.php(72): SiteController->getController()
+#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(70): CController->render('dashboard')
+#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionDashboard()
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('dashboard')
+#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/dashboard')
+#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#14 {main}
+REQUEST_URI=/control/
+HTTP_REFERER=http://brands.local/control/login/
+---
+2015/05/10 11:13:57 [error] [exception.CException] exception 'CException' with message 'Property "CompanyContacts.PreferredLanguage" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('PreferredLangua...')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('PreferredLangua...')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1668): CHtml::resolveValue(Object(CompanyContacts), 'PreferredLangua...')
+#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(795): CHtml::activeCheckBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
+#4 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(87): CActiveForm->checkBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
+#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(93): CController->render('profile', Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
+#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#18 {main}
+REQUEST_URI=/control/site/profile
+HTTP_REFERER=http://brands.local/control/
+---
