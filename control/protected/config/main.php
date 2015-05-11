@@ -21,12 +21,12 @@ return array(
           ), */
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=127.0.0.1;dbname=brands',
+            'connectionString' => 'mysql:host=localhost;dbname=brands',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => '28326084',
             'charset' => 'utf8',
-            'tablePrefix' => 'BR_',
+            'tablePrefix' => 'br_',
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors

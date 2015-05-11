@@ -80,24 +80,40 @@ class SiteController extends Controller {
             if ($oCompany->id) {
                 $oCompanyContacts = CompanyContacts::model()->find('CompanyID=:CompanyID', array(':CompanyID' => $oCompany->id));
             } else {
-                $oCompanyContacts = CompanyContacts::model();
+                Yii::app()->user->logout();
+                $this->redirect("/control/");
             }
 
-            if (isset($_POST['ContactForm'])) {
-                echo "<pre>";
-                print_r($_POST);
-                echo "</pre>";
-                /* $model->attributes = $_POST['ContactForm'];
-                  if ($model->validate()) {
-                  $headers = "From: {$model->email}\r\nReply-To: {$model->email}";
-                  mail(Yii::app()->params['adminEmail'], $model->subject, $model->body, $headers);
-                  Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
-                  $this->refresh();
-                  } */
+            if (isset($_POST["CompanyDetails"])) {
+                $oCompany->attributes = $_POST["CompanyDetails"];
+                if ($oCompany->validate()) {
+                    $oCompany->update("CompanyName", "TradingName", "ProductsAndServices");
+                    $this->refresh();
+                }
             }
 
+            if (isset($_POST["CompanyContacts"])) {
+                $oCompanyContacts->attributes = $_POST["CompanyContacts"];
+                $oCompanyContacts->CompanyID = $oCompany->id;
+                if (!$oCompanyContacts->id) {
+                    $oCompanyContacts->DateCreated = date("Y-m-d H:i:s");
+                    $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
+                    $oCompanyContacts->save();
+                } else {
+                    $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
+                    $oCompanyContacts->update();
+                }
+            }
 
             $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts));
+        }
+    }
+
+    public function actionProducts() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
         }
     }
 
@@ -106,7 +122,7 @@ class SiteController extends Controller {
      */
     public function actionLogout() {
         Yii::app()->user->logout();
-        $this->redirect(Yii::app()->homeUrl);
+        $this->redirect("/control/");
     }
 
 }

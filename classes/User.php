@@ -20,7 +20,7 @@ class User {
     private $oPDO;
     private $sUsersTable;
 
-    public function __construct($sUsersTable = "br_users") {
+    public function __construct($sUsersTable = "br_user") {
         $this->iUserId = 0;
         $this->aUserData = array();
         $this->oPDO = DatabaseConnection::getConnection()->getConnInstance();

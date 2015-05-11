@@ -37,7 +37,7 @@ class Registration {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
         if ($this->checkUserUsingEmail($s_POST['emailAddress'])) {
-            $this->setError("$s_firstname{$_POST['companyName']} already exists on the system with email {$s_POST['emailAddress']}");
+            $this->setError("{$_POST['companyName']} already exists on the system with email {$s_POST['emailAddress']}");
             $this->bHasErrors = true;
         } else {
             $sPassword = substr($_POST['companyName'], 0, 5) . "." . mt_rand(1111, 555555555);
@@ -134,8 +134,9 @@ class Registration {
         $oUser->setUserDataByEmail($sEmail);
         $aUserData = $oUser->getData();
 
-        if (count($aUserData) > 0)
+        if (count($aUserData) > 0) {
             $bUserexists = true;
+        }
 
         return $bUserexists;
     }
