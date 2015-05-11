@@ -96,7 +96,7 @@
                     <div class="four columns noMargin">
                         <label>COMPANY PHONE NUMBER 2</label>
                         <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" />
-                        <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" hidden="hidden" />
+                        <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
                     </div>
                     <div class="four columns noMargin">
                         <label>INDUSTRY</label>
