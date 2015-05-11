@@ -13,9 +13,21 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.pngFix.js"></script>
     <script src="js/modernizr.js"></script>
+    <script src="../js/jquery.easyModal.js"></script>
 </head>
 
 <body>
+
+<!-- Notication Windows -->
+    <div id="notification" class="modal">
+    <p>This is a notification window</p>
+</div>
+
+<div id="alert" class="modal">
+    <p>This is an alert window to show something is wrong</p>
+</div>
+<!-- End Notication Windows -->
+
 <div class="wrapper">
     <div class="container">
         <div class="row login_container">

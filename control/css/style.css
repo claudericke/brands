@@ -301,3 +301,59 @@ input[type="button"]:hover {
 .register_btn  {
     background: url(../../images/settings_icon.png) 10% 50% no-repeat #1e1e1e;
 }
+
+#notification {
+    text-align: center !important;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    color: #FFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    display: none;
+    background: skyblue;
+    height: auto;
+    text-align: center !important;
+    margin: 0 auto;
+    text-transform: capitalize !important;
+    text-decoration: none !important;
+}
+
+#alert {
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    color: #FFF;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    background: darkred;
+    display: none;
+    height: auto;
+    text-align: center !important;
+    margin: 0 auto;
+    text-transform: capitalize !important;
+    text-decoration: none !important;
+}
+
+#alert p {
+    text-align: center !important;
+    margin-top: 5px;
+}
+
+#notification p {
+    text-align: center !important;
+    margin-top: 5px;
+}
+
+.modal u,
+.modal u li {
+    display: block !important;
+    list-style: none !important;
+    text-decoration: none !important;
+}
