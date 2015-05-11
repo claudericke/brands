@@ -25,9 +25,12 @@
                             overlayColor: "#333",
                             overlayClose: true,
                             closeOnEscape: true,
-                            updateZIndexOnOpen: true
+                            updateZIndexOnOpen: true,
+                            onClose: function(redirect){
+			                     window.location.replace("http://demo.etcetera.co.zw/brands");
+		                  }
                         });
-                        oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10; font-weight: bold;'>Registration Successful. An activate link has been sent to your email address.</span>");
+                        $("#alert").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
                     } else {
 
                         $('#alert').easyModal({
