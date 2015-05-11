@@ -17,7 +17,7 @@
                 $.post("phpscripts/registeruser.php", sContent, function (gData) {
                     if (gData.indexOf("Successfully") > -1) {
                         oCurrentForm.empty();
-                        $('#alert').easyModal({
+                        $('#notification').easyModal({
                             top: 100,
                             left: 0,
                             autoOpen: true,
