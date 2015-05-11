@@ -1,18 +1,16 @@
 <?php
 
-class CompanyContacts extends CActiveRecord {
+class Products extends CActiveRecord {
     /**
      * The followings are the available columns in table 'BR_CompanyDetails':
-     * @var integer $ID
+     * @var integer $id
      * @var integer $CompanyID
-     * @var string $Email
-     * @var string $PhysicalAddress
-     * @var string $PostalAddress
-     * @var string $PreferredLanguage
-     * @var string $BrandsNumber
-     * @var string $AccountNumber
-     * @var int $Subscription
-     * @var int $ThirdpartyMarketing
+     * @var integer $CategoryID
+     * @var string $ProductName
+     * @var integer $Quantity
+     * @var double $Price
+     * @var int $ProductImageId
+     * @var int $Active
      */
 
     /**
@@ -27,7 +25,7 @@ class CompanyContacts extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return '{{companycontacts}}';
+        return '{{products}}';
     }
 
     /**
@@ -37,8 +35,8 @@ class CompanyContacts extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('Email', 'required'),
-            array('Email, PhysicalAddress, PostalAddress, BrandsNumber, AccountNumber', 'length', 'max' => 255),
+            array('CategoryID,ProductName,Description', 'required'),
+            array('ProductName', 'length', 'max' => 255),
         );
     }
 
@@ -60,18 +58,13 @@ class CompanyContacts extends CActiveRecord {
         return array(
             'id' => 'Id',
             'CompanyID' => 'Company Id',
-            'Email' => 'Email',
-            'CompanyPhone1' => 'Company Phone Number 1',
-            'CompanyPhone2' => 'Company Phone Number 2',
-            'CompanyPhone3' => 'Company Phone Number 3',
-            'PhysicalAddress' => 'Physical Address',
-            'PostalAddress' => 'Postal Address',
-            'PreferredLanguage' => 'Preferred Language(s)',
-            'BrandsNumber' => 'Brand Number',
-            'AccountNumber' => 'Account Number',
-            'PreferredCorrespondence' => 'Preferred Correspondence',
-            'Subscription' => 'Subscribe to our magazine?',
-            'ThirdpartyMarketing' => 'Receive third party marketing?',
+            'CategoryID' => "Category",
+            'ProductName' => 'Product Name',
+            'Description' => 'Product description',
+            'Quantity' => 'Quantity',
+            'Price' => 'Price',
+            'ProductImageId' => 'Product Image',
+            'Active' => 'Set to be visible?',
         );
     }
 

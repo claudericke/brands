@@ -76,8 +76,8 @@ $aTables['br_errorlog'] = array(
 
 
 $aTables['br_productcategories'] = array(
-    array("CompanyID", "Link to Company", "int", 11),
-    array("ProductName", "Product Category", "varchar", 255),
+    array("ParentID", "Reference to parent Category", "int", 11),
+    array("Category", "Product Category", "varchar", 255),
     array("Description", "Category desription", "text", 0),
     array("DateCreated", "Date on which category details were stored", "timestamp", 0),
     array("DateUpdated", "Date on which category was updated", "datetime", 0),
@@ -87,6 +87,7 @@ $aTables['br_products'] = array(
     array("CompanyID", "Link to Company", "int", 11),
     array("CategoryID", "Link to Product category", "int", 11),
     array("ProductName", "Product Name", "varchar", 255),
+    array("Description", "Product description", "text", 0),
     array("Quantity", "Number of products available", "int", 11),
     array("Price", "Price of the product", "int", 11),
     array("ProductImageId", "Link to product Image", "int", 11),
@@ -118,7 +119,7 @@ $aTables['br_productoptionvalues'] = array(
 $aTables['br_vacancies'] = array(
     array("CompanyID", "Link to Company", "int", 11),
     array("CategoryID", "Link to vacancy category", "int", 11),
-    array("Title", "Product Name", "varchar", 255),
+    array("Title", "Vacancy Title", "varchar", 255),
     array("Description", "Details of the requirements and reponsibilities of the vacancy", "text", 0),
     array("DocumentId", "Document attached to vacancy", "int", 11),
     array("Active", "Whether product should be displayed or not", "tinyint", 2),

@@ -930,3 +930,144 @@ Stack trace:
 REQUEST_URI=/control/site/profile
 HTTP_REFERER=http://www.brands.local/control/site/profile
 ---
+2015/05/11 12:00:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "products".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('products')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('products')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/products')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/products
+---
+2015/05/11 12:01:30 [error] [php] get_class() expects parameter 1 to be object, array given (C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php:2220)
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1929): activeName()
+#1 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(427): activeId()
+#2 C:\xampp\htdocs\brands\control\protected\views\site\products.php(26): CActiveForm->error()
+#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#7 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(118): SiteController->render()
+#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/productlist
+2015/05/11 12:02:53 [error] [php] get_class() expects parameter 1 to be object, array given (C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php:2220)
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1929): activeName()
+#1 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(427): activeId()
+#2 C:\xampp\htdocs\brands\control\protected\views\site\products.php(26): CActiveForm->error()
+#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#7 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(120): SiteController->render()
+#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/productlist
+2015/05/11 12:11:25 [error] [exception.CException] exception 'CException' with message 'Property "Products.Description" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Description')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('Description')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1417): CHtml::resolveValue(Object(Products), 'Description')
+#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(702): CHtml::activeTextArea(Object(Products), 'Description', Array)
+#4 C:\xampp\htdocs\brands\control\protected\views\site\products.php(44): CActiveForm->textArea(Object(Products), 'Description', Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('products', Array, true)
+#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(120): CController->render('products', Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#18 {main}
+REQUEST_URI=/control/site/productlist
+---
+2015/05/11 12:11:28 [error] [exception.CException] exception 'CException' with message 'Property "Products.Description" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Description')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('Description')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1417): CHtml::resolveValue(Object(Products), 'Description')
+#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(702): CHtml::activeTextArea(Object(Products), 'Description', Array)
+#4 C:\xampp\htdocs\brands\control\protected\views\site\products.php(44): CActiveForm->textArea(Object(Products), 'Description', Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('products', Array, true)
+#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(120): CController->render('products', Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#18 {main}
+REQUEST_URI=/control/site/productlist
+---
+2015/05/11 12:11:31 [error] [exception.CException] exception 'CException' with message 'Property "Products.Description" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Description')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('Description')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1417): CHtml::resolveValue(Object(Products), 'Description')
+#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(702): CHtml::activeTextArea(Object(Products), 'Description', Array)
+#4 C:\xampp\htdocs\brands\control\protected\views\site\products.php(44): CActiveForm->textArea(Object(Products), 'Description', Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('products', Array, true)
+#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(120): CController->render('products', Array)
+#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#18 {main}
+REQUEST_URI=/control/site/productlist
+---
+2015/05/11 12:13:31 [error] [exception.CException] exception 'CException' with message 'Property "Products.Price" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Price')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('Price')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Products), 'Price')
+#3 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Products), 'Price', Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(Products), 'Price', Array)
+#5 C:\xampp\htdocs\brands\control\protected\views\site\products.php(60): CActiveForm->textField(Object(Products), 'Price', Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('products', Array, true)
+#10 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(120): CController->render('products', Array)
+#11 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#16 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#17 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#19 {main}
+REQUEST_URI=/control/site/productlist
+---

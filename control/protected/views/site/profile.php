@@ -10,7 +10,9 @@
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'company-details-form',
+    'enableClientValidation' => true,
     'enableAjaxValidation' => true,
+    'clientOptions' => array('validateOnSubmit' => true),
         )
 );
 ?>
@@ -52,7 +54,9 @@ $this->endWidget();
 
 $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     'id' => 'company-contacts-form',
+    'enableClientValidation' => true,
     'enableAjaxValidation' => true,
+    'clientOptions' => array('validateOnSubmit' => true),
         )
 );
 ?>
