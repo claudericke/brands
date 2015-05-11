@@ -26,9 +26,9 @@
                             overlayClose: true,
                             closeOnEscape: true,
                             updateZIndexOnOpen: true,
-                            onClose: function(redirect){
-			                     window.location.replace("http://demo.etcetera.co.zw/brands");
-		                  }
+                            onClose: function (redirect) {
+                                window.location.replace("http://brands.etcetera.co.zw");
+                            }
                         });
                         $("#notification").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
                     } else {
@@ -101,23 +101,120 @@
                     <div class="four columns noMargin">
                         <label>INDUSTRY</label>
                         <select name="industry">
-                            <option value="">Bank</option>
-                            <option value="Beverage Manufacturer">Beverage Manufacturer</option>
-                            <option value="Childrens Home">Childrens Home</option>
-                            <option value="Church">Church</option>
-                            <option value="Estate Agent">Estate Agent</option>
-                            <option value="Food and Dining">Food and Dining</option>
-                            <option value="Government">Government</option>
-                            <option value="Hospital">Hospital</option>
-                            <option value="Hotels">Hotels</option>
-                            <option value="NGO">NGO</option>
-                            <option value="Night Club">Night Club</option>
-                            <option value="Pharmacy">Pharmacy</option>
-                            <option value="Tertiary Institution">Tertiary Institution</option>
-                            <option value="School">School</option>
-                            <option value="Service Provider">Service Provider</option>
-                            <option value="Supermarket">Supermarket</option>
-                            <option value="Travel">Travel</option>
+                                <optgroup label="Church">
+                                    <option value="Pentecostal ">Pentecostal </option>
+                                    <option value="Customary">Customary</option>
+                                    <option value="Anglican">Anglican</option>
+                                    <option value="Catholic	">Catholic </option>
+                                </optgroup>
+                                <optgroup label="Education">
+                                    <option value="Preschool">Preschool</option>
+                                    <option value="Primary">Primary</option>
+                                    <option value="Secondary">Secondary</option>
+                                    <option value="College">College</option>
+                                    <option value="Tertiary">Tertiary</option>
+                                    <option value="University">University</option>
+                                </optgroup>
+                                <optgroup label="S.M.E">
+                                    <option value="Saloon">Saloon</option>
+                                    <option value="Barber">Barber</option>
+                                    <option value="Spa">Spa</option>
+                                    <option value="Boutique">Boutique</option>
+                                    <option value="Plumber">Plumber</option>
+                                    <option value="Carpenter">Carpenter</option>
+                                    <option value="Builder">Builder</option>
+                                    <option value="Other">Other</option>
+                                </optgroup>
+                                <optgroup label="Healthcare">
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Hospital">Hospital</option>
+                                    <option value="Clinic">Clinic</option>
+                                    <option value="Pharmacy">Pharmacy</option>
+                                    <option value="Rehabilitation Centre	">Rehabilitation Centre </option>
+                                </optgroup>
+                                <optgroup label="Food Outlets">
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Food Court">Food Court</option>
+                                </optgroup>
+
+                                <optgroup label="Financial Institutes">
+                                    <option value="Bank">Bank</option>
+                                    <option value="Micro Finance">Micro Finance</option>
+                                    <option value="Investors ">Investors </option>
+                                </optgroup>
+
+                                <optgroup label="Auto Indusrty">
+                                    <option value="Vehicle">Vehicle</option>
+                                    <option value="Panel beater">Panel beater</option>
+                                    <option value="Car sale">Car sale</option>
+                                    <option value="Car breaker">Car breaker</option>
+                                    <option value="Spray Painter">Spray Painters </option>
+                                </optgroup>
+
+
+                                <optgroup label="Property">
+                                    <option value="Real estate">Real estate</option>
+                                    <option value="Cooperative">Cooperative</option>
+                                    <option value="Land developers	">Land developers </option>
+                                </optgroup>
+
+                                <optgroup label="Airport / Airline">
+                                    <option value="Airport ">Airport</option>
+                                    <option value="Airline">Airline</option>
+                                    <option value="Airport logistics">Airport Logistics</option>
+                                </optgroup>
+
+
+                                <option value="Internet Service Provider">Internet Service Provider</option>
+
+                                <optgroup label="Travel">
+                                    <option value="Taxis">Taxis </option>
+                                </optgroup>
+                                <option value="Telecoms">Telecoms </option>
+                                <optgroup label="Orphanage / Support Center">
+                                    <option value="Children’s Home">Children’s Home</option>
+                                    <option value="Old age Home">Old age Home</option>
+                                    <option value="Psychiatric Ward">Psychiatric Ward</option>
+                                </optgroup>
+                                <optgroup label="Night Club">
+                                    <option value="Indoor Bar">Indoor Bar</option>
+                                    <option value="Open Bar">Open Bar</option>
+                                    <option value="Clubs  	">Clubs </option>
+                                </optgroup>
+
+
+                                <optgroup label="Burial Services">
+                                    <option value="Burial Service">Burial Service</option>
+                                    <option value="Funeral Parlour">Funeral Parlour</option>
+                                    <option value="Funeral Agent">Funeral Agent</option>
+                                    <option value="Tombstones supplier">Tombstones supplier</option>
+                                </optgroup>
+
+                                <optgroup label="Retail Store">
+                                    <option value="Grocery Store">Grocery Store</option>
+                                    <option value="Supermarket">Supermarket</option>
+                                    <option value="Wholesaler ">Wholesaler </option>
+                                    <option value="Retail store">Retail Outlet</option>
+                                </optgroup>
+
+                                <optgroup label="Hardware">
+                                    <option value="Building material">Building material</option>
+                                    <option value="Domestic Accessories">Domestic Accessories</option>
+                                    <option value="Appliances">Appliances </option>
+                                </optgroup>
+
+                                <optgroup label="Electrical Devices and Accessories">
+                                    <option value="Cell Phones">Cell Phones</option>
+                                    <option value="Computers">Computers</option>
+                                    <option value="Appliances 	">Household Appliances </option>
+                                </optgroup>
+
+                                <optgroup label="Travel">
+                                    <option value="Travelling Agent">Travelling Agent</option>
+                                    <option value="Car Rental">Car Rental</option>
+                                    <option value="House Boat">House Boat</option>
+                                    <option value="Taxi">Taxi</option>
+                                </optgroup>
                         </select>
                     </div>
                     <div class="four columns noMargin">
@@ -212,7 +309,7 @@
     </form>
     </div>
 
-</div>
+    </div>
 
 
 
