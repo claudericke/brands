@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brands App- Mobile Application for iOS and Symbian</title>
     <?php include( 'includes/links.php'); ?>
+
     <script type="text/javascript">
         $(function () {
             $("#RegistrationForm").submit(function (e) {
@@ -70,156 +71,160 @@
                 <div class="twelve columns">
                     <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
                     <div class="four columns noMargin">
-                        <label>COMPANY NAME</label>
-                        <input type="text" class="u-full-width" name="companyName" placeholder="Registered Name of Company" />
+                        <label>COMPANY NAME <sup>required</sup>
+                        </label>
+                        <input type="text" class="u-full-width" name="companyName" placeholder="Registered Name of Company" value="" data-validate="alphanumeric,required" />
                     </div>
                     <div class="four columns noMargin">
                         <label>TRADING NAME</label>
-                        <input type="text" class="u-full-width" name="tradingName" placeholder="Name used when Trading" name="TradingName" />
+                        <input type="text" class="u-full-width" name="tradingName" placeholder="Name used when Trading" name="TradingName" value="" data-validate="alphanumeric" />
                     </div>
                     <div class="four columns noMargin">
                         <label>REGISTRATION NUMBER</label>
-                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number" />
+                        <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number" value="" data-validate="alphanumeric" />
                     </div>
                     <div class="four columns noMargin">
-                        <label>COMPANY PHONE NUMBER 1</label>
-                        <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company registration number" />
+                        <label>COMPANY PHONE NUMBER 1 <sup>Digits Only</sup>
+                        </label>
+                        <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company registration number" value="" data-validate="alphanumeric,number" />
                     </div>
                     <div class="four columns noMargin">
                         <label>POSTAL ADDRESS</label>
-                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" />
+                        <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive physical mail" value="" data-validate="alphanumeric" />
                     </div>
                     <div class="four columns noMargin">
                         <label>PHYSICAL ADDRESS</label>
-                        <input type="text" class="u-full-width" name="physicalAddress" placeholder="Address of where company trades from" />
+                        <input type="text" class="u-full-width" name="physicalAddress" placeholder="Address of where company trades from" value="" data-validate="alphanumeric" />
                     </div>
                     <div class="four columns noMargin">
                         <label>COMPANY PHONE NUMBER 2</label>
-                        <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" />
+                        <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" value="" data-validate="number" />
                         <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
                     </div>
                     <div class="four columns noMargin">
                         <label>INDUSTRY</label>
                         <select name="industry">
-                                <optgroup label="Church">
-                                    <option value="Pentecostal ">Pentecostal </option>
-                                    <option value="Customary">Customary</option>
-                                    <option value="Anglican">Anglican</option>
-                                    <option value="Catholic	">Catholic </option>
-                                </optgroup>
-                                <optgroup label="Education">
-                                    <option value="Preschool">Preschool</option>
-                                    <option value="Primary">Primary</option>
-                                    <option value="Secondary">Secondary</option>
-                                    <option value="College">College</option>
-                                    <option value="Tertiary">Tertiary</option>
-                                    <option value="University">University</option>
-                                </optgroup>
-                                <optgroup label="S.M.E">
-                                    <option value="Saloon">Saloon</option>
-                                    <option value="Barber">Barber</option>
-                                    <option value="Spa">Spa</option>
-                                    <option value="Boutique">Boutique</option>
-                                    <option value="Plumber">Plumber</option>
-                                    <option value="Carpenter">Carpenter</option>
-                                    <option value="Builder">Builder</option>
-                                    <option value="Other">Other</option>
-                                </optgroup>
-                                <optgroup label="Healthcare">
-                                    <option value="Healthcare">Healthcare</option>
-                                    <option value="Hospital">Hospital</option>
-                                    <option value="Clinic">Clinic</option>
-                                    <option value="Pharmacy">Pharmacy</option>
-                                    <option value="Rehabilitation Centre	">Rehabilitation Centre </option>
-                                </optgroup>
-                                <optgroup label="Food Outlets">
-                                    <option value="Restaurant">Restaurant</option>
-                                    <option value="Food Court">Food Court</option>
-                                </optgroup>
+                            <option value="Other">Other</option>
+                            <optgroup label="Church">
+                                <option value="Pentecostal ">Pentecostal </option>
+                                <option value="Customary">Customary</option>
+                                <option value="Anglican">Anglican</option>
+                                <option value="Catholic	">Catholic </option>
+                            </optgroup>
+                            <optgroup label="Education">
+                                <option value="Preschool">Preschool</option>
+                                <option value="Primary">Primary</option>
+                                <option value="Secondary">Secondary</option>
+                                <option value="College">College</option>
+                                <option value="Tertiary">Tertiary</option>
+                                <option value="University">University</option>
+                            </optgroup>
+                            <optgroup label="S.M.E">
+                                <option value="Saloon">Saloon</option>
+                                <option value="Barber">Barber</option>
+                                <option value="Spa">Spa</option>
+                                <option value="Boutique">Boutique</option>
+                                <option value="Plumber">Plumber</option>
+                                <option value="Carpenter">Carpenter</option>
+                                <option value="Builder">Builder</option>
+                                <option value="Other">Other</option>
+                            </optgroup>
+                            <optgroup label="Healthcare">
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Hospital">Hospital</option>
+                                <option value="Clinic">Clinic</option>
+                                <option value="Pharmacy">Pharmacy</option>
+                                <option value="Rehabilitation Centre	">Rehabilitation Centre </option>
+                            </optgroup>
+                            <optgroup label="Food Outlets">
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Food Court">Food Court</option>
+                            </optgroup>
 
-                                <optgroup label="Financial Institutes">
-                                    <option value="Bank">Bank</option>
-                                    <option value="Micro Finance">Micro Finance</option>
-                                    <option value="Investors ">Investors </option>
-                                </optgroup>
+                            <optgroup label="Financial Institutes">
+                                <option value="Bank">Bank</option>
+                                <option value="Micro Finance">Micro Finance</option>
+                                <option value="Investors ">Investors </option>
+                            </optgroup>
 
-                                <optgroup label="Auto Indusrty">
-                                    <option value="Vehicle">Vehicle</option>
-                                    <option value="Panel beater">Panel beater</option>
-                                    <option value="Car sale">Car sale</option>
-                                    <option value="Car breaker">Car breaker</option>
-                                    <option value="Spray Painter">Spray Painters </option>
-                                </optgroup>
-
-
-                                <optgroup label="Property">
-                                    <option value="Real estate">Real estate</option>
-                                    <option value="Cooperative">Cooperative</option>
-                                    <option value="Land developers	">Land developers </option>
-                                </optgroup>
-
-                                <optgroup label="Airport / Airline">
-                                    <option value="Airport ">Airport</option>
-                                    <option value="Airline">Airline</option>
-                                    <option value="Airport logistics">Airport Logistics</option>
-                                </optgroup>
+                            <optgroup label="Auto Indusrty">
+                                <option value="Vehicle">Vehicle</option>
+                                <option value="Panel beater">Panel beater</option>
+                                <option value="Car sale">Car sale</option>
+                                <option value="Car breaker">Car breaker</option>
+                                <option value="Spray Painter">Spray Painters </option>
+                            </optgroup>
 
 
-                                <option value="Internet Service Provider">Internet Service Provider</option>
+                            <optgroup label="Property">
+                                <option value="Real estate">Real estate</option>
+                                <option value="Cooperative">Cooperative</option>
+                                <option value="Land developers	">Land developers </option>
+                            </optgroup>
 
-                                <optgroup label="Travel">
-                                    <option value="Taxis">Taxis </option>
-                                </optgroup>
-                                <option value="Telecoms">Telecoms </option>
-                                <optgroup label="Orphanage / Support Center">
-                                    <option value="Children’s Home">Children’s Home</option>
-                                    <option value="Old age Home">Old age Home</option>
-                                    <option value="Psychiatric Ward">Psychiatric Ward</option>
-                                </optgroup>
-                                <optgroup label="Night Club">
-                                    <option value="Indoor Bar">Indoor Bar</option>
-                                    <option value="Open Bar">Open Bar</option>
-                                    <option value="Clubs  	">Clubs </option>
-                                </optgroup>
+                            <optgroup label="Airport / Airline">
+                                <option value="Airport ">Airport</option>
+                                <option value="Airline">Airline</option>
+                                <option value="Airport logistics">Airport Logistics</option>
+                            </optgroup>
 
 
-                                <optgroup label="Burial Services">
-                                    <option value="Burial Service">Burial Service</option>
-                                    <option value="Funeral Parlour">Funeral Parlour</option>
-                                    <option value="Funeral Agent">Funeral Agent</option>
-                                    <option value="Tombstones supplier">Tombstones supplier</option>
-                                </optgroup>
+                            <option value="Internet Service Provider">Internet Service Provider</option>
 
-                                <optgroup label="Retail Store">
-                                    <option value="Grocery Store">Grocery Store</option>
-                                    <option value="Supermarket">Supermarket</option>
-                                    <option value="Wholesaler ">Wholesaler </option>
-                                    <option value="Retail store">Retail Outlet</option>
-                                </optgroup>
+                            <optgroup label="Travel">
+                                <option value="Taxis">Taxis </option>
+                            </optgroup>
+                            <option value="Telecoms">Telecoms </option>
+                            <optgroup label="Orphanage / Support Center">
+                                <option value="Children’s Home">Children’s Home</option>
+                                <option value="Old age Home">Old age Home</option>
+                                <option value="Psychiatric Ward">Psychiatric Ward</option>
+                            </optgroup>
+                            <optgroup label="Night Club">
+                                <option value="Indoor Bar">Indoor Bar</option>
+                                <option value="Open Bar">Open Bar</option>
+                                <option value="Clubs  	">Clubs </option>
+                            </optgroup>
 
-                                <optgroup label="Hardware">
-                                    <option value="Building material">Building material</option>
-                                    <option value="Domestic Accessories">Domestic Accessories</option>
-                                    <option value="Appliances">Appliances </option>
-                                </optgroup>
 
-                                <optgroup label="Electrical Devices and Accessories">
-                                    <option value="Cell Phones">Cell Phones</option>
-                                    <option value="Computers">Computers</option>
-                                    <option value="Appliances 	">Household Appliances </option>
-                                </optgroup>
+                            <optgroup label="Burial Services">
+                                <option value="Burial Service">Burial Service</option>
+                                <option value="Funeral Parlour">Funeral Parlour</option>
+                                <option value="Funeral Agent">Funeral Agent</option>
+                                <option value="Tombstones supplier">Tombstones supplier</option>
+                            </optgroup>
 
-                                <optgroup label="Travel">
-                                    <option value="Travelling Agent">Travelling Agent</option>
-                                    <option value="Car Rental">Car Rental</option>
-                                    <option value="House Boat">House Boat</option>
-                                    <option value="Taxi">Taxi</option>
-                                </optgroup>
+                            <optgroup label="Retail Store">
+                                <option value="Grocery Store">Grocery Store</option>
+                                <option value="Supermarket">Supermarket</option>
+                                <option value="Wholesaler ">Wholesaler </option>
+                                <option value="Retail store">Retail Outlet</option>
+                            </optgroup>
+
+                            <optgroup label="Hardware">
+                                <option value="Building material">Building material</option>
+                                <option value="Domestic Accessories">Domestic Accessories</option>
+                                <option value="Appliances">Appliances </option>
+                            </optgroup>
+
+                            <optgroup label="Electrical Devices and Accessories">
+                                <option value="Cell Phones">Cell Phones</option>
+                                <option value="Computers">Computers</option>
+                                <option value="Appliances 	">Household Appliances </option>
+                            </optgroup>
+
+                            <optgroup label="Travel">
+                                <option value="Travelling Agent">Travelling Agent</option>
+                                <option value="Car Rental">Car Rental</option>
+                                <option value="House Boat">House Boat</option>
+                                <option value="Taxi">Taxi</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="four columns noMargin">
-                        <label>E-MAIL ADDRESS *</label>
-                        <input type="email" class="u-full-width" name="emailAddress" placeholder="Your e-mail address" />
+                        <label>E-MAIL ADDRESS <sup>required</sup>
+                        </label>
+                        <input type="email" class="u-full-width" name="emailAddress" placeholder="Your e-mail address" value="" data-validate="email,required" />
                     </div>
                     <div class="four columns noMargin">
                         <label>PREFERED LANGUAGE(S)</label>
@@ -298,7 +303,7 @@
                     <div class="spacer"></div>
                 </div>
                 <div class="twelve columns">
-                    <h2 class="left large ">SPAM<strong class="left bold"> CHECK</strong></h2>
+                    <h2 class="left large ">SPAM<strong class="left bold"> CHECK</strong><sup>required</sup></h2>
                     <div class="g-recaptcha" data-sitekey="6Lec3QMTAAAAAMwXk_ATFT1SN-Z9qlaFyfAO_EXc"></div>
                 </div>
                 <div class="twelve columns">
@@ -315,7 +320,12 @@
 
     <?php include( 'includes/footer.php'); ?>
 
-
+    <script src="js/verify.js"></script>
+    <script>
+        $.verify({
+            // no options required !
+        });
+    </script>
 </body>
 
 </html>

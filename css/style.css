@@ -524,3 +524,10 @@ input[type="button"]:hover {
     list-style: none !important;
     text-decoration: none !important;
 }
+
+sup {
+    color: darkred;
+    font-size:150%;
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+}
