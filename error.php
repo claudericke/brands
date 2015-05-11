@@ -28,18 +28,6 @@ require_once 'common.php';
                             </div>
 
                         </div>
-                        <!-- CALL TO ACTION 1 -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="four columns">&nbsp;</div>
-                                <div class="four columns center">
-                                    <p class=" center">ADD YOUR BUSINESS ON OUR EVER EXPANDING LISTED INDEX</p>
-                                    <p class=" center">
-                                        <a href="register.html" class="register_btn">
-                                            Register
-                                        </a>
-                                    </p>
-                                </div>
                                 <div class="four columns">&nbsp;</div>
                             </div>
                         </div>
