@@ -33,7 +33,6 @@ $aTables['br_companycontacts'] = array(array("CompanyID", "Link to Company", "in
     array("Email", "Email Address", "varchar", 255),
     array("CompanyPhone1", "Work Telephone Number", "varchar", 255),
     array("CompanyPhone2", "Work Telephone Number", "varchar", 255),
-    array("CompanyPhone3", "Work Telephone Number", "varchar", 255),
     array("PhysicalAddress", "Company Physical Address", "varchar", 255),
     array("PostalAddress", "Company Postal Address", "varchar", 255),
     array("RegistrationNumber", "Brand Number", "varchar", 255),

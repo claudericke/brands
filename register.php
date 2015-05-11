@@ -30,7 +30,7 @@
 			                     window.location.replace("http://demo.etcetera.co.zw/brands");
 		                  }
                         });
-                        $("#alert").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
+                        $("#notification").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
                     } else {
 
                         $('#alert').easyModal({
