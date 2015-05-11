@@ -29,6 +29,8 @@
 
 <body>
     <div class="wrapper">
+            <div class="preloader"></div>
+
         <?php include( 'includes/header.php'); ?>
 
 

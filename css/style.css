@@ -1,8 +1,30 @@
 /* Template Stylesheet */
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+html {
+    height: 100%;
+    margin: auto 0;
+}
+
 body {
     background: #fff;
     overflow-x: hidden;
     margin: 0 auto;
+    height: 100%;
+}
+
+.wrapper {
+		min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -200px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /* Content Styling */
@@ -154,6 +176,8 @@ li.email {
     background: #1e1e1e;
     color: #fff;
     padding-top: 6%;
+    width: 100%;
+    margin-top: 200px;
     }
 
 
@@ -425,4 +449,29 @@ input[type="button"]:hover {
 
 .noMargin {
     margin:5px !important;
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    top:0;
+    left: 0;
+    background: url(../images/preloader.gif) center center no-repeat #1e1e1e;
+     /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=90);
+
+  /* Netscape */
+  -moz-opacity: 0.9;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.9;
+
+  /* Good browsers */
+  opacity: 0.9;
+
 }
