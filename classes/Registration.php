@@ -36,7 +36,8 @@ class Registration {
     public function createUser($sActivationScript, $sAdminMail, $sWebTitle) {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
-        if ($this->checkUserUsingEmail($s_POST['emailAddress'])) {
+
+        if ($this->checkUserUsingEmail($_POST['emailAddress'])) {
             $this->setError("{$_POST['companyName']} already exists on the system with email {$s_POST['emailAddress']}");
             $this->bHasErrors = true;
         } else {
@@ -133,7 +134,6 @@ class Registration {
         $oUser = new UserData();
         $oUser->setUserDataByEmail($sEmail);
         $aUserData = $oUser->getData();
-
         if (count($aUserData) > 0) {
             $bUserexists = true;
         }
