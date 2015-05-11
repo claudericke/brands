@@ -4,6 +4,15 @@
         <p class="small uppercase center">&copy; Massive Dynamics 2015 | Designed by <a href="http://www.etcetera.co.zw" target="_blank">Et Cetera Creative</a>
         </p>
     </div>
+
+<!-- Notication Windows -->
+    <div id="notification" class="modal">
+    <p>This is a notification window</p>
+</div>
+
+<div id="alert" class="modal">
+    <p>This is an alert window to show something is wrong</p>
+</div>
 </footer>
 
 
@@ -14,4 +23,5 @@
 <script type="text/javascript">
     $('.menu nav').slicknav();
 </script>
+
 <!-- End Mobile Navigation -->

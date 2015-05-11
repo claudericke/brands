@@ -26,7 +26,7 @@
                     <a href="control/login" class="login_btn">Login</a>
                 </div>
                 <div class="two columns register">
-                    <a href="register" class="register_btn">Register</a>
+                    <a href="register.php" class="register_btn">Register</a>
                 </div>
             </div>
             <div class="twelve columns right">

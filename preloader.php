@@ -17,32 +17,9 @@
                 $.post("phpscripts/registeruser.php", sContent, function (gData) {
                     if (gData.indexOf("Successfully") > -1) {
                         oCurrentForm.empty();
-                        $('#notification').easyModal({
-                            top: 100,
-                            left: 0,
-                            autoOpen: true,
-                            overlayOpacity: 0.3,
-                            overlayColor: "#333",
-                            overlayClose: true,
-                            closeOnEscape: true,
-                            updateZIndexOnOpen: true,
-                            onClose: function(redirect){
-			                     window.location.replace("http://demo.etcetera.co.zw/brands");
-		                  }
-                        });
-                        $("#notification").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
+                        oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10; font-weight: bold;'>Registration Successful. An activate link has been sent to your email address.</span>");
                     } else {
-                        $('#alert').easyModal({
-                            top: 100,
-                            left: 0,
-                            autoOpen: true,
-                            overlayOpacity: 0.3,
-                            overlayColor: "#333",
-                            overlayClose: true,
-                            closeOnEscape: true,
-                            updateZIndexOnOpen: true
-                        });
-                        $("#alert").empty().html(gData).show();
+                        $(".errorMessage").empty().html(gData).show().fadeOut(iFadeSpeed);
                     }
                 });
             });
@@ -52,6 +29,8 @@
 
 <body>
     <div class="wrapper">
+            <div class="preloader"></div>
+
         <?php include( 'includes/header.php'); ?>
 
 
@@ -96,7 +75,6 @@
                     <div class="four columns noMargin">
                         <label>COMPANY PHONE NUMBER 2</label>
                         <input type="text" class="u-full-width" name="companyPhone2" placeholder="Address to receive physical mail" />
-                        <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
                     </div>
                     <div class="four columns noMargin">
                         <label>INDUSTRY</label>
@@ -211,8 +189,8 @@
     </div>
     </form>
     </div>
-
-</div>
+    </div>
+    <!-- CALL TO ACTION 1 -->
 
 
 

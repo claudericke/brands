@@ -19,7 +19,7 @@ class DatabaseConnection {
 
         $this->aDatabaseConnectionDetails["localhost"] = array("host" => "localhost", "username" => "root", "password" => "28326084", "db" => "brands");
         $this->aDatabaseConnectionDetails["rayac"] = array("host" => "localhost", "username" => "rayachnx_rayac", "password" => "6s1q56xSP6", "db" => "rayachnx_rayac");
-        $this->aDatabaseConnectionDetails["brands"] = array("host" => "sourcecodemediacozw.fatcowmysql.com", "brands" => "root", "password" => "brands3847ThG", "db" => "brands");
+        $this->aDatabaseConnectionDetails["brands"] = array("host" => "sourcecodemediacozw.fatcowmysql.com", "username" => "brands", "password" => "brands3847ThG", "db" => "brands");
 
         $sCurrentHost = $this->determineHost();
 
@@ -29,6 +29,7 @@ class DatabaseConnection {
             $this->oDbConn->exec("SET CHARACTER SET utf8");
             $this->oDbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            //$this->oDbConn->query("CREATE DATABASE IF  NOT EXISTS {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
             //$this->oDbConn->query("CREATE DATABASE IF  NOT EXISTS {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
             $this->oDbConn->query("USE {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
 

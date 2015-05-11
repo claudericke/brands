@@ -1,17 +1,16 @@
 <?php
 
 /**
- * file = tables.php
-  Author = Lebogang Ratsoana <lebogang.ratsoana@yahoo.com>
-  Date = 01 May 2015
+ * file = db.structure.php
+  Author = Lebogang Ratsoana
+  Date = 13 October 2012
 
   Descr = Specifies tables to create
   array structure = ("Field", "Description", "Type", "length")
 
   NB. = Do not add primary keys, they are auto generated
  */
-$aTables['br_companydetails'] = array(
-    array("UserID", "User who created the company profile", "int", 11),
+$aTables['br_companydetails'] = array(array("UserID", "User who created the company profile", "int", 11),
     array("CompanyName", "Company name", "varchar", 255),
     array("TradingName", "Name with which the company trades", "varchar", 255),
     array("ProductsAndServices", "Full description of what the company does", "text", 0),
@@ -20,8 +19,7 @@ $aTables['br_companydetails'] = array(
     array("dateupdated", "Date on which the company profile was updated", "datetime", 0),
 );
 
-$aTables['br_user'] = array(
-    array("Username", "Username", "varchar", 255),
+$aTables['br_user'] = array(array("Username", "Username", "varchar", 255),
     array("Email", "User's name", "varchar", 255),
     array("Password", "User password", "varchar", 255),
     array("Online", "Whether User/Company is currently logged in", "tinyint", 2),
@@ -31,8 +29,7 @@ $aTables['br_user'] = array(
     array("lastLogin", "Date on which the user profile was updated", "datetime", 0),
 );
 
-$aTables['br_companycontacts'] = array(
-    array("CompanyID", "Link to Company", "int", 11),
+$aTables['br_companycontacts'] = array(array("CompanyID", "Link to Company", "int", 11),
     array("Email", "Email Address", "varchar", 255),
     array("CompanyPhone1", "Work Telephone Number", "varchar", 255),
     array("CompanyPhone2", "Work Telephone Number", "varchar", 255),
@@ -49,8 +46,7 @@ $aTables['br_companycontacts'] = array(
     array("DateUpdated", "Date on which the company contacts were updated", "datetime", 0),
 );
 
-$aTables['br_messagessentout'] = array(
-    array("userid", "Link to user", "int", 11),
+$aTables['br_messagessentout'] = array(array("userid", "Link to user", "int", 11),
     array("subject", "Email subject", "varchar", 255),
     array("contenttype", "Content type of the email", "varchar", 255),
     array("emailfrom", "Email where mail will be sent from", "varchar", 255),
@@ -78,12 +74,10 @@ $aTables['br_errorlog'] = array(
     array("fixed", "Whether this error has been fixed or not", "enum", "'No','Yes'"),
 );
 
-/**
- * Products
- */
+
 $aTables['br_productcategories'] = array(
     array("CompanyID", "Link to Company", "int", 11),
-    array("Category", "Name of category", "varchar", 255),
+    array("ProductName", "Product Category", "varchar", 255),
     array("Description", "Category desription", "text", 0),
     array("DateCreated", "Date on which category details were stored", "timestamp", 0),
     array("DateUpdated", "Date on which category was updated", "datetime", 0),
@@ -120,9 +114,7 @@ $aTables['br_productoptionvalues'] = array(
 
 
 
-/**
- * Vacancies
- */
+
 $aTables['br_vacancies'] = array(
     array("CompanyID", "Link to Company", "int", 11),
     array("CategoryID", "Link to vacancy category", "int", 11),
@@ -135,9 +127,7 @@ $aTables['br_vacancies'] = array(
     array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
 );
 
-/**
- * Services
- */
+
 $aTables['br_services'] = array(
     array("CompanyID", "Link to Company", "int", 11),
     array("Service", "The service offered by the company", "varchar", 255),
