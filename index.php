@@ -49,6 +49,8 @@
 
     <!-- CALL TO ACTION 1 -->
     <div class="container">
+
+
         <div class="row">
             <div class="four columns">&nbsp;</div>
             <div class="four columns center">
@@ -218,6 +220,8 @@
                 $('.feature').removeClass("animated fadeIn");
             }
         });
+
+
     </script>
     <!-- End Mobile Navigation -->
 </body>

@@ -17,9 +17,30 @@
                 $.post("phpscripts/registeruser.php", sContent, function (gData) {
                     if (gData.indexOf("Successfully") > -1) {
                         oCurrentForm.empty();
+                        $('#alert').easyModal({
+                            top: 100,
+                            left: 0,
+                            autoOpen: true,
+                            overlayOpacity: 0.3,
+                            overlayColor: "#333",
+                            overlayClose: true,
+                            closeOnEscape: true,
+                            updateZIndexOnOpen: true
+                        });
                         oCurrentForm.append("<span style='color: #4F8A10;background-color: #DFF2BF; padding: 8px; border: 1px #4F8A10; font-weight: bold;'>Registration Successful. An activate link has been sent to your email address.</span>");
                     } else {
-                        $(".errorMessage").empty().html(gData).show().fadeOut(iFadeSpeed);
+
+                        $('#alert').easyModal({
+                            top: 100,
+                            left: 0,
+                            autoOpen: true,
+                            overlayOpacity: 0.3,
+                            overlayColor: "#333",
+                            overlayClose: true,
+                            closeOnEscape: true,
+                            updateZIndexOnOpen: true
+                        });
+                        $("#alert").empty().html(gData).show();
                     }
                 });
             });
@@ -187,8 +208,8 @@
     </div>
     </form>
     </div>
-    </div>
-    <!-- CALL TO ACTION 1 -->
+
+</div>
 
 
 

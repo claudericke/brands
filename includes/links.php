@@ -11,3 +11,4 @@
     <script src="js/modernizr.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/jquery.inview.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyModal.js"></script>
