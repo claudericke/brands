@@ -482,13 +482,12 @@ input[type="button"]:hover {
     font-weight: bold;
     display: none;
     background: skyblue;
-    height: 100px;
+    height: auto;
     text-align: center !important;
-    margin:0 auto;
+    margin: 0 auto;
     text-transform: capitalize !important;
     text-decoration: none !important;
 }
-
 
 #alert {
     width: 100%;
@@ -502,26 +501,26 @@ input[type="button"]:hover {
     font-weight: bold;
     background: darkred;
     display: none;
-    height: 100px;
+    height: auto;
     text-align: center !important;
-    margin:0 auto;
+    margin: 0 auto;
     text-transform: capitalize !important;
     text-decoration: none !important;
 }
 
 #alert p {
     text-align: center !important;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 #notification p {
-     text-align: center !important;
-    margin-top:5px;
+    text-align: center !important;
+    margin-top: 5px;
 }
 
-.modal u, .modal u li {
+.modal u,
+.modal u li {
     display: block !important;
-    list-style: none !important;    text-decoration: none !important;
-
+    list-style: none !important;
+    text-decoration: none !important;
 }
-
