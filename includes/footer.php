@@ -48,7 +48,7 @@
             overlayClose: true,
             closeOnEscape: true,
             updateZIndexOnOpen: true
-        });
+        });  });
 
             $('#open-alert').click(function (e) {
         $('#alert').easyModal({

@@ -32,7 +32,6 @@
                         });
                         $("#notification").empty().html("Registration Successful. An activate link has been sent to your email address.").show();
                     } else {
-
                         $('#alert').easyModal({
                             top: 100,
                             left: 0,
