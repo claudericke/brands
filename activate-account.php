@@ -25,31 +25,11 @@ require_once 'common.php';
                         <br style="clear: both"/>
                         <br style="clear: both"/>
                         <br style="clear: both"/>
-
-                        <div class="four columns phones">
-                            <img src="images/phones.png" alt="" />
-                        </div>
-
                         <br style="clear: both"/>
                         <br style="clear: both"/>
                     </div>
                 </div>
 
-            </div>
-            <!-- CALL TO ACTION 1 -->
-            <div class="container">
-                <div class="row">
-                    <div class="four columns">&nbsp;</div>
-                    <div class="four columns center">
-                        <p class=" center">ADD YOUR BUSINESS ON OUR EVER EXPANDING LISTED INDEX</p>
-                        <p class=" center">
-                            <a href="register.html" class="register_btn">
-                                Register
-                            </a>
-                        </p>
-                    </div>
-                    <div class="four columns">&nbsp;</div>
-                </div>
             </div>
 
             <?php include('includes/footer.php'); ?>
