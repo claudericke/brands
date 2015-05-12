@@ -1071,3 +1071,152 @@ Stack trace:
 #19 {main}
 REQUEST_URI=/control/site/productlist
 ---
+2015/05/11 13:34:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "products".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('products')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('products')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/products')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/products
+HTTP_REFERER=http://brands.local/control/
+---
+2015/05/11 14:18:56 [error] [exception.CException] exception 'CException' with message 'Products and its behaviors do not have a method or closure named "create".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(225): CComponent->__call('create', Array)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): CActiveRecord->__call('create', Array)
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): Products->create()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#11 {main}
+REQUEST_URI=/control/site/productlist
+HTTP_REFERER=http://brands.local/control/site/productlist
+---
+2015/05/11 14:19:12 [error] [exception.CException] exception 'CException' with message 'Products and its behaviors do not have a method or closure named "create".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(225): CComponent->__call('create', Array)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): CActiveRecord->__call('create', Array)
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): Products->create()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#11 {main}
+REQUEST_URI=/control/site/productlist
+HTTP_REFERER=http://brands.local/control/site/productlist
+---
+2015/05/11 14:19:15 [error] [exception.CException] exception 'CException' with message 'Products and its behaviors do not have a method or closure named "create".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(225): CComponent->__call('create', Array)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): CActiveRecord->__call('create', Array)
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): Products->create()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#11 {main}
+REQUEST_URI=/control/site/productlist
+HTTP_REFERER=http://brands.local/control/site/productlist
+---
+2015/05/11 14:19:24 [error] [exception.CException] exception 'CException' with message 'Products and its behaviors do not have a method or closure named "create".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(225): CComponent->__call('create', Array)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): CActiveRecord->__call('create', Array)
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(131): Products->create()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProductList()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('productlist')
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/productlis...')
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#11 {main}
+REQUEST_URI=/control/site/productlist
+HTTP_REFERER=http://brands.local/control/site/productlist
+---
+2015/05/11 14:25:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "products".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('products')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('products')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/products')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/products
+HTTP_REFERER=http://brands.local/control/site/profile
+---
+2015/05/11 14:36:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add-products".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('add-products')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('add-products')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/add-produc...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/add-products
+HTTP_REFERER=http://brands.local/control/site/productlist
+---
+2015/05/11 14:38:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add-products".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('add-products')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('add-products')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/add-produc...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/add-products
+HTTP_REFERER=http://brands.local/control/site/products
+---
+2015/05/11 14:39:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addproducts".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('addproducts')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addproducts')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addproduct...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/addproducts
+HTTP_REFERER=http://brands.local/control/site/products
+---
+2015/05/11 14:39:25 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "add-product".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('add-product', Array, true)
+#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(146): CController->render('add-product', Array)
+#2 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionAddproduct()
+#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addproduct')
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addproduct')
+#8 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#10 {main}
+REQUEST_URI=/control/site/addproduct
+---
+2015/05/11 14:41:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addproducts".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('addproducts')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addproducts')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addproduct...')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/addproducts
+HTTP_REFERER=http://brands.local/control/site/products
+---

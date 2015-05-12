@@ -109,29 +109,39 @@ class SiteController extends Controller {
         }
     }
 
-    public function actionProductList() {
+    public function actionProducts() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oProducts = Products::model();
+            $aProducts = $oProducts->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("products", array("oProducts" => $oProducts, "aProducts" => $aProducts));
+        }
+    }
+
+    public function actionAddproduct() {
         if (Yii::app()->user->isGuest) {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
             $oProducts = Products::model();
 
-            if (isset($_POST)) {
-                echo "<pre>" . print_r($_POST, true) . "</pre>";
-            }
+            if (isset($_POST["Products"])) {
+                print_r($_POST["Products"]);
+                $oProducts->attributes = $_POST["Products"];
 
-            if (isset($_POST["products"])) {
-                $oProducts->attributes = $_POST["products"];
-                if (isset($_POST["products"]) && $_POST["products"] > 0) {
-                    $oProducts->CompanyID = $oCompany->id;
-                    $oProducts->DateUpdated = date("Y-m-d H:i:s");
+                $oProducts->CompanyID = $oCompany->id;
+                $oProducts->Active = 1;
+                $oProducts->DateUpdated = date("Y-m-d H:i:s");
+                if (isset($_POST["Products"]['id']) && $_POST["Products"]['id'] > 0) {
                     $oProducts->update();
                 } else {
-                    $oProducts->create();
+                    $oProducts->DateCreated = date("Y-m-d H:i:s");
+                    $oProducts->save();
                 }
             }
-            $aProducts = $oProducts->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
-            $this->render("products", array("oCompany" => $oCompany, "oProducts" => $oProducts, "aProducts" => $aProducts));
+            $this->render("add-product", array("oCompany" => $oCompany, "oProducts" => $oProducts));
         }
     }
 

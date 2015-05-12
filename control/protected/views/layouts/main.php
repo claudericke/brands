@@ -44,7 +44,7 @@
                                         <ul class="sub-menu">
                                             <li ><a href="/control/site/profile">Profile</a>
                                             </li>
-                                            <li><a href="#">Products</a>
+                                            <li><a href="/control/site/products">Products</a>
                                             </li>
                                             <li><a href="#">Services</a>
                                             </li>

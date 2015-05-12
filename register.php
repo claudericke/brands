@@ -65,8 +65,9 @@
                     </p>
                 </div>
                 <br style="clear: both;" />
-                <div class="errorMessage red"></div>
+                <div class="errorMessage red"><div id="notification"></div></div>
                 <form class="registerForm" method="post" name="RegistrationForm" id="RegistrationForm" action="/phpscripts/registeruser.php">
+
                     <div class="twelve columns">
                         <h2 class="left large ">COMPANY<strong class="left bold"> DETAILS</strong></h2>
                         <div class="four columns noMargin">
