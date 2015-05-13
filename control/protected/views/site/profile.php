@@ -7,6 +7,8 @@
 <div class="row">
     <h5>Basic Information</h5>
 </div>
+
+<?php echo Yii::app()->user->getFlash('success'); ?>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'company-details-form',
@@ -36,7 +38,7 @@ $form = $this->beginWidget('CActiveForm', array(
 <div class="row">
     <?php
     echo $form->labelEx($oCompany, 'ProductsAndServices') .
-    $form->textField($oCompany, 'ProductsAndServices', array('class' => 'left u-full-width')) .
+    $form->checkboxList($oCompany, 'ProductsAndServices', array('Brands Premium' => 'Brands Premium', 'Brands Scroll Advert' => 'Brands Scroll Advert', 'Brands Promotional Advert ' => 'Brands Promotional Advert', 'Brands Magazine' => 'Brands Magazine', "Post" => "Post"), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',)) .
     $form->error($oCompany, 'ProductsAndServices');
     ?>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 class CompanyContacts extends CActiveRecord {
+
     /**
      * The followings are the available columns in table 'BR_CompanyDetails':
      * @var integer $ID
@@ -14,6 +15,20 @@ class CompanyContacts extends CActiveRecord {
      * @var int $Subscription
      * @var int $ThirdpartyMarketing
      */
+    protected function beforeValidate() {
+        if (!is_array($this->PreferredLanguage))
+            $this->PreferredLanguage = array();
+        $this->PreferredLanguage = CJSON::encode($this->PreferredLanguage);
+
+        return parent::beforeValidate();
+    }
+
+    protected function afterFind() {
+        parent::afterFind();
+        $this->PreferredLanguage = CJSON::decode($this->PreferredLanguage);
+        if (!is_array($this->PreferredLanguage))
+            $this->PreferredLanguage = array();
+    }
 
     /**
      * Returns the static model of the specified AR class.

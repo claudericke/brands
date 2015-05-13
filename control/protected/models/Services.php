@@ -1,16 +1,12 @@
 <?php
 
-class Products extends CActiveRecord {
+class Services extends CActiveRecord {
     /**
      * The followings are the available columns in table 'BR_CompanyDetails':
      * @var integer $id
      * @var integer $CompanyID
-     * @var integer $Category
-     * @var string $ProductName
-     * @var integer $Quantity
-     * @var double $Price
-     * @var int $ProductImageId
-     * @var int $Active
+     * @var string $Service
+     * @var integer $Description
      */
 
     /**
@@ -25,7 +21,7 @@ class Products extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return '{{products}}';
+        return '{{services}}';
     }
 
     /**
@@ -35,9 +31,9 @@ class Products extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('Category,ProductName', 'required'),
-            array('ProductName', 'length', 'max' => 255),
-            array('CompanyID, Category, ProductName, Description, Quantity, Price, ProductImageId, Active', 'safe'),
+            array('Service', 'required'),
+            array('Service', 'length', 'max' => 255),
+            array('CompanyID, Service, Description', 'safe'),
         );
     }
 
@@ -59,13 +55,8 @@ class Products extends CActiveRecord {
         return array(
             'id' => 'Id',
             'CompanyID' => 'Company Id',
-            'Category' => "Category",
-            'ProductName' => 'Product Name',
-            'Description' => 'Product description',
-            'Quantity' => 'Quantity',
-            'Price' => 'Price',
-            'ProductImageId' => 'Product Image',
-            'Active' => 'Set to be visible?',
+            'Service' => "Service",
+            'Description' => 'Service description',
         );
     }
 

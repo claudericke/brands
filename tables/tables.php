@@ -13,6 +13,7 @@
 $aTables['br_companydetails'] = array(array("UserID", "User who created the company profile", "int", 11),
     array("CompanyName", "Company name", "varchar", 255),
     array("TradingName", "Name with which the company trades", "varchar", 255),
+    array("Industry", "Industry into which the company belongs", "varchar", 255),
     array("ProductsAndServices", "Full description of what the company does", "text", 0),
     array("companylogoid", "Link to company logo", "int", 11),
     array("datecreated", "Date on which user details were stored", "datetime", 0),
@@ -85,7 +86,7 @@ $aTables['br_productcategories'] = array(
 
 $aTables['br_products'] = array(
     array("CompanyID", "Link to Company", "int", 11),
-    array("CategoryID", "Link to Product category", "int", 11),
+    array("Category", "Product category", "varchar", 255),
     array("ProductName", "Product Name", "varchar", 255),
     array("Description", "Product description", "text", 0),
     array("Quantity", "Number of products available", "int", 11),
@@ -98,7 +99,7 @@ $aTables['br_products'] = array(
 
 $aTables['br_productoptions'] = array(
     array("CompanyID", "Link to Company", "int", 11),
-    array("Option", "Product Name", "varchar", 255),
+    array("Name", "Product option", "varchar", 255),
     array("Description", "Link to Product category", "text", 0),
     array("DateCreated", "Date on which products option details were stored", "timestamp", 0),
     array("DateUpdated", "Date on which the products option was updated", "datetime", 0),
@@ -118,7 +119,6 @@ $aTables['br_productoptionvalues'] = array(
 
 $aTables['br_vacancies'] = array(
     array("CompanyID", "Link to Company", "int", 11),
-    array("CategoryID", "Link to vacancy category", "int", 11),
     array("Title", "Vacancy Title", "varchar", 255),
     array("Description", "Details of the requirements and reponsibilities of the vacancy", "text", 0),
     array("DocumentId", "Document attached to vacancy", "int", 11),

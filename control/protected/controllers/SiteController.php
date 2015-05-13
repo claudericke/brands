@@ -83,25 +83,37 @@ class SiteController extends Controller {
                 Yii::app()->user->logout();
                 $this->redirect("/control/");
             }
-
-            if (isset($_POST["companydetails"])) {
-                $oCompany->attributes = $_POST["companydetails"];
+            if (isset($_POST)) {
+                print_r($_POST);
+            }
+            if (isset($_POST["CompanyDetails"])) {
+                $oCompany->attributes = $_POST["CompanyDetails"];
                 if ($oCompany->validate()) {
-                    $oCompany->update("CompanyName", "TradingName", "ProductsAndServices");
-                    $this->refresh();
+                    $oCompany->dateupdated = date("Y-m-d H:i:s");
+
+                    if ($oCompany->update("CompanyName", "TradingName", "ProductsAndServices")) {
+                        Yii::app()->user->setFlash('success', "Profile successfully updated");
+                        $this->redirect("/control/site/profile");
+                    } else {
+                        Yii::app()->user->setFlash('error', "Failed to update profile");
+                    }
                 }
             }
 
-            if (isset($_POST["companycontacts"])) {
-                $oCompanyContacts->attributes = $_POST["companycontacts"];
+            if (isset($_POST["CompanyContacts"])) {
+                $oCompanyContacts->attributes = $_POST["CompanyContacts"];
                 $oCompanyContacts->CompanyID = $oCompany->id;
                 if (!$oCompanyContacts->id) {
-                    $oCompanyContacts->DateCreated = date("Y-m-d H:i:s");
-                    $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
-                    $oCompanyContacts->save();
+                    $oCompanyContacts->datecreated = date("Y-m-d H:i:s");
+                    $oCompanyContacts->dateupdated = date("Y-m-d H:i:s");
+                    if ($oCompanyContacts->save()) {
+                        Yii::app()->user->setFlash('success', "Company contacts successfully updated");
+                    }
                 } else {
-                    $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
-                    $oCompanyContacts->update();
+                    $oCompanyContacts->dateupdated = date("Y-m-d H:i:s");
+                    if ($oCompanyContacts->update()) {
+                        Yii::app()->user->setFlash('success', "Company contacts successfully updated");
+                    }
                 }
             }
 
@@ -114,8 +126,8 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
-            $oProducts = Products::model();
-            $aProducts = $oProducts->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $oProducts = new Products();
+            $aProducts = Products::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
             $this->render("products", array("oProducts" => $oProducts, "aProducts" => $aProducts));
         }
     }
@@ -125,10 +137,13 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
-            $oProducts = Products::model();
+            if (isset($_GET['pid'])) {
+                $oProducts = Products::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            } else {
+                $oProducts = new Products();
+            }
 
             if (isset($_POST["Products"])) {
-                print_r($_POST["Products"]);
                 $oProducts->attributes = $_POST["Products"];
 
                 $oProducts->CompanyID = $oCompany->id;
@@ -142,6 +157,44 @@ class SiteController extends Controller {
                 }
             }
             $this->render("add-product", array("oCompany" => $oCompany, "oProducts" => $oProducts));
+        }
+    }
+
+    public function actionAddservice() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['sid'])) {
+                $oServices = Services::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            } else {
+                $oServices = new Services();
+            }
+
+            if (isset($_POST["Services"])) {
+                $oServices->attributes = $_POST["Services"];
+
+                $oServices->CompanyID = $oCompany->id;
+                $oServices->DateUpdated = date("Y-m-d H:i:s");
+                if (isset($_POST["Services"]['id']) && $_POST["Services"]['id'] > 0) {
+                    $oServices->update();
+                } else {
+                    $oServices->DateCreated = date("Y-m-d H:i:s");
+                    $oServices->save();
+                }
+            }
+            $this->render("add-service", array("oCompany" => $oCompany, "oServices" => $oServices));
+        }
+    }
+
+    public function actionServices() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oServices = new Services();
+            $aServices = Services::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("services", array("oServices" => $oServices, "aServices" => $aServices));
         }
     }
 

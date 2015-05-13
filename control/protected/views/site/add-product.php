@@ -7,44 +7,34 @@
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'products',
     'enableClientValidation' => true,
-    'enableAjaxValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
-?>
-<?php
-/** Start Widget * */
-/* $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-  'id' => 'mydialog',
-  'options' => array(
-  'title' => 'Dialog box',
-  'autoOpen' => false,
-  ),
-  )); */
 ?>
 <div class="row">
     <?php
     echo
-    $form->error($oProducts, 'CategoryID') .
-    $form->labelEx($oProducts, 'CategoryID') .
-    $form->dropDownList($oProducts, 'CategoryID', array(3 => "Electronics", 3 => "Household"), array('class' => 'left u-full-width'));
+    $form->error($oProducts, 'Category') .
+    $form->labelEx($oProducts, 'Category') .
+    $form->dropDownList($oProducts, 'Category', array("Electronics" => "Electronics", "Household" => "Household"), array('class' => 'left u-full-width'));
     ?>
 </div>
 
 
 <div class="row">
     <?php
-    echo $form->labelEx($oProducts, 'ProductName') .
-    $form->textField($oProducts, 'ProductName', array('class' => 'left u-full-width')) .
-    $form->error($oProducts, 'ProductName');
+    echo $form->error($oProducts, 'ProductName') .
+    $form->labelEx($oProducts, 'ProductName') .
+    $form->textField($oProducts, 'ProductName', array('class' => 'left u-full-width'));
     ?>
 </div>
 
 <div class="row">
     <?php
-    echo $form->labelEx($oProducts, 'Description') .
-    $form->textArea($oProducts, 'Description', array('class' => 'left u-full-width')) .
-    $form->error($oProducts, 'Description');
+    echo $form->error($oProducts, 'Description') .
+    $form->labelEx($oProducts, 'Description') .
+    $form->textArea($oProducts, 'Description', array('class' => 'left u-full-width'));
     ?>
 </div>
 
@@ -58,29 +48,17 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->labelEx($oProducts, 'Price') .
-    $form->textField($oProducts, 'Price', array('class' => 'left u-full-width')) .
-    $form->error($oProducts, 'Price');
+    echo $form->error($oProducts, 'Price') .
+    $form->labelEx($oProducts, 'Price') .
+    $form->textField($oProducts, 'Price', array('class' => 'left u-full-width'));
     ?>
 </div>
 
 <div class="row">
-    <?php echo CHtml::submitButton('CREATE/UPDATE', array('class' => 'login_btn')); ?>
+    <?php echo CHtml::submitButton('CREATE', array('class' => 'login_btn')); ?>
 </div>
-
-
-<?php
-/* $this->endWidget('zii.widgets.jui.CJuiDialog');
-  /** End Widget * */
-/* echo CHtml::link('Create product', '#', array(
-  'onclick' => '$("#mydialog").dialog("open"); return false;',
-  )); */
-?>
-
 
 
 <?php
 $this->endWidget();
 ?>
-
-Showing a list of products here;

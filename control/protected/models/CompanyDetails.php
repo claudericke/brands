@@ -1,6 +1,7 @@
 <?php
 
 class CompanyDetails extends CActiveRecord {
+
     /**
      * The followings are the available columns in table 'BR_CompanyDetails':
      * @var integer $ID
@@ -9,6 +10,20 @@ class CompanyDetails extends CActiveRecord {
      * @var string $TradingName
      * @var string $ProductsAndServices
      */
+    protected function beforeValidate() {
+        if (!is_array($this->ProductsAndServices))
+            $this->ProductsAndServices = array();
+        $this->ProductsAndServices = CJSON::encode($this->ProductsAndServices);
+
+        return parent::beforeValidate();
+    }
+
+    protected function afterFind() {
+        parent::afterFind();
+        $this->ProductsAndServices = CJSON::decode($this->ProductsAndServices);
+        if (!is_array($this->ProductsAndServices))
+            $this->ProductsAndServices = array();
+    }
 
     /**
      * Returns the static model of the specified AR class.

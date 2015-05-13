@@ -1,7 +1,7 @@
 
 
 <div class="row">
-    <h2>Products</h2>
+    <h2>Services</h2>
 </div>
 <style type="text/css">
     .productDescription,
@@ -22,15 +22,15 @@
     }
 </style>
 
-<a href="/control/site/addproduct">Add a product</a>
+<a href="/control/site/addservice">Add a service</a>
 <br style="clear: both"/>
 <?php
-if (count($aProducts) > 0) {
-    foreach ($aProducts as $aProduct) {
+if (count($aServices) > 0) {
+    foreach ($aServices as $aService) {
         ?>
         <div class="row">
-            <div class="ProductName"><a href="/control/site/addproduct/?pid=<?php echo $aProduct["id"]; ?>" title="<?php echo $aProduct["ProductName"]; ?>"><?php echo $aProduct["ProductName"]; ?></a></div>
-            <div class="productDescription"><?php echo $aProduct["Description"]; ?></div>
+            <div class="ProductName"><a href="/control/site/addservice/?pid=<?php echo $aService["id"]; ?>" title="<?php echo $aService["Service"]; ?>"><?php echo $aService["Service"]; ?></a></div>
+            <div class="productDescription"><?php echo $aService["Description"]; ?></div>
             <br style="clear: both"/>
         </div>
         <?php

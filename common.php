@@ -1,9 +1,5 @@
 <?php
 
-$sMyRootFolder = "";
-if (stripos($_SERVER["DOCUMENT_ROOT"], "etcetera") !== false) {
-    $sMyRootFolder = "/brands/";
-}
 defined('ROOT') || define('ROOT', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 defined('CROOTFOLDER') || define('CROOTFOLDER', $sMyRootFolder);
 
