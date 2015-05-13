@@ -165,7 +165,7 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
-            if (isset($_GET['sid'])) {
+            if (isset($_GET['pid'])) {
                 $oServices = Services::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
             } else {
                 $oServices = new Services();
@@ -195,6 +195,45 @@ class SiteController extends Controller {
             $oServices = new Services();
             $aServices = Services::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
             $this->render("services", array("oServices" => $oServices, "aServices" => $aServices));
+        }
+    }
+
+    public function actionAddvacancy() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['pid'])) {
+                $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            } else {
+                $oVacancies = new Vacancies();
+            }
+
+            if (isset($_POST["Vacancies"])) {
+                $oVacancies->attributes = $_POST["Vacancies"];
+                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime($oVacancies->StartDate));
+
+                $oVacancies->CompanyID = $oCompany->id;
+                $oVacancies->DateUpdated = date("Y-m-d H:i:s");
+                if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
+                    $oVacancies->update();
+                } else {
+                    $oVacancies->DateCreated = date("Y-m-d H:i:s");
+                    $oVacancies->save();
+                }
+            }
+            $this->render("add-vacancy", array("oCompany" => $oCompany, "oVacancies" => $oVacancies));
+        }
+    }
+
+    public function actionVacancies() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oVacancies = new Vacancies();
+            $aVacancies = Vacancies::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("vacancies", array("oVacancies" => $oVacancies, "aVacancies" => $aVacancies));
         }
     }
 

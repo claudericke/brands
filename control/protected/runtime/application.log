@@ -88,3 +88,36 @@ Stack trace:
 #9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
 REQUEST_URI=/control/site/services
+2015/05/13 21:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "services".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('services')
+#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#3 {main}
+REQUEST_URI=/control/services
+---
+2015/05/13 22:24:05 [error] [php] Undefined variable: aServices (C:\xampp\htdocs\brands\control\protected\views\site\services.php:28)
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(235): SiteController->render()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionVacancies()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/vacancies
+2015/05/13 22:24:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addvacancy".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('addvacancy')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addvacancy')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addvacancy')
+#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#5 {main}
+REQUEST_URI=/control/site/addvacancy
+HTTP_REFERER=http://www.brands.local/control/site/vacancies
+---
