@@ -46,9 +46,9 @@
                                             </li>
                                             <li><a href="/control/site/products">Products</a>
                                             </li>
-                                            <li><a href="#">Services</a>
+                                            <li><a href="/control/site/services">Services</a>
                                             </li>
-                                            <li><a href="#">Vacancies</a>
+                                            <li><a href="/control/site/vacancies">Vacancies</a>
                                             </li>
                                             <li><a href="#">Promotions</a>
                                             </li>

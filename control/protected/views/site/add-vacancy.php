@@ -30,10 +30,6 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    /* echo $form->error($oVacancies, 'StartDate') .
-      $form->labelEx($oVacancies, 'StartDate') .
-      $form->textField($oVacancies, 'StartDate', array('class' => 'left u-full-width'))->widget(\yii\jui\DatePicker::classname()); */
-
     echo $form->error($oVacancies, 'StartDate') .
     $form->labelEx($oVacancies, 'StartDate');
 
