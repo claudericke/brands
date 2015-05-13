@@ -40,9 +40,10 @@ $form = $this->beginWidget('CActiveForm', array(
     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
         'name' => 'Vacancies[StartDate]',
         'id' => 'Vacancies_StartDate',
-        'value' => Yii::app()->dateFormatter->format("yyyy-M-dd", strtotime($oVacancies->StartDate)),
+        'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oVacancies->StartDate)),
         'options' => array(
             'showAnim' => 'fold',
+            'dateFormat' => 'yy-mm-dd',
         ),
         'htmlOptions' => array(
             'class' => 'left u-full-width'

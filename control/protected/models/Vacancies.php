@@ -36,7 +36,7 @@ class Vacancies extends CActiveRecord {
         return array(
             array('Title,Description', 'required'),
             array('Title', 'length', 'max' => 255),
-            array('CompanyID,Title,Service,Description,DocumentId,Active', 'safe'),
+            array('CompanyID,Title,Description,DocumentId,Active,StartDate', 'safe'),
         );
     }
 

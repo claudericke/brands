@@ -211,7 +211,7 @@ class SiteController extends Controller {
 
             if (isset($_POST["Vacancies"])) {
                 $oVacancies->attributes = $_POST["Vacancies"];
-                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime($oVacancies->StartDate));
+                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oVacancies->StartDate)));
 
                 $oVacancies->CompanyID = $oCompany->id;
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");

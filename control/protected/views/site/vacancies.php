@@ -29,7 +29,7 @@ if (count($aVacancies) > 0) {
     foreach ($aVacancies as $aVacancy) {
         ?>
         <div class="row">
-            <div class="ProductName"><a href="/control/site/addvacancy/?pid=<?php echo $aVacancy["id"]; ?>" title="<?php echo $aVacancy["Service"]; ?>"><?php echo $aVacancy["Service"]; ?></a></div>
+            <div class="ProductName"><a href="/control/site/addvacancy/?pid=<?php echo $aVacancy["id"]; ?>" title="<?php echo $aVacancy["Title"]; ?>"><?php echo $aVacancy["Title"]; ?></a></div>
             <div class="productDescription"><?php echo $aVacancy["Description"]; ?></div>
             <br style="clear: both"/>
         </div>
