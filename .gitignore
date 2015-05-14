@@ -5,5 +5,3 @@
 /node_modules/
 /control/.htaccess
 /.htaccess
-/control/protected/config/main.php
-/classes/DatabaseConnection.php
