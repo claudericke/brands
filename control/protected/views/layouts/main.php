@@ -13,6 +13,27 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'/>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.pngFix.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr.js"></script>
+
+        <style type="text/css">
+            .successFeedbackMessage,
+            .errorFeedbackMessage {
+                border: 1px solid;
+                margin: 10px 0px;
+                padding:15px 10px 15px 50px;
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+
+            .successFeedbackMessage {
+                color: #4F8A10;
+                background-color: #DFF2BF;
+            }
+
+            .errorFeedbackMessage {
+                color: #D8000C;
+                background-color: #FFBABA;
+            }
+        </style>
     </head>
 
     <body>

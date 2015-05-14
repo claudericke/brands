@@ -36,6 +36,6 @@ if (count($aVacancies) > 0) {
         <?php
     }
 } else {
-    echo "<p>No products added yet.</p>";
+    echo "<p>No vacancy added yet.</p>";
 }
 ?>

@@ -36,6 +36,6 @@ if (count($aPromotions) > 0) {
         <?php
     }
 } else {
-    echo "<p>No promo added yet.</p>";
+    echo "<p>No promotion added yet.</p>";
 }
 ?>

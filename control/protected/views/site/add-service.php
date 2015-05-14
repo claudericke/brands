@@ -12,9 +12,24 @@ $form = $this->beginWidget('CActiveForm', array(
 );
 ?>
 
+
+<?php if (Yii::app()->user->hasFlash('success')): ?>
+    <div class="successFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+
+<?php endif; ?>
+
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+    <div class="errorFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+
+<?php endif; ?>
+
 <div class="row">
     <?php
-    echo $form->error($oServices, 'Service') .
+    echo $form->error($oServices, 'Service', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oServices, 'Service') .
     $form->textField($oServices, 'Service', array('class' => 'left u-full-width'));
     ?>
@@ -22,7 +37,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oServices, 'Description') .
+    echo $form->error($oServices, 'Description', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oServices, 'Description') .
     $form->textArea($oServices, 'Description', array('class' => 'left u-full-width'));
     ?>

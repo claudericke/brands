@@ -36,6 +36,6 @@ if (count($aServices) > 0) {
         <?php
     }
 } else {
-    echo "<p>No products added yet.</p>";
+    echo "<p>No services added yet.</p>";
 }
 ?>

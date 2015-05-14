@@ -104,7 +104,7 @@ class SiteController extends Controller {
                     $oCompanyContacts->datecreated = date("Y-m-d H:i:s");
                     $oCompanyContacts->dateupdated = date("Y-m-d H:i:s");
                     if ($oCompanyContacts->save()) {
-                        Yii::app()->user->setFlash('success', "Company contacts successfully updated");
+                        Yii::app()->user->setFlash('success', "Company contacts successfully created");
                     }
                 } else {
                     $oCompanyContacts->dateupdated = date("Y-m-d H:i:s");
@@ -148,9 +148,11 @@ class SiteController extends Controller {
                 $oProducts->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oProducts->id) && $oProducts->id > 0) {
                     $oProducts->update();
+                    Yii::app()->user->setFlash('success', 'Product successfully updated.');
                 } else {
                     $oProducts->DateCreated = date("Y-m-d H:i:s");
                     $oProducts->save();
+                    Yii::app()->user->setFlash('success', 'Product successfully created.');
                 }
             }
             $this->render("add-product", array("oCompany" => $oCompany, "oProducts" => $oProducts));
@@ -175,9 +177,11 @@ class SiteController extends Controller {
                 $oServices->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oServices->id) && $oServices->id > 0) {
                     $oServices->update();
+                    Yii::app()->user->setFlash('success', 'Service successfully updated.');
                 } else {
                     $oServices->DateCreated = date("Y-m-d H:i:s");
                     $oServices->save();
+                    Yii::app()->user->setFlash('success', 'Service successfully created.');
                 }
             }
             $this->render("add-service", array("oCompany" => $oCompany, "oServices" => $oServices));
@@ -214,9 +218,11 @@ class SiteController extends Controller {
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
                     $oVacancies->update();
+                    Yii::app()->user->setFlash('success', 'Vacancies successfully updated.');
                 } else {
                     $oVacancies->DateCreated = date("Y-m-d H:i:s");
                     $oVacancies->save();
+                    Yii::app()->user->setFlash('success', 'Vacancies successfully updated.');
                 }
             }
             $this->render("add-vacancy", array("oCompany" => $oCompany, "oVacancies" => $oVacancies));
@@ -264,9 +270,11 @@ class SiteController extends Controller {
                 $oPromotions->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oPromotions->id) && $oPromotions->id > 0) {
                     $oPromotions->update();
+                    Yii::app()->user->setFlash('success', 'Promotion successfully updated.');
                 } else {
                     $oPromotions->DateCreated = date("Y-m-d H:i:s");
                     $oPromotions->save();
+                    Yii::app()->user->setFlash('success', 'Promotion successfully created.');
                 }
             }
             $this->render("add-promotion", array("oCompany" => $oCompany, "oPromotions" => $oPromotions));

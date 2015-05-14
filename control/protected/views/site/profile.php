@@ -8,7 +8,20 @@
     <h5>Basic Information</h5>
 </div>
 
-<?php echo Yii::app()->user->getFlash('success'); ?>
+<?php if (Yii::app()->user->hasFlash('success')): ?>
+    <div class="successFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+
+<?php endif; ?>
+
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+    <div class="errorFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+
+<?php endif; ?>
+
 <?php
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'company-details-form',
@@ -23,7 +36,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oCompany, 'CompanyName') .
     $form->textField($oCompany, 'CompanyName', array('class' => 'left u-full-width')) .
-    $form->error($oCompany, 'CompanyName');
+    $form->error($oCompany, 'CompanyName', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -31,7 +44,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oCompany, 'TradingName') .
     $form->textField($oCompany, 'TradingName', array('class' => 'left u-full-width')) .
-    $form->error($oCompany, 'TradingName');
+    $form->error($oCompany, 'TradingName', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -39,7 +52,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oCompany, 'ProductsAndServices') .
     $form->checkboxList($oCompany, 'ProductsAndServices', array('Brands Premium' => 'Brands Premium', 'Brands Scroll Advert' => 'Brands Scroll Advert', 'Brands Promotional Advert ' => 'Brands Promotional Advert', 'Brands Magazine' => 'Brands Magazine', "Post" => "Post"), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',)) .
-    $form->error($oCompany, 'ProductsAndServices');
+    $form->error($oCompany, 'ProductsAndServices', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -67,7 +80,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'Email') .
     $form->textField($oContacts, 'Email', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'Email');
+    $form->error($oContacts, 'Email', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -75,7 +88,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'CompanyPhone1') .
     $form->textField($oContacts, 'CompanyPhone1', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'CompanyPhone1');
+    $form->error($oContacts, 'CompanyPhone1', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -83,7 +96,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'CompanyPhone2') .
     $form->textField($oContacts, 'CompanyPhone2', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'CompanyPhone2');
+    $form->error($oContacts, 'CompanyPhone2', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -91,7 +104,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'CompanyPhone3') .
     $form->textField($oContacts, 'CompanyPhone3', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'CompanyPhone3');
+    $form->error($oContacts, 'CompanyPhone3', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -99,7 +112,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'PhysicalAddress') .
     $form->textField($oContacts, 'PhysicalAddress', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'PhysicalAddress');
+    $form->error($oContacts, 'PhysicalAddress', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -107,7 +120,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'PostalAddress') .
     $form->textField($oContacts, 'PostalAddress', array('class' => 'left u-full-width')) .
-    $form->error($oContacts, 'PostalAddress');
+    $form->error($oContacts, 'PostalAddress', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 <br/>
@@ -115,7 +128,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'PreferredLanguage') .
     $form->checkboxList($oContacts, 'PreferredLanguage', array('English' => 'English', 'Shona' => 'Shona', 'Ndebele' => 'Ndebele'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',)) .
-    $form->error($oContacts, 'PreferredLanguage');
+    $form->error($oContacts, 'PreferredLanguage', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 <br/>
@@ -124,7 +137,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     <?php
     echo $form->labelEx($oContacts, 'PreferredCorrespondence');
     echo $form->radioButtonList($oContacts, 'PreferredCorrespondence', array('MobilePhone' => 'Mobile Phone', 'eMail' => 'eMail', 'Post' => 'Post'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',));
-    echo $form->error($oContacts, 'PreferredCorrespondence');
+    echo $form->error($oContacts, 'PreferredCorrespondence', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 <br/>

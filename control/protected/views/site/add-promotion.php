@@ -1,7 +1,7 @@
 
 
 <div class="row">
-    <h2>Add Vacancy</h2>
+    <h2>Add Promotion</h2>
 </div>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
@@ -11,6 +11,20 @@ $form = $this->beginWidget('CActiveForm', array(
         )
 );
 ?>
+
+<?php if (Yii::app()->user->hasFlash('success')): ?>
+    <div class="successFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+
+<?php endif; ?>
+
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+    <div class="errorFeedbackMessage">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+
+<?php endif; ?>
 
 <div class="row">
     <?php
