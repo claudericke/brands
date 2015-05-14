@@ -21,10 +21,10 @@ return array(
           ), */
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=brands',
+            'connectionString' => 'mysql:host=sourcecodemediacozw.fatcowmysql.com;dbname=brands',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '28326084',
+            'username' => 'brands',
+            'password' => 'brands3847ThG',
             'charset' => 'utf8',
             'tablePrefix' => 'br_',
         ),
