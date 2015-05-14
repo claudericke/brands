@@ -10,7 +10,7 @@ class CompanyContacts extends CActiveRecord {
      * @var string $PhysicalAddress
      * @var string $PostalAddress
      * @var string $PreferredLanguage
-     * @var string $BrandsNumber
+     * @var string $RegistrationNumber
      * @var string $AccountNumber
      * @var int $Subscription
      * @var int $ThirdpartyMarketing
@@ -53,7 +53,8 @@ class CompanyContacts extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('Email', 'required'),
-            array('Email, PhysicalAddress, PostalAddress, BrandsNumber, AccountNumber', 'length', 'max' => 255),
+            array('Email, PhysicalAddress, PostalAddress, RegistrationNumber, AccountNumber', 'length', 'max' => 255),
+            array('CompanyPhone1,CompanyPhone2,CompanyPhone3,Email,PhysicalAddress,PostalAddress,RegistrationNumber,AccountNumber,PreferredLanguage,Subscription,ThirdpartyMarketing', 'safe'),
         );
     }
 
@@ -82,7 +83,7 @@ class CompanyContacts extends CActiveRecord {
             'PhysicalAddress' => 'Physical Address',
             'PostalAddress' => 'Postal Address',
             'PreferredLanguage' => 'Preferred Language(s)',
-            'BrandsNumber' => 'Brand Number',
+            'RegistrationNumber' => 'Registration Number',
             'AccountNumber' => 'Account Number',
             'PreferredCorrespondence' => 'Preferred Correspondence',
             'Subscription' => 'Subscribe to our magazine?',

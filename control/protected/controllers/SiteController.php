@@ -103,13 +103,17 @@ class SiteController extends Controller {
                 if (!$oCompanyContacts->id) {
                     $oCompanyContacts->DateCreated = date("Y-m-d H:i:s");
                     $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
-                    if ($oCompanyContacts->save()) {
-                        Yii::app()->user->setFlash('success', "Company contacts successfully created");
+                    if ($oCompanyContacts->validate()) {
+                        if ($oCompanyContacts->save()) {
+                            Yii::app()->user->setFlash('success', "Company contacts successfully created");
+                        }
                     }
                 } else {
                     $oCompanyContacts->DateUpdated = date("Y-m-d H:i:s");
-                    if ($oCompanyContacts->update()) {
-                        Yii::app()->user->setFlash('success', "Company contacts successfully updated");
+                    if ($oCompanyContacts->validate()) {
+                        if ($oCompanyContacts->update()) {
+                            Yii::app()->user->setFlash('success', "Company contacts successfully updated");
+                        }
                     }
                 }
             }
