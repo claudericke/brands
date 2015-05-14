@@ -52,7 +52,7 @@
                                             </li>
                                             <li><a href="#">Promotions</a>
                                             </li>
-                                            <li><a href="#">Qoutations</a>
+                                            <li><a href="#">Quotations</a>
                                             </li>
                                             <li><a href="#">Management</a>
                                             </li>

@@ -64,7 +64,7 @@ class UserData extends AbstractData {
                     echo '<span class="error red">Your account is already activated</span>';
                 } else {
                     $oUser->activateAccount($sEmailAddress);
-                    echo '<span class="success">Your account was successfully activated. You can now log in.</span>';
+                    echo '<span class="success">Your account was successfully activated. You can now <a href="/control/login/" title="Login">log in.</a></span>';
                 }
             } else {
                 echo "<span class='error red'>Seems like you clicked on an expired activation link. This data no longer exists on our system.</span>";
