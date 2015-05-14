@@ -237,6 +237,45 @@ class SiteController extends Controller {
         }
     }
 
+    public function actionPromotions() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oVacancies = new Vacancies();
+            $aVacancies = Vacancies::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("vacancies", array("oVacancies" => $oVacancies, "aVacancies" => $aVacancies));
+        }
+    }
+
+    public function actionAddpromotion() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['pid'])) {
+                $oPromotions = Promotions::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            } else {
+                $oPromotions = new Promotions();
+            }
+
+            if (isset($_POST["Promotions"])) {
+                $oPromotions->attributes = $_POST["Promotions"];
+                $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->StartDate)));
+
+                $oPromotions->CompanyID = $oCompany->id;
+                $oPromotions->DateUpdated = date("Y-m-d H:i:s");
+                if (isset($oPromotions->id) && $oPromotions->id > 0) {
+                    $oPromotions->update();
+                } else {
+                    $oPromotions->DateCreated = date("Y-m-d H:i:s");
+                    $oPromotions->save();
+                }
+            }
+            $this->render("add-promotion", array("oCompany" => $oCompany, "oPromotions" => $oPromotions));
+        }
+    }
+
     /**
      * Logs out the current user and redirect to homepage.
      */

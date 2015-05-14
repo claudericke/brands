@@ -50,7 +50,7 @@
                                             </li>
                                             <li><a href="/control/site/vacancies">Vacancies</a>
                                             </li>
-                                            <li><a href="#">Promotions</a>
+                                            <li><a href="/control/site/promotions">Promotions</a>
                                             </li>
                                             <li><a href="#">Quotations</a>
                                             </li>

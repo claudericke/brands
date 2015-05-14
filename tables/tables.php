@@ -128,6 +128,16 @@ $aTables['br_vacancies'] = array(
     array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
 );
 
+$aTables['br_promotions'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("Title", "Promotion Title", "varchar", 255),
+    array("Description", "Details of the promotion", "text", 0),
+    array("Active", "Whether promotion should be displayed or not", "tinyint", 2),
+    array("StartDate", "Date on which promotion will commence", "datetime", 0),
+    array("DateCreated", "Date on which a promotion was stored", "timestamp", 0),
+    array("DateUpdated", "Date on which a promotion was updated", "datetime", 0),
+);
+
 
 $aTables['br_services'] = array(
     array("CompanyID", "Link to Company", "int", 11),
