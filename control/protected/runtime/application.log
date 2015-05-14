@@ -1,179 +1,9 @@
-2015/05/03 23:04:54 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "main".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('main', NULL, true)
-#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(9): CController->render('main')
-#2 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#8 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#10 {main}
-REQUEST_URI=/brands/control/
----
-2015/05/03 23:34:16 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "login/login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('login/login', NULL, true)
-#1 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(9): CController->render('login/login')
-#2 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#8 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#10 {main}
-REQUEST_URI=/brands/control/
----
-2015/05/04 11:08:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/brands/control/
----
-2015/05/04 11:08:35 [error] [exception.CException] exception 'CException' with message 'LoginController contains improperly nested widget tags in its view "C:\xampp\htdocs\brands\control\protected\views\login\login.php". A CActiveForm widget does not have an endWidget() call.' in C:\xampp\htdocs\brands\control\framework\web\CBaseController.php:101
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
-#2 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(33): CController->render('login', Array)
-#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('index')
-#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/index')
-#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#11 {main}
-REQUEST_URI=/brands/control/index.php?r=login/index
----
-2015/05/04 11:10:35 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\brands\control\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\brands\control\framework\web\CAssetManager.php:138
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CAssetManager.php(123): CAssetManager->setBasePath('C:\xampp\htdocs...')
-#1 C:\xampp\htdocs\brands\control\framework\web\CAssetManager.php(217): CAssetManager->getBasePath()
-#2 C:\xampp\htdocs\brands\control\framework\web\CClientScript.php(462): CAssetManager->publish('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CClientScript.php(499): CClientScript->getCoreScriptUrl()
-#4 C:\xampp\htdocs\brands\control\framework\web\CClientScript.php(315): CClientScript->getPackageBaseUrl('jquery')
-#5 C:\xampp\htdocs\brands\control\framework\web\CClientScript.php(208): CClientScript->renderCoreScripts()
-#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(351): CClientScript->render('<!DOCTYPE html>...')
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(788): CController->processOutput('<!DOCTYPE html>...')
-#8 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(33): CController->render('login', Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('index')
-#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/index')
-#15 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#16 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#17 {main}
-REQUEST_URI=/brands/control/index.php?r=login/index
----
-2015/05/04 12:30:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:32:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:32:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:33:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:33:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:34:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:36:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('controller/acti...')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/
----
-2015/05/04 13:03:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "<action>".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('<action>')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('<action>')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/<action>')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/
----
-2015/05/04 14:26:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php?r=site/profile
----
-2015/05/04 14:35:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php?r=site/profile
----
-2015/05/04 14:42:27 [error] [php] Non-static method CActiveRecord::find() should not be called statically, assuming $this from incompatible context (C:\xampp\htdocs\brands\control\protected\views\site\profile.php:10)
+2015/05/13 16:17:06 [error] [php] Undefined variable: oProducts (C:\xampp\htdocs\brands\control\protected\views\site\add-product.php:17)
 Stack trace:
 #0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
 #1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
-#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(78): SiteController->render()
-#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionViewProfile()
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(186): SiteController->render()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionAddservice()
 #4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
 #5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
 #6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
@@ -181,652 +11,134 @@ Stack trace:
 #8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
-REQUEST_URI=/control/index.php?r=site/viewprofile
-2015/05/04 15:10:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+REQUEST_URI=/control/site/addservice
+2015/05/13 16:17:51 [error] [php] Undefined variable: oProducts (C:\xampp\htdocs\brands\control\protected\views\site\add-service.php:17)
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php?r=site/profile
----
-2015/05/04 15:19:06 [error] [exception.CException] exception 'CException' with message 'SiteController contains improperly nested widget tags in its view "C:\xampp\htdocs\brands\control\protected\views\site\profile.php". A CActiveForm widget does not have an endWidget() call.' in C:\xampp\htdocs\brands\control\framework\web\CBaseController.php:101
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(79): CController->render('profile', Array)
-#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionViewProfile()
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('viewprofile')
-#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/viewprofil...')
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(186): SiteController->render()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionAddservice()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#11 {main}
-REQUEST_URI=/control/index.php?r=site/viewprofile
----
-2015/05/05 10:32:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+#10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/addservice
+2015/05/13 16:20:29 [error] [exception.CException] exception 'CException' with message 'Property "Services.ProductName" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php?r=site/profile
----
-2015/05/05 11:27:02 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php:98)
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(153): renderAttributes()
-#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(564): tag()
-#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1216): label()
-#3 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1238): activeLabel()
-#4 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(562): activeLabelEx()
-#5 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(79): CActiveForm->labelEx()
-#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require()
-#7 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
-#10 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(80): SiteController->render()
-#11 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionViewProfile()
-#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
-#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
-#14 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
-#16 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ProductName')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('ProductName')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Services), 'ProductName')
+#3 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Services), 'ProductName', Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(Services), 'ProductName', Array)
+#5 C:\xampp\htdocs\brands\control\protected\views\site\add-service.php(19): CActiveForm->textField(Object(Services), 'ProductName', Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('add-service', Array, true)
+#10 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(186): CController->render('add-service', Array)
+#11 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionAddservice()
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addservice')
+#16 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addservice')
 #17 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#18 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
-REQUEST_URI=/control/index.php?r=site/viewprofile
-2015/05/06 14:49:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('profile')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php?r=site/profile
+#18 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#19 {main}
+REQUEST_URI=/control/site/addservice
 ---
-2015/05/08 05:48:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+2015/05/13 16:21:12 [error] [exception.CException] exception 'CException' with message 'Property "Services.Service" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/log...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/logo.png
-HTTP_REFERER=http://brands.local/control/index.php/site/index
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Service')
+#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('Service')
+#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Services), 'Service')
+#3 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Services), 'Service', Array)
+#4 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(657): CHtml::activeTextField(Object(Services), 'Service', Array)
+#5 C:\xampp\htdocs\brands\control\protected\views\site\add-service.php(19): CActiveForm->textField(Object(Services), 'Service', Array)
+#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('add-service', Array, true)
+#10 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(186): CController->render('add-service', Array)
+#11 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionAddservice()
+#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addservice')
+#16 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addservice')
+#17 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
+#19 {main}
+REQUEST_URI=/control/site/addservice
 ---
-2015/05/08 05:48:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+2015/05/13 16:31:52 [error] [php] Undefined variable: aProduct (C:\xampp\htdocs\brands\control\protected\views\site\services.php:32)
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/use...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/user.png
-HTTP_REFERER=http://brands.local/control/index.php/site/index
----
-2015/05/08 05:49:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(197): SiteController->render()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionServices()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/services
+2015/05/13 21:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "services".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/index
----
-2015/05/08 05:49:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/index
----
-2015/05/08 05:50:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/index
----
-2015/05/08 05:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/
----
-2015/05/08 05:58:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/
----
-2015/05/08 06:27:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/
----
-2015/05/08 06:28:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/log...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/logo.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:28:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/use...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/user.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:29:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/
----
-2015/05/08 06:29:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login/images/lo...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/login/images/logo_icon.png
-HTTP_REFERER=http://brands.local/control/index.php/login/
----
-2015/05/08 06:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/log...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/logo.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/use...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/user.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/log...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/logo.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/use...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/index.php/site/images/user.png
-HTTP_REFERER=http://brands.local/control/index.php/site/viewprofile
----
-2015/05/08 06:30:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/log...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/site/images/logo.png
-HTTP_REFERER=http://brands.local/control/site/viewprofile
----
-2015/05/08 06:30:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('images')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('images')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/images/use...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/site/images/user.png
-HTTP_REFERER=http://brands.local/control/site/viewprofile
----
-2015/05/08 09:26:32 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.name" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:173
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWidgetFactory.php(161): CComponent->__set('name', 'LoginForm')
-#1 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(LoginController), 'CActiveForm', Array)
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(189): CBaseController->createWidget('CActiveForm', Array)
-#3 C:\xampp\htdocs\brands\control\protected\views\login\login.php(7): CBaseController->beginWidget('CActiveForm', Array)
-#4 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
-#8 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(51): CController->render('login', Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#15 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#16 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#17 {main}
-REQUEST_URI=/control/login/
-HTTP_REFERER=http://brands.local/control/login/
----
-2015/05/08 10:00:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register.html".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('register.html')
+#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('services')
 #1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
 #3 {main}
-REQUEST_URI=/control/register.html
-HTTP_REFERER=http://brands.local/control/login/
+REQUEST_URI=/control/services
 ---
-2015/05/08 14:47:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
+2015/05/13 22:24:05 [error] [php] Undefined variable: aServices (C:\xampp\htdocs\brands\control\protected\views\site\services.php:28)
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/profile
----
-2015/05/08 14:48:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(235): SiteController->render()
+#3 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionVacancies()
+#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
+REQUEST_URI=/control/site/vacancies
+2015/05/13 22:24:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addvacancy".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('addvacancy')
+#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('addvacancy')
+#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/addvacancy')
 #3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
 #5 {main}
-REQUEST_URI=/control/site/login/
+REQUEST_URI=/control/site/addvacancy
+HTTP_REFERER=http://www.brands.local/control/site/vacancies
 ---
-2015/05/08 14:48:48 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\brands\control\framework\web\CController.php:793) (C:\xampp\htdocs\brands\control\framework\web\CHttpRequest.php:789)
+2015/05/13 22:41:01 [error] [exception.CException] exception 'CException' with message 'Property "Vacancies.Service" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
 Stack trace:
-#0 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(10): SiteController->redirect()
-#1 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#2 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
-#3 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): SiteController->runAction()
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#5 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): SiteController->run()
-#6 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#7 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
-REQUEST_URI=/control/site
-2015/05/08 14:50:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/profile
----
-2015/05/08 14:50:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('profile')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/profile
----
-2015/05/09 16:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login/inde...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/site/login/index
----
-2015/05/09 16:05:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\brands\control\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CController.php(270): CController->missingAction('login')
-#1 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('login')
-#2 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login/inde...')
-#3 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#5 {main}
-REQUEST_URI=/control/site/login/index
----
-2015/05/10 07:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login.php".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login.php')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/login.php
-HTTP_REFERER=http://brands.local/register.php
----
-2015/05/10 08:31:22 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('password')
-#1 C:\xampp\htdocs\brands\control\protected\models\User.php(77): CActiveRecord->__get('password')
-#2 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(22): User->validatePassword('28326084@Lebo')
-#3 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(46): UserIdentity->authenticate()
-#4 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#5 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#6 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#7 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
-#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('Service')
+#1 C:\xampp\htdocs\brands\control\framework\base\CModel.php(595): CActiveRecord->__get('Service')
+#2 C:\xampp\htdocs\brands\control\protected\views\site\vacancies.php(32): CModel->offsetGet('Service')
+#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('vacancies', Array, true)
+#7 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(236): CController->render('vacancies', Array)
+#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionVacancies()
 #9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
 #11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('vacancies')
+#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/vacancies')
 #14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
 #15 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
 #16 {main}
-REQUEST_URI=/control/login
-HTTP_REFERER=http://brands.local/control/login
----
-2015/05/10 08:34:55 [error] [exception.CException] exception 'CException' with message 'Property "User.password" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('password')
-#1 C:\xampp\htdocs\brands\control\protected\models\User.php(77): CActiveRecord->__get('password')
-#2 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(22): User->validatePassword('28326084@Lebo')
-#3 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(46): UserIdentity->authenticate()
-#4 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#5 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#6 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#7 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
-#8 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#13 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#14 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#15 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#16 {main}
-REQUEST_URI=/control/login
-HTTP_REFERER=http://brands.local/control/login
----
-2015/05/10 08:46:04 [error] [php] Missing argument 2 for CActiveForm::error(), called in C:\xampp\htdocs\brands\control\protected\views\login\login.php on line 20 and defined (C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php:414)
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): LoginController->renderInternal()
-#1 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): LoginController->renderFile()
-#2 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): LoginController->renderPartial()
-#3 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(54): LoginController->render()
-#4 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams()
-#6 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): LoginController->runAction()
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): LoginController->runActionWithFilters()
-#8 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): LoginController->run()
-#9 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#10 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\brands\control\index.php(7): CWebApplication->run()
-REQUEST_URI=/control/login
-2015/05/10 10:41:58 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity.email" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:173
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(28): CComponent->__set('email', 'lebogang.ratsoa...')
-#1 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(47): UserIdentity->authenticate()
-#2 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#3 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#4 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#5 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
-#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#14 {main}
-REQUEST_URI=/control/login
-HTTP_REFERER=http://brands.local/control/login
----
-2015/05/10 10:42:18 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity.email" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:173
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\protected\components\UserIdentity.php(28): CComponent->__set('email', 'lebogang.ratsoa...')
-#1 C:\xampp\htdocs\brands\control\protected\models\LoginForm.php(47): UserIdentity->authenticate()
-#2 C:\xampp\htdocs\brands\control\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
-#3 C:\xampp\htdocs\brands\control\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
-#4 C:\xampp\htdocs\brands\control\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
-#5 C:\xampp\htdocs\brands\control\protected\controllers\LoginController.php(47): CModel->validate()
-#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('')
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
-#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#14 {main}
-REQUEST_URI=/control/login
-HTTP_REFERER=http://brands.local/control/login
----
-2015/05/10 11:11:22 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "getController".' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:265
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\protected\views\layouts\main.php(72): CComponent->__call('getController', Array)
-#1 C:\xampp\htdocs\brands\control\protected\views\layouts\main.php(72): SiteController->getController()
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(784): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(70): CController->render('dashboard')
-#6 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionDashboard()
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('dashboard')
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/dashboard')
-#12 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#13 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#14 {main}
-REQUEST_URI=/control/
-HTTP_REFERER=http://brands.local/control/login/
----
-2015/05/10 11:13:57 [error] [exception.CException] exception 'CException' with message 'Property "CompanyContacts.PreferredLanguage" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('PreferredLangua...')
-#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('PreferredLangua...')
-#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1668): CHtml::resolveValue(Object(CompanyContacts), 'PreferredLangua...')
-#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(795): CHtml::activeCheckBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
-#4 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(87): CActiveForm->checkBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
-#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(93): CController->render('profile', Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#18 {main}
-REQUEST_URI=/control/site/profile
-HTTP_REFERER=http://brands.local/control/
----
-2015/05/10 11:31:59 [error] [exception.CException] exception 'CException' with message 'Property "CompanyContacts.PreferredLanguage" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('PreferredLangua...')
-#1 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('PreferredLangua...')
-#2 C:\xampp\htdocs\brands\control\framework\web\helpers\CHtml.php(1668): CHtml::resolveValue(Object(CompanyContacts), 'PreferredLangua...')
-#3 C:\xampp\htdocs\brands\control\framework\web\widgets\CActiveForm.php(795): CHtml::activeCheckBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
-#4 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(87): CActiveForm->checkBoxList(Object(CompanyContacts), 'PreferredLangua...', Array, Array)
-#5 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#6 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#7 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#9 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(93): CController->render('profile', Array)
-#10 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#11 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#12 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#13 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#14 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#15 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#16 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#17 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#18 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 11:39:22 [error] [exception.CException] exception 'CException' with message 'Property "CompanyDetails.ID" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ID')
-#1 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(107): CActiveRecord->__get('ID')
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#6 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(93): CController->render('profile', Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#13 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#15 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 11:42:35 [error] [exception.CException] exception 'CException' with message 'Property "CompanyDetails.ID" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ID')
-#1 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(107): CActiveRecord->__get('ID')
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#6 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(94): CController->render('profile', Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#13 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#15 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 11:43:42 [error] [exception.CException] exception 'CException' with message 'Property "CompanyDetails.ID" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ID')
-#1 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(107): CActiveRecord->__get('ID')
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#6 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(94): CController->render('profile', Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#13 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#15 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 11:43:47 [error] [exception.CException] exception 'CException' with message 'Property "CompanyDetails.ID" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ID')
-#1 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(107): CActiveRecord->__get('ID')
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#6 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(94): CController->render('profile', Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#13 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#15 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 11:44:38 [error] [exception.CException] exception 'CException' with message 'Property "CompanyDetails.ID" is not defined.' in C:\xampp\htdocs\brands\control\framework\base\CComponent.php:130
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\db\ar\CActiveRecord.php(143): CComponent->__get('ID')
-#1 C:\xampp\htdocs\brands\control\protected\views\site\profile.php(107): CActiveRecord->__get('ID')
-#2 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
-#3 C:\xampp\htdocs\brands\control\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
-#4 C:\xampp\htdocs\brands\control\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
-#5 C:\xampp\htdocs\brands\control\framework\web\CController.php(782): CController->renderPartial('profile', Array, true)
-#6 C:\xampp\htdocs\brands\control\protected\controllers\SiteController.php(94): CController->render('profile', Array)
-#7 C:\xampp\htdocs\brands\control\framework\web\actions\CInlineAction.php(49): SiteController->actionProfile()
-#8 C:\xampp\htdocs\brands\control\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 C:\xampp\htdocs\brands\control\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 C:\xampp\htdocs\brands\control\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(282): CController->run('profile')
-#12 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('site/profile')
-#13 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#15 {main}
-REQUEST_URI=/control/site/profile
----
-2015/05/10 12:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "register.html".' in C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php:286
-Stack trace:
-#0 C:\xampp\htdocs\brands\control\framework\web\CWebApplication.php(141): CWebApplication->runController('register.html')
-#1 C:\xampp\htdocs\brands\control\framework\base\CApplication.php(169): CWebApplication->processRequest()
-#2 C:\xampp\htdocs\brands\control\index.php(7): CApplication->run()
-#3 {main}
-REQUEST_URI=/control/register.html
-HTTP_REFERER=http://brands.local/control/login/
+REQUEST_URI=/control/site/vacancies
 ---

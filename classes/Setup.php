@@ -95,13 +95,13 @@ class Setup {
             } else if ($sType == "tinyint") {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) NOT NULL";
             } elseif (($sType == "text") || ($sType == "date" || $sType == "datetime" || $sType == "timestamp")) {
-                $sDefault = $sType == "timestamp" ? " DEFAULT NOW()" : "";
-                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType NOT NULL$sDefault";
+                $sDefault = $sType == "timestamp" ? " NOT NULL DEFAULT NOW()" : "";
+                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType $sDefault";
             } elseif ($sType == "enum") {
                 $sDefault = trim(strstr($iLength, ',', true));
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType($iLength) NOT NULL DEFAULT $sDefault";
             } else {
-                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) NOT NULL DEFAULT ''";
+                $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) ";
             }
 
 

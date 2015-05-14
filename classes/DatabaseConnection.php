@@ -30,6 +30,7 @@ class DatabaseConnection {
             $this->oDbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             //$this->oDbConn->query("CREATE DATABASE IF  NOT EXISTS {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
+            $this->oDbConn->query("CREATE DATABASE IF  NOT EXISTS {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
             $this->oDbConn->query("USE {$this->aDatabaseConnectionDetails[$sCurrentHost]["db"]}");
 
             $this->oDbConn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);

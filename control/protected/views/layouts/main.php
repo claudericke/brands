@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row header">
                     <div class="eight columns"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" /></div>
-                    <div class="two columns "><a href="settings.html" class="settings_btn">Settings</a> </div>
+                    <div class="two columns "><a href="/settings" class="settings_btn">Settings</a> </div>
                     <div class="two columns "><a href="/control/login/logout" class="login_btn">Log Off</a></div>
                 </div>
 
@@ -36,7 +36,7 @@
                         <nav>
                             <div id="acdnmenu" class="">
                                 <ul class="nav accordion">
-                                    <li id="v_hm" class="menu_item dash_icon"><a href="#">Dashboard</a>
+                                    <li id="v_hm" class="menu_item dash_icon"><a href="/control/site/dashboard">Dashboard</a>
                                     </li>
                                     <li id="v_hm" class="menu_item settings_icon"><a href="#">Settings</a>
                                     </li>
@@ -44,11 +44,11 @@
                                         <ul class="sub-menu">
                                             <li ><a href="/control/site/profile">Profile</a>
                                             </li>
-                                            <li><a href="#">Products</a>
+                                            <li><a href="/control/site/products">Products</a>
                                             </li>
-                                            <li><a href="#">Services</a>
+                                            <li><a href="/control/site/services">Services</a>
                                             </li>
-                                            <li><a href="#">Vacancies</a>
+                                            <li><a href="/control/site/vacancies">Vacancies</a>
                                             </li>
                                             <li><a href="#">Promotions</a>
                                             </li>
@@ -77,7 +77,7 @@
 
             <div class="offset-by-four five columns">
                 <p class="center small">©2001–<?php echo date("Y"); ?> All Rights Reserved. Brands ® is a registered trademark of Massive Dynamics. <br />
-                    <a href="../terms.html">Privacy and Terms</a></p>
+                    <a href="/terms">Privacy and Terms</a></p>
             </div>
         </div>
         </div>

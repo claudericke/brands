@@ -36,15 +36,14 @@ class Registration {
     public function createUser($sActivationScript, $sAdminMail, $sWebTitle) {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
-        if ($this->checkUserUsingEmail($s_POST['emailAddress'])) {
-            $this->setError("$s_firstname{$_POST['companyName']} already exists on the system with email {$s_POST['emailAddress']}");
+
+        if ($this->checkUserUsingEmail($_POST['emailAddress'])) {
+            $this->setError("{$_POST['companyName']} already exists on the system with email {$_POST['emailAddress']}");
             $this->bHasErrors = true;
         } else {
             $sPassword = substr($_POST['companyName'], 0, 5) . "." . mt_rand(1111, 555555555);
 
-
             $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$this->sUsersTable]) . "`";
-
 
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
@@ -54,11 +53,10 @@ class Registration {
             //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
 
-
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST['industry'], $_POST["tradingName"], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
 
                 $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
@@ -133,9 +131,9 @@ class Registration {
         $oUser = new UserData();
         $oUser->setUserDataByEmail($sEmail);
         $aUserData = $oUser->getData();
-
-        if (count($aUserData) > 0)
+        if (count($aUserData) > 0) {
             $bUserexists = true;
+        }
 
         return $bUserexists;
     }
