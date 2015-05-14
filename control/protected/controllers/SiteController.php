@@ -218,11 +218,11 @@ class SiteController extends Controller {
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
                     $oVacancies->update();
-                    Yii::app()->user->setFlash('success', 'Vacancies successfully updated.');
+                    Yii::app()->user->setFlash('success', 'Vacancy successfully updated.');
                 } else {
                     $oVacancies->DateCreated = date("Y-m-d H:i:s");
                     $oVacancies->save();
-                    Yii::app()->user->setFlash('success', 'Vacancies successfully updated.');
+                    Yii::app()->user->setFlash('success', 'Vacancy successfully created.');
                 }
             }
             $this->render("add-vacancy", array("oCompany" => $oCompany, "oVacancies" => $oVacancies));
