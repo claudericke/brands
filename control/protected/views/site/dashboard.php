@@ -18,12 +18,12 @@
             <p>Update your existing vacancies</p></a>
     </div>
     <div class="three columns linker promos">
-        <a href="#"><h2>PROMOTIONS</h2>
+        <a href="/control/site/promotions"><h2>PROMOTIONS</h2>
             <p>See statistics about who has been viewing your profile</p></a>
     </div>
     <div class="three columns linker qoutes">
-        <a href="#"> <h2>QOUTATIONS</h2>
-            <p>Update your exisiting product catalog</p></a>
+        <a href="#"> <h2>QUOTATIONS</h2>
+            <p>Update your existing product catalog</p></a>
     </div>
 </div>
 <div class="row">

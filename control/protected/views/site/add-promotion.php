@@ -5,7 +5,7 @@
 </div>
 <?php
 $form = $this->beginWidget('CActiveForm', array(
-    'id' => 'vacancies',
+    'id' => 'promotions',
     'enableClientValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
         )
@@ -14,29 +14,29 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oVacancies, 'Title') .
-    $form->labelEx($oVacancies, 'Title') .
-    $form->textField($oVacancies, 'Title', array('class' => 'left u-full-width'));
+    echo $form->error($oPromotions, 'Title') .
+    $form->labelEx($oPromotions, 'Title') .
+    $form->textField($oPromotions, 'Title', array('class' => 'left u-full-width'));
     ?>
 </div>
 
 <div class="row">
     <?php
-    echo $form->error($oVacancies, 'Description') .
-    $form->labelEx($oVacancies, 'Description') .
-    $form->textArea($oVacancies, 'Description', array('class' => 'left u-full-width'));
+    echo $form->error($oPromotions, 'Description') .
+    $form->labelEx($oPromotions, 'Description') .
+    $form->textArea($oPromotions, 'Description', array('class' => 'left u-full-width'));
     ?>
 </div>
 
 <div class="row">
     <?php
-    echo $form->error($oVacancies, 'StartDate') .
-    $form->labelEx($oVacancies, 'StartDate');
+    echo $form->error($oPromotions, 'StartDate') .
+    $form->labelEx($oPromotions, 'StartDate');
 
     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-        'name' => 'Vacancies[StartDate]',
-        'id' => 'Vacancies_StartDate',
-        'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oVacancies->StartDate)),
+        'name' => 'Promotions[StartDate]',
+        'id' => 'Promotions',
+        'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oPromotions->StartDate)),
         'options' => array(
             'showAnim' => 'fold',
             'dateFormat' => 'yy-mm-dd',
