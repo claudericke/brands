@@ -22,20 +22,20 @@
     }
 </style>
 
-<a href="/control/site/addpromotion">Add a service</a>
+<a href="/control/site/addpromotion">Add a promotion</a>
 <br style="clear: both"/>
 <?php
 if (count($aPromotions) > 0) {
     foreach ($aPromotions as $aPromotion) {
         ?>
         <div class="row">
-            <div class="ProductName"><a href="/control/site/addservice/?pid=<?php echo $aPromotion["id"]; ?>" title="<?php echo $aPromotion["Title"]; ?>"><?php echo $aPromotion["Title"]; ?></a></div>
+            <div class="ProductName"><a href="/control/site/addpromotion/?pid=<?php echo $aPromotion["id"]; ?>" title="<?php echo $aPromotion["Title"]; ?>"><?php echo $aPromotion["Title"]; ?></a></div>
             <div class="productDescription"><?php echo $aPromotion["Description"]; ?></div>
             <br style="clear: both"/>
         </div>
         <?php
     }
 } else {
-    echo "<p>No products added yet.</p>";
+    echo "<p>No promo added yet.</p>";
 }
 ?>
