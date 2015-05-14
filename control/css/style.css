@@ -357,3 +357,33 @@ input[type="button"]:hover {
     list-style: none !important;
     text-decoration: none !important;
 }
+
+/* Products Page Styling */
+     .single-item {
+
+    border-top : 2px solid #cecece;
+         padding: 5px;
+         background #efefef;
+        font-size:12px;
+     }
+
+    .itemDescription,
+    .itemName{
+        display: block;
+        clear: right;
+        line-height: 25px;
+        min-height: 60px;
+        padding: 2px;
+    }
+
+    .itemDescription a,
+    .itemName a{
+        display: block;
+        clear: right;
+        line-height: 25px;
+        min-height: 60px;
+        padding: 2px;
+    }
+
+
+
