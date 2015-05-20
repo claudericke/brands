@@ -88,7 +88,7 @@ class Setup {
     public function addColumn($sTable, $sColumnName, $sType, $iLength = 255) {
 
         $bExists = $this->columnExists($sTable, $sColumnName);
-
+        $sDefault = "";
         if (!$this->bHasError && !$bExists) {
             if ($sType == "int") {
                 $sQuery = "ALTER TABLE  $sTable ADD  $sColumnName $sType( $iLength ) UNSIGNED NOT NULL";

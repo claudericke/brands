@@ -32,7 +32,29 @@ $form = $this->beginWidget('CActiveForm', array(
     echo
     $form->error($oProducts, 'Category', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oProducts, 'Category') .
-    $form->dropDownList($oProducts, 'Category', array("Electronics" => "Electronics", "Household" => "Household"), array('class' => 'left u-full-width'));
+    $form->dropDownList($oProducts, 'Category', array(
+        "Animals & Pet Supplies" => "Animals & Pet Supplies",
+        "Apparel & Accessories" => "Apparel & Accessories",
+        "Arts & Entertainment" => "Arts & Entertainment",
+        "Baby & Toddler" => "Baby & Toddler",
+        "Business & Industrial" => "Business & Industrial",
+        "Cameras & Optics" => "Cameras & Optics",
+        "Electronics" => "Electronics",
+        "Food, Beverages & Tobacco" => "Food, Beverages & Tobacco",
+        "Furniture" => "Furniture",
+        "Hardware" => "Hardware",
+        "Health & Beauty" => "Health & Beauty",
+        "Home & Garden" => "Home & Garden",
+        "Adult/Erotic" => "Adult/Erotic",
+        "Weapons" => "Weapons",
+        "Media" => "Media",
+        "Office Supplies" => "Office Supplies",
+        "Religious & Ceremonial" => "Religious & Ceremonial",
+        "Software" => "Software",
+        "Sporting Goods" => "Sporting Goods",
+        "Toys & Games" => "Toys & Games",
+        "Vehicles & Parts" => "Vehicles & Parts",
+            ), array('class' => 'left u-full-width'));
     ?>
 </div>
 

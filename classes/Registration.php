@@ -64,6 +64,7 @@ class Registration {
                 $aCompanyContacts = array(
                     $iCompanyId,
                     $_POST["emailAddress"],
+                    $_POST["alternativeEmail"],
                     $_POST["companyPhone1"],
                     $_POST["companyPhone2"],
                     $_POST["companyPhone3"],

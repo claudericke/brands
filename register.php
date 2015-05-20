@@ -88,6 +88,13 @@
                             </label>
                             <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company telephone number" value="" data-validate="alphanumeric,number" />
                         </div>
+
+                        <div class="four columns noMargin">
+                            <label>COMPANY PHONE NUMBER 2</label>
+                            <input type="text" class="u-full-width" name="companyPhone2" placeholder="Alternative company phone number" value="" data-validate="number" />
+                            <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
+                        </div>
+
                         <div class="four columns noMargin">
                             <label>POSTAL ADDRESS</label>
                             <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive postal mails" value="" />
@@ -96,11 +103,7 @@
                             <label>PHYSICAL ADDRESS</label>
                             <input type="text" class="u-full-width" name="physicalAddress" placeholder="Address of where company trades from" value=""/>
                         </div>
-                        <div class="four columns noMargin">
-                            <label>COMPANY PHONE NUMBER 2</label>
-                            <input type="text" class="u-full-width" name="companyPhone2" placeholder="Alternative company phone number" value="" data-validate="number" />
-                            <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
-                        </div>
+
                         <div class="four columns noMargin">
                             <label>INDUSTRY</label>
                             <select name="industry">
@@ -225,6 +228,12 @@
                             <label>E-MAIL ADDRESS <sup>required</sup>
                             </label>
                             <input type="email" class="u-full-width" name="emailAddress" placeholder="Your e-mail address" value="" data-validate="email,required" />
+                        </div>
+
+                        <div class="four columns noMargin">
+                            <label>ALTERNATIVE E-MAIL ADDRESS
+                            </label>
+                            <input type="email" class="u-full-width" name="alternativeEmail" placeholder="Your alternative e-mail address" value="" data-validate="email" />
                         </div>
                         <div class="four columns noMargin">
                             <label>PREFERED LANGUAGE(S)</label>

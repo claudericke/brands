@@ -79,18 +79,38 @@ class SiteController extends Controller {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
             if ($oCompany->id) {
                 $oCompanyContacts = CompanyContacts::model()->find('CompanyID=:CompanyID', array(':CompanyID' => $oCompany->id));
+                $oImageManager = new ManageImages();
             } else {
                 Yii::app()->user->logout();
                 $this->redirect("/control/");
             }
+
             if (isset($_POST["CompanyDetails"])) {
+                if (isset($_POST['ManageImages'])) {
+                    $oInstanceOfUpload = CUploadedFile::getInstance($oImageManager, 'image');
+                    $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
+                    $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
+                    $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/company/$sNewFileName";
+                    if ($oInstanceOfUpload->saveAs($sImagePath)) {
+                        chmod($sImagePath, 777);
+                        $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/company/thumbs/$sNewFileName", 100, 100);
+                        $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/company/";
+                        $oImageManager->newname = $sNewFileName;
+                        $oImageManager->originalname = $oInstanceOfUpload->name;
+                        //unset($oImageManager->image);
+                        $oImageManager->save();
+
+                        $oCompany->companylogoid = $oImageManager->primaryKey;
+                    } else {
+                        Yii::app()->user->setFlash('error', "Could not upload/create company logo");
+                    }
+                }
                 $oCompany->attributes = $_POST["CompanyDetails"];
                 if ($oCompany->validate()) {
                     $oCompany->dateupdated = date("Y-m-d H:i:s");
 
-                    if ($oCompany->update("CompanyName", "TradingName", "ProductsAndServices")) {
+                    if ($oCompany->update()) {
                         Yii::app()->user->setFlash('success', "Profile successfully updated");
-                        $this->redirect("/control/site/profile");
                     } else {
                         Yii::app()->user->setFlash('error', "Failed to update profile");
                     }
@@ -118,7 +138,7 @@ class SiteController extends Controller {
                 }
             }
 
-            $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts));
+            $this->render("profile", array("oCompany" => $oCompany, 'oContacts' => $oCompanyContacts, "oImageManager" => $oImageManager));
         }
     }
 

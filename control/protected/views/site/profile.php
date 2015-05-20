@@ -26,12 +26,19 @@
 $form = $this->beginWidget('CActiveForm', array(
     'id' => 'company-details-form',
     'enableClientValidation' => true,
-    'enableAjaxValidation' => true,
+    'enableAjaxValidation' => false,
     'clientOptions' => array('validateOnSubmit' => true),
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
 ?>
-
+<div class="row">
+    <?php
+    echo $form->labelEx($oImageManager, 'image') .
+    $form->fileField($oImageManager, 'image', array('class' => 'left u-full-width')) .
+    $form->error($oImageManager, 'image', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
 <div class="row">
     <?php
     echo $form->labelEx($oCompany, 'CompanyName') .
@@ -45,6 +52,15 @@ $form = $this->beginWidget('CActiveForm', array(
     echo $form->labelEx($oCompany, 'TradingName') .
     $form->textField($oCompany, 'TradingName', array('class' => 'left u-full-width')) .
     $form->error($oCompany, 'TradingName', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    $aIndustryData = CHtml::listData($oCompany->getCategoryOptions(), 'text', 'text', 'group');
+    echo $form->labelEx($oCompany, 'Industry') .
+    $form->dropDownList($oCompany, "Industry", $aIndustryData, array('class' => 'left u-full-width')) .
+    $form->error($oCompany, 'Industry', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
 
@@ -83,6 +99,16 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     $form->error($oContacts, 'Email', array("class" => "errorFeedbackMessage"));
     ?>
 </div>
+
+<div class="row">
+    <?php
+    echo $form->labelEx($oContacts, 'AlternativeEmail') .
+    $form->textField($oContacts, 'AlternativeEmail', array('class' => 'left u-full-width')) .
+    $form->error($oContacts, 'AlternativeEmail', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+
 
 <div class="row">
     <?php
@@ -136,7 +162,7 @@ $oContactInfoForm = $this->beginWidget('CActiveForm', array(
 
     <?php
     echo $form->labelEx($oContacts, 'PreferredCorrespondence');
-    echo $form->radioButtonList($oContacts, 'PreferredCorrespondence', array('MobilePhone' => 'Mobile Phone', 'eMail' => 'eMail', 'Post' => 'Post'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',));
+    echo $form->radioButtonList($oContacts, 'PreferredCorrespondence', array('MobilePhone' => 'Mobile Phone', 'Email' => 'Email', 'Post' => 'Post'), array('labelOptions' => array('style' => 'display:inline'), 'separator' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',));
     echo $form->error($oContacts, 'PreferredCorrespondence', array("class" => "errorFeedbackMessage"));
     ?>
 </div>

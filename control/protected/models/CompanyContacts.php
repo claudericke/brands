@@ -54,7 +54,8 @@ class CompanyContacts extends CActiveRecord {
         return array(
             array('Email', 'required'),
             array('Email, PhysicalAddress, PostalAddress, RegistrationNumber, AccountNumber', 'length', 'max' => 255),
-            array('CompanyPhone1,CompanyPhone2,CompanyPhone3,Email,PhysicalAddress,PostalAddress,RegistrationNumber,AccountNumber,PreferredLanguage,Subscription,ThirdpartyMarketing', 'safe'),
+            array('CompanyPhone1,CompanyPhone2,CompanyPhone3,Email,AlternativeEmail,PhysicalAddress,PostalAddress,RegistrationNumber,AccountNumber,PreferredLanguage,Subscription,ThirdpartyMarketing', 'safe'),
+            array('Email,AlternativeEmail', 'email'),
         );
     }
 
@@ -77,6 +78,7 @@ class CompanyContacts extends CActiveRecord {
             'id' => 'Id',
             'CompanyID' => 'Company Id',
             'Email' => 'Email',
+            'AlternativeEmail' => 'Alternative Email',
             'CompanyPhone1' => 'Company Phone Number 1',
             'CompanyPhone2' => 'Company Phone Number 2',
             'CompanyPhone3' => 'Company Phone Number 3',

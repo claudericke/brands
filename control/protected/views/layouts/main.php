@@ -47,11 +47,12 @@
 
                 <div class="row">
                     <div class="three columns sidebar">
+                        <br style="clear: both"/>
                         <ul class="user_profile">
-                            <li class="user_image"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/user.png" /></li>
+                            <li class="user_image"><img src="<?php echo Yii::app()->user->getUserMainImage("thumbs/"); ?>" /></li>
                             <li>
                                 <p class="welcome">Welcome</p>
-                                <p class="user" >Barclays Bank</p>
+                                <p class="user" ><?php echo Yii::app()->user->name; ?></p>
                             </li>
                         </ul>
                         <nav>
