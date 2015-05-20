@@ -13,18 +13,15 @@ return array(
     'components' => array(
         'user' => array(
             // enable cookie-based authentication
+            "class" => "WebUser",
             'allowAutoLogin' => true,
         ),
-        /* 'db' => array(
-          'connectionString' => 'sqlite:protected/data/blog.db',
-          'tablePrefix' => 'tbl_',
-          ), */
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=sourcecodemediacozw.fatcowmysql.com;dbname=brands',
+            'connectionString' => 'mysql:host=localhost;dbname=brands',
             'emulatePrepare' => true,
-            'username' => 'brands',
-            'password' => 'brands3847ThG',
+            'username' => 'root',
+            'password' => '28326084',
             'charset' => 'utf8',
             'tablePrefix' => 'br_',
         ),
