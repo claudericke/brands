@@ -58,6 +58,15 @@ class Registration {
             if ($iUserid) {
                 $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
+                $sPreferredLingo = "['English']";
+                if (!empty($_POST["preferredLanguage"])) {
+                    $sPreferredLingo = "['" . implode("','", $_POST["preferredLanguage"]) . "']";
+                }
+
+                $sPreferredCori = "['Email']";
+                if (!empty($_POST["preferedCorrespondence"])) {
+                    $sPreferredCori = "['" . implode("','", $_POST["preferedCorrespondence"]) . "']";
+                }
 
                 $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
                 $sThirdPartyMarketing = $_POST["thirdPartMarketing"] == "Yes" ? 1 : 0;
@@ -71,9 +80,9 @@ class Registration {
                     $_POST["physicalAddress"],
                     $_POST["postalAddress"],
                     $_POST["registrationNumber"],
-                    $_POST["preferredLanguage"],
+                    $sPreferredLingo,
                     "",
-                    $_POST["preferedCorrespondence"],
+                    $sPreferredCori,
                     $sSubscribe,
                     $sThirdPartyMarketing,
                     "now()",
