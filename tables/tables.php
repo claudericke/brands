@@ -40,7 +40,7 @@ $aTables['br_companycontacts'] = array(array("CompanyID", "Link to Company", "in
     array("RegistrationNumber", "Brand Number", "varchar", 255),
     array("PreferredLanguage", "Preferred language of correspondence", "varchar", 255),
     array("AccountNumber", "Account Number", "varchar", 255),
-    array("PreferredCorrespondence", "Preferred method of correspondence", "enum", "'MobilePhone','eMail','Post'"),
+    array("PreferredCorrespondence", "Preferred method of correspondence", "enum", "'Mobile Phone','Email','Post'"),
     array("Subscription", "Whether user subscribed to magazine or not", "tinyint", 2),
     array("ThirdpartyMarketing", "Whether user allowed third party marketing or not", "tinyint", 2),
     array("DateCreated", "Date on which company contacts were stored", "timestamp", 0),
@@ -115,11 +115,12 @@ $aTables['br_productoptionvalues'] = array(
 );
 
 
-
-
 $aTables['br_vacancies'] = array(
     array("CompanyID", "Link to Company", "int", 11),
     array("Title", "Vacancy Title", "varchar", 255),
+    array("VacancyType", "The type of Job currently open", "enum", "'Permanent','contract','Internship','Learnership'"),
+    array("YearsOfExperience", "Experience expressed as number of years ", "int", 4),
+    array("Location", "Where vacancy is located", "varchar", 255),
     array("Description", "Details of the requirements and reponsibilities of the vacancy", "text", 0),
     array("DocumentId", "Document attached to vacancy", "int", 11),
     array("Active", "Whether product should be displayed or not", "tinyint", 2),
@@ -136,6 +137,19 @@ $aTables['br_promotions'] = array(
     array("StartDate", "Date on which promotion will commence", "datetime", 0),
     array("DateCreated", "Date on which a promotion was stored", "timestamp", 0),
     array("DateUpdated", "Date on which a promotion was updated", "datetime", 0),
+);
+
+$aTables['br_management'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("Title", "Title/Postion of the individual added", "varchar", 255),
+    array("Name", "Name of the management individual", "varchar", 255),
+    array("Surname", "Surname of the management individual", "varchar", 255),
+    array("Email", "Email address of the management individual", "varchar", 255),
+    array("ContactNumber", "Contact Number of the management individual", "varchar", 255),
+    array("WebAddress", "Web addres to the individual's page", "varchar", 255),
+    array("Description", "Details of the management individual", "text", 0),
+    array("DateCreated", "Date on which this was stored", "timestamp", 0),
+    array("DateUpdated", "Date on which this was updated", "datetime", 0),
 );
 
 

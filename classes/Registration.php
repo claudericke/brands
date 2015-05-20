@@ -56,7 +56,7 @@ class Registration {
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST['industry'], $_POST["tradingName"], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
 
                 $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
