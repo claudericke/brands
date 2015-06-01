@@ -80,28 +80,24 @@
                             <input type="text" class="u-full-width" name="tradingName" placeholder="Name used when Trading" name="TradingName" value="" data-validate="required" />
                         </div>
                         <div class="four columns noMargin">
-                            <label>REGISTRATION NUMBER</label>
-                            <input type="text" class="u-full-width" name="registrationNumber" placeholder="Company registration number, OPTIONAL (For Rating Sake)" value="" />
+                            <label>NAME<sup>required</sup></label>
+                            <input type="text" class="u-full-width" name="name" placeholder="Your name" value="" data-validate="required" />
                         </div>
+
                         <div class="four columns noMargin">
-                            <label>COMPANY PHONE NUMBER 1 <sup>Digits Only</sup>
+                            <label>SURNAME<sup>required</sup></label>
+                            <input type="text" class="u-full-width" name="surname" placeholder="Your surname" value="" data-validate="required" />
+                        </div>
+
+                        <div class="four columns noMargin">
+                            <label>Password<sup>required</sup></label>
+                            <input type="password" class="u-full-width" name="password" placeholder="Password" value="" data-validate="required" />
+                        </div>
+
+                        <div class="four columns noMargin">
+                            <label>COMPANY PHONE NUMBER <sup>Digits Only</sup>
                             </label>
-                            <input type="text" class="u-full-width" name="companyPhone1" placeholder="Company telephone number" value="" data-validate="alphanumeric,number" />
-                        </div>
-
-                        <div class="four columns noMargin">
-                            <label>COMPANY PHONE NUMBER 2</label>
-                            <input type="text" class="u-full-width" name="companyPhone2" placeholder="Alternative company phone number" value="" data-validate="number" />
-                            <input type="text" class="u-full-width" name="companyPhone3" placeholder="Address to receive physical mail" value="123" hidden="hidden" />
-                        </div>
-
-                        <div class="four columns noMargin">
-                            <label>POSTAL ADDRESS</label>
-                            <input type="text" class="u-full-width" name="postalAddress" placeholder="Address to receive postal mails" value="" />
-                        </div>
-                        <div class="four columns noMargin">
-                            <label>PHYSICAL ADDRESS</label>
-                            <input type="text" class="u-full-width" name="physicalAddress" placeholder="Address of where company trades from" value=""/>
+                            <input type="text" class="u-full-width" name="companyPhone" placeholder="Company telephone number" value="" data-validate="alphanumeric,number" />
                         </div>
 
                         <div class="four columns noMargin">
@@ -235,46 +231,10 @@
                             </label>
                             <input type="email" class="u-full-width" name="alternativeEmail" placeholder="Your alternative e-mail address" value="" data-validate="email" />
                         </div>
-                        <div class="four columns noMargin">
-                            <label>PREFERED LANGUAGE(S)</label>
-                            <input type="checkbox" name="preferredLanguage" value="English" checked="checked"/>&nbsp;English&nbsp;
-                            <input type="checkbox" name="preferredLanguage" value="Shona" />&nbsp;Shona&nbsp;
-                            <input type="checkbox" name="preferredLanguage" value="Ndebele" />&nbsp;Ndebele&nbsp;
-                        </div>
+
                     </div>
-                    <div class="twelve columns">
-                        <h2 class="left large ">CORRESPONDENCE<strong class="left bold"> WITH BRANDS</strong></h2>
-                        <p>OUR PREFERRED METHOD OF CORRESPONDENCE FROM BRANDS IS BY</p>
-                        <input type="radio" name="preferedCorrespondence" value="MobilePhone"  checked="checked"/>&nbsp;Mobile Phone (Voice and SMS)
-                        <br/>
-                        <input type="radio" name="preferedCorrespondence" value="eMail" />&nbsp;E-Mail
-                        <br/>
-                        <input type="radio" name="preferedCorrespondence" value="Post" />&nbsp;Post
-                    </div>
-                    <div class="twelve columns">
-                        <h2 class="left large ">THIRD-PARTY MARKETING<strong class="left bold"> OPT-OUT</strong></h2>
-                        <p class="uppercase">We do not consent to Massive Dynamics disclosing our information to third party marketing. (place your company initial in this box if you do not wish to receive third party marketing)</p>
-                        <input type="radio" name="thirdPartMarketing" value="Yes"  checked="checked"/>&nbsp;Yes&nbsp;
-                        <input type="radio" name="thirdPartMarketing" value="No" />&nbsp;No
-                        <br />
-                    </div>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div class="twelve columns">
-                        <h2 class="left large ">SELECTION OF<strong class="left bold"> SERVICES</strong></h2>
-                        <p>WE ASK THAT YOU AUTHORIZE ACCESS TO THE FOLLOWING MASSIVE DYNAMICS SERVICE(S)</p>
-                        <input type="checkbox" name="brandsServices" value="Brands Premium"  checked="checked"/>Brands Premium
-                        <br/>
-                        <input type="checkbox" name="brandsServices" value="Brands Scroll Advert" />&nbsp;Brands Scroll Advert
-                        <br/>
-                        <input type="checkbox" name="brandsServices" value="Brands Promotional Advert" />&nbsp;Brands Promotional Advert
-                        <br/>
-                        <input type="checkbox" name="brandsServices" value="Brands Magazinet" />&nbsp;Brands Magazine
-                        <br/>
-                        <input type="checkbox" name="brandsServices" value="Post" />&nbsp;Post
-                    </div>
+
+
                     <br/>
                     <br/>
                     <br/>

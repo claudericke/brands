@@ -41,14 +41,12 @@ class Registration {
             $this->setError("{$_POST['companyName']} already exists on the system with email {$_POST['emailAddress']}");
             $this->bHasErrors = true;
         } else {
-            $sPassword = substr($_POST['companyName'], 0, 5) . "." . mt_rand(1111, 555555555);
-
+            $sPassword = $_POST['password'];
             $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$this->sUsersTable]) . "`";
-
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
 
-            $aUserDataStrip = array($_POST['companyName'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
+            $aUserDataStrip = array($_POST['companyName'], $_POST['name'], $_POST['surname'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
             $sTempValues = self::setTempValues(count($aUserDataStrip));
             //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
@@ -56,7 +54,7 @@ class Registration {
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], $_POST["brandsServices"], 0, "now()", date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], "None", 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
                 $sPreferredLingo = "['English']";
                 if (!empty($_POST["preferredLanguage"])) {
@@ -74,12 +72,12 @@ class Registration {
                     $iCompanyId,
                     $_POST["emailAddress"],
                     $_POST["alternativeEmail"],
-                    $_POST["companyPhone1"],
-                    $_POST["companyPhone2"],
-                    $_POST["companyPhone3"],
-                    $_POST["physicalAddress"],
-                    $_POST["postalAddress"],
-                    $_POST["registrationNumber"],
+                    $_POST["companyPhone"],
+                    "00000000000",
+                    "00000000000",
+                    "No address",
+                    "No Address",
+                    "no Registration Number",
                     $sPreferredLingo,
                     "",
                     $sPreferredCori,
