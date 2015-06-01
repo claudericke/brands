@@ -21,6 +21,8 @@ $aTables['br_companydetails'] = array(array("UserID", "User who created the comp
 );
 
 $aTables['br_user'] = array(array("Username", "Username", "varchar", 255),
+    array("FirstName", "User's first name", "varchar", 255),
+    array("LastName", "User's last name", "varchar", 255),
     array("Email", "User's name", "varchar", 255),
     array("Password", "User password", "varchar", 255),
     array("Online", "Whether User/Company is currently logged in", "tinyint", 2),
