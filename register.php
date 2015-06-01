@@ -104,12 +104,7 @@
                             <label>INDUSTRY</label>
                             <select name="industry">
                                 <option value="Other">Other</option>
-                                <optgroup label="Church">
-                                    <option value="Pentecostal ">Pentecostal </option>
-                                    <option value="Customary">Customary</option>
-                                    <option value="Anglican">Anglican</option>
-                                    <option value="Catholic	">Catholic </option>
-                                </optgroup>
+
                                 <optgroup label="Education">
                                     <option value="Preschool">Preschool</option>
                                     <option value="Primary">Primary</option>
@@ -159,6 +154,13 @@
                                     <option value="Real estate">Real estate</option>
                                     <option value="Cooperative">Cooperative</option>
                                     <option value="Land developers	">Land developers </option>
+                                </optgroup>
+
+                                <optgroup label="Church">
+                                    <option value="Pentecostal ">Pentecostal </option>
+                                    <option value="Customary">Customary</option>
+                                    <option value="Anglican">Anglican</option>
+                                    <option value="Catholic	">Catholic </option>
                                 </optgroup>
 
                                 <optgroup label="Airport / Airline">
