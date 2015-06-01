@@ -137,15 +137,13 @@ class Registration {
     }
 
     private function checkUserUsingEmail($sEmail) {
-        $bUserexists = false;
         $oUser = new UserData();
         $oUser->setUserDataByEmail($sEmail);
         $aUserData = $oUser->getData();
         if (count($aUserData) > 0) {
-            $bUserexists = true;
+            return true;
         }
-
-        return $bUserexists;
+        return false;
     }
 
     private function generateNotification($sEmail, $sPrefferedName, $sPassword, $sActivationScript, $sWebTitle) {
@@ -195,12 +193,12 @@ class Registration {
         $iStart = 0;
         $sTempValues = "";
         while ($iStart < $iNumberofTempValues) {
-            if ($iStart > 0)
+            if ($iStart > 0) {
                 $sTempValues .= ", ";
+            }
             $sTempValues .= "?";
             $iStart++;
         }
-
         return $sTempValues;
     }
 

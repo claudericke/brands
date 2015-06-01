@@ -36,6 +36,51 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
+    echo
+    $form->error($oVacancies, 'VacancyType', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oVacancies, 'VacancyType') .
+    $form->dropDownList($oVacancies, 'VacancyType', array(
+        'Permanent' => 'Permanent',
+        'contract' => 'contract',
+        'Internship' => 'Internship',
+        'Learnership' => 'Learnership',
+            ), array('class' => 'left u-full-width'));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo
+    $form->error($oVacancies, 'YearsOfExperience', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oVacancies, 'YearsOfExperience') .
+    $form->dropDownList($oVacancies, 'YearsOfExperience', array(
+        '0' => '0',
+        '1' => '1',
+        '3' => '3',
+        '5' => '5',
+        '10' => '10',
+            ), array('class' => 'left u-full-width'));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->error($oVacancies, 'Location', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oVacancies, 'Location') .
+    $form->textField($oVacancies, 'Location', array('class' => 'left u-full-width'));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->error($oVacancies, 'Title', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oVacancies, 'Title') .
+    $form->textField($oVacancies, 'Title', array('class' => 'left u-full-width'));
+    ?>
+</div>
+
+<div class="row">
+    <?php
     echo $form->error($oVacancies, 'Description', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oVacancies, 'Description') .
     $form->textArea($oVacancies, 'Description', array('class' => 'left u-full-width'));

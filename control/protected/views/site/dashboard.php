@@ -28,7 +28,7 @@
 </div>
 <div class="row">
     <div class="three columns linker management">
-        <a href="#"> <h2>MANAGEMENT</h2>
+        <a href="/control/site/management"> <h2>MANAGEMENT</h2>
             <p>Update management profiles here</p></a>
     </div>
     <div class="three columns linker calendar">

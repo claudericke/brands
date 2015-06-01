@@ -86,25 +86,7 @@ class SiteController extends Controller {
             }
 
             if (isset($_POST["CompanyDetails"])) {
-                if (isset($_POST['ManageImages'])) {
-                    $oInstanceOfUpload = CUploadedFile::getInstance($oImageManager, 'image');
-                    $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
-                    $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
-                    $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/company/$sNewFileName";
-                    if ($oInstanceOfUpload->saveAs($sImagePath)) {
-                        chmod($sImagePath, 777);
-                        $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/company/thumbs/$sNewFileName", 100, 100);
-                        $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/company/";
-                        $oImageManager->newname = $sNewFileName;
-                        $oImageManager->originalname = $oInstanceOfUpload->name;
-                        //unset($oImageManager->image);
-                        $oImageManager->save();
-
-                        $oCompany->companylogoid = $oImageManager->primaryKey;
-                    } else {
-                        Yii::app()->user->setFlash('error', "Could not upload/create company logo");
-                    }
-                }
+                $oCompany->companylogoid = $this->insertImageReturnId();
                 $oCompany->attributes = $_POST["CompanyDetails"];
                 if ($oCompany->validate()) {
                     $oCompany->dateupdated = date("Y-m-d H:i:s");
@@ -158,6 +140,7 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oImageManager = new ManageImages();
             if (isset($_GET['pid'])) {
                 $oProducts = Products::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
             } else {
@@ -169,6 +152,7 @@ class SiteController extends Controller {
 
                 $oProducts->CompanyID = $oCompany->id;
                 $oProducts->Active = 1;
+                $oProducts->ProductImageId = $this->insertImageReturnId("products");
                 $oProducts->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oProducts->id) && $oProducts->id > 0) {
                     $oProducts->update();
@@ -179,8 +163,33 @@ class SiteController extends Controller {
                     Yii::app()->user->setFlash('success', 'Product successfully created.');
                 }
             }
-            $this->render("add-product", array("oCompany" => $oCompany, "oProducts" => $oProducts));
+            $this->render("add-product", array("oCompany" => $oCompany, "oProducts" => $oProducts, "oImageManager" => $oImageManager));
         }
+    }
+
+    protected function insertImageReturnId($sFolder = "company") {
+        $oImageManager = new ManageImages();
+        if (isset($_POST['ManageImages'])) {
+            $oInstanceOfUpload = CUploadedFile::getInstance($oImageManager, 'image');
+            $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
+            $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
+            $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/$sNewFileName";
+            if ($oInstanceOfUpload->saveAs($sImagePath)) {
+                chmod($sImagePath, 777);
+                $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/thumbs/$sNewFileName", 100, 100);
+                $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/$sFolder/";
+                $oImageManager->newname = $sNewFileName;
+                $oImageManager->originalname = $oInstanceOfUpload->name;
+                //unset($oImageManager->image);
+                $oImageManager->save();
+
+                return $oImageManager->primaryKey;
+            } else {
+                return 0;
+            }
+        }
+
+        return 0;
     }
 
     public function actionAddservice() {
@@ -280,6 +289,7 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oImageManager = new ManageImages();
             if (isset($_GET['pid'])) {
                 $oPromotions = Promotions::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
             } else {
@@ -289,7 +299,11 @@ class SiteController extends Controller {
             if (isset($_POST["Promotions"])) {
                 $oPromotions->attributes = $_POST["Promotions"];
                 $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->StartDate)));
+                $oPromotions->EndDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->EndDate)));
                 $oPromotions->Active = 1;
+
+                //$oPromotions->PromotionImageId = 0;
+                $oPromotions->PromotionImageId = $this->insertImageReturnId("promotions");
                 $oPromotions->CompanyID = $oCompany->id;
                 $oPromotions->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oPromotions->id) && $oPromotions->id > 0) {
@@ -301,7 +315,48 @@ class SiteController extends Controller {
                     Yii::app()->user->setFlash('success', 'Promotion successfully created.');
                 }
             }
-            $this->render("add-promotion", array("oCompany" => $oCompany, "oPromotions" => $oPromotions));
+            $this->render("add-promotion", array("oCompany" => $oCompany, "oPromotions" => $oPromotions, "oImageManager" => $oImageManager));
+        }
+    }
+
+    public function actionManagement() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oManagement = new Management();
+            $aManagement = Management::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("management", array("oManagement" => $oManagement, "aManagement" => $aManagement));
+        }
+    }
+
+    public function actionAddmanagement() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oImageManager = new ManageImages();
+            if (isset($_GET['mid'])) {
+                $oManagement = Management::model()->find('id=:id', array(":id" => (int) $_GET['mid']));
+            } else {
+                $oManagement = new Management();
+            }
+
+            if (isset($_POST["Management"])) {
+                $oManagement->attributes = $_POST["Management"];
+                $oManagement->ManagementImageId = $this->insertImageReturnId("management");
+                $oManagement->CompanyID = $oCompany->id;
+                $oManagement->DateUpdated = date("Y-m-d H:i:s");
+                if (isset($oManagement->id) && $oManagement->id > 0) {
+                    $oManagement->update();
+                    Yii::app()->user->setFlash('success', 'Management successfully updated.');
+                } else {
+                    $oManagement->DateCreated = date("Y-m-d H:i:s");
+                    $oManagement->save();
+                    Yii::app()->user->setFlash('success', 'Management successfully created.');
+                }
+            }
+            $this->render("add-management", array("oCompany" => $oCompany, "oManagement" => $oManagement, "oImageManager" => $oImageManager));
         }
     }
 

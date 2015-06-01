@@ -137,6 +137,7 @@ $aTables['br_promotions'] = array(
     array("Description", "Details of the promotion", "text", 0),
     array("Active", "Whether promotion should be displayed or not", "tinyint", 2),
     array("StartDate", "Date on which promotion will commence", "datetime", 0),
+    array("EndDate", "Date on which promotion will commence", "datetime", 0),
     array("DateCreated", "Date on which a promotion was stored", "timestamp", 0),
     array("DateUpdated", "Date on which a promotion was updated", "datetime", 0),
 );
@@ -146,6 +147,8 @@ $aTables['br_management'] = array(
     array("Title", "Title/Postion of the individual added", "varchar", 255),
     array("Name", "Name of the management individual", "varchar", 255),
     array("Surname", "Surname of the management individual", "varchar", 255),
+    array("Position", "Position of the management individual", "varchar", 255),
+    array("ManagementImageId", "Link to management Image", "int", 11),
     array("Email", "Email address of the management individual", "varchar", 255),
     array("ContactNumber", "Contact Number of the management individual", "varchar", 255),
     array("WebAddress", "Web addres to the individual's page", "varchar", 255),

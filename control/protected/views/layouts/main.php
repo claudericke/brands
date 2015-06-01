@@ -76,7 +76,7 @@
                                             </li>
                                             <li><a href="#">Quotations</a>
                                             </li>
-                                            <li><a href="#">Management</a>
+                                            <li><a href="/control/site/management">Management</a>
                                             </li>
                                             <li><a href="#">Calendar</a>
                                             </li>

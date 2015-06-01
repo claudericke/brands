@@ -8,8 +8,10 @@ class Promotions extends CActiveRecord {
      * @var string $Title
      * @var integer $Description
      * @var integer $DocumentId
+     * @var integer $PromotionImageId
      * @var integer $Active
      * @var string $StartDate
+     * @var string $EndDate
      */
 
     /**
@@ -34,9 +36,9 @@ class Promotions extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('Title,Description', 'required'),
+            array('Title,Description,StartDate,EndDate', 'required'),
             array('Title', 'length', 'max' => 255),
-            array('CompanyID,Title,Description,Active,StartDate', 'safe'),
+            array('CompanyID,Title,Description,PromotionImageId,Active,StartDate,EndDate', 'safe'),
         );
     }
 
@@ -47,7 +49,7 @@ class Promotions extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'CompanyID' => array(self::BELONGS_TO, 'CompanyDetails', 'id'),
+            'CompanyID' => array(self::BELONGS_TO, 'companydetails', 'id'),
         );
     }
 
@@ -62,6 +64,8 @@ class Promotions extends CActiveRecord {
             'Description' => 'Description',
             'Active' => 'Active',
             'StartDate' => 'Promotion Start Date',
+            'EndDate' => 'Promotion End Date',
+            'PromotionImageId' => 'Promotion Image Id',
         );
     }
 

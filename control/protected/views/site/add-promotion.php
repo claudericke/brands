@@ -28,7 +28,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oPromotions, 'Title') .
+    echo $form->error($oPromotions, 'Title', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oPromotions, 'Title') .
     $form->textField($oPromotions, 'Title', array('class' => 'left u-full-width'));
     ?>
@@ -36,7 +36,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oPromotions, 'Description') .
+    echo $form->error($oPromotions, 'Description', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oPromotions, 'Description') .
     $form->textArea($oPromotions, 'Description', array('class' => 'left u-full-width'));
     ?>
@@ -44,13 +44,46 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oPromotions, 'StartDate') .
+    if ($oPromotions->PromotionImageId > 0) {
+        $aImage = ManageImages::model()->find('id=:id', array(':id' => $oPromotions->PromotionImageId));
+        echo "<img src='{$aImage["path"]}/thumbs/{$aImage["newname"]}' alt='" . $oPromotions->Title . "'/>";
+    }
+
+    echo $form->labelEx($oImageManager, 'image') .
+    $form->fileField($oImageManager, 'image', array('class' => 'left u-full-width')) .
+    $form->error($oImageManager, 'image', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->error($oPromotions, 'StartDate', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oPromotions, 'StartDate');
 
     $this->widget('zii.widgets.jui.CJuiDatePicker', array(
         'name' => 'Promotions[StartDate]',
-        'id' => 'Promotions',
+        'id' => 'PromotionsStartDate',
         'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oPromotions->StartDate)),
+        'options' => array(
+            'showAnim' => 'fold',
+            'dateFormat' => 'yy-mm-dd',
+        ),
+        'htmlOptions' => array(
+            'class' => 'left u-full-width'
+        ),
+    ));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->error($oPromotions, 'EndDate', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oPromotions, 'EndDate');
+
+    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        'name' => 'Promotions[EndDate]',
+        'id' => 'PromotionsEndDate',
+        'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oPromotions->EndDate)),
         'options' => array(
             'showAnim' => 'fold',
             'dateFormat' => 'yy-mm-dd',

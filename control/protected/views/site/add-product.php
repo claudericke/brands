@@ -92,6 +92,19 @@ $form = $this->beginWidget('CActiveForm', array(
 </div>
 
 <div class="row">
+    <?php
+    if ($oProducts->ProductImageId > 0) {
+        $aImage = ManageImages::model()->find('id=:id', array(':id' => $oProducts->ProductImageId));
+        echo "<img src='{$aImage["path"]}/thumbs/{$aImage["newname"]}' alt='" . $oProducts->ProductName . "'/>";
+    }
+
+    echo $form->labelEx($oImageManager, 'image') .
+    $form->fileField($oImageManager, 'image', array('class' => 'left u-full-width')) .
+    $form->error($oImageManager, 'image', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+<div class="row">
     <?php echo CHtml::submitButton('CREATE', array('class' => 'login_btn')); ?>
 </div>
 

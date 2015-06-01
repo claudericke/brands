@@ -10,8 +10,7 @@ class ManageImages extends CActiveRecord {
      * @var string $path
      */
     private $fQuality;
-
-    // public $image;
+    public $image;
 
     /**
      * Returns the static model of the specified AR class.
