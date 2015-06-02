@@ -169,30 +169,33 @@
                                     <option value="Airport logistics">Airport Logistics</option>
                                 </optgroup>
 
-
-                                <option value="Internet Service Provider">Internet Service Provider</option>
+                                <option value="Internet Service Provider"><strong>Internet Service Provider</strong></option>
 
                                 <optgroup label="Travel">
-                                    <option value="Taxis">Taxis </option>
+                                    <option value="Taxis">Travel Agent</option>
+                                    <option value="Taxis">Car Rental</option>
+                                    <option value="Taxis">House Boat</option>
+                                    <option value="Taxis">Taxi</option>
                                 </optgroup>
-                                <option value="Telecoms">Telecoms </option>
+
+                                <option value="Telecoms"><strong>Telecoms</strong></option>
+
                                 <optgroup label="Orphanage / Support Center">
-                                    <option value="Childrenâ€™s Home">Childrenâ€™s Home</option>
-                                    <option value="Old age Home">Old age Home</option>
+                                    <option value="Children's Home">Children's Home</option>
+                                    <option value="Old age Home">Old Age Home</option>
                                     <option value="Psychiatric Ward">Psychiatric Ward</option>
                                 </optgroup>
                                 <optgroup label="Night Club">
                                     <option value="Indoor Bar">Indoor Bar</option>
                                     <option value="Open Bar">Open Bar</option>
-                                    <option value="Clubs  	">Clubs </option>
+                                    <option value="Club">Club</option>
                                 </optgroup>
 
 
                                 <optgroup label="Burial Services">
-                                    <option value="Burial Service">Burial Service</option>
                                     <option value="Funeral Parlour">Funeral Parlour</option>
                                     <option value="Funeral Agent">Funeral Agent</option>
-                                    <option value="Tombstones supplier">Tombstones supplier</option>
+                                    <option value="Tombstones supplier">Tombstones Supplier</option>
                                 </optgroup>
 
                                 <optgroup label="Retail Store">
@@ -219,6 +222,90 @@
                                     <option value="Car Rental">Car Rental</option>
                                     <option value="House Boat">House Boat</option>
                                     <option value="Taxi">Taxi</option>
+                                </optgroup>
+
+                                <optgroup label="Agriculture">
+                                    <option value="Commercial Farming">Commercial Farming</option>
+                                    <option value="Livestock Rearing">Livestick Rearing</option>
+                                    <option value="Farming Equipment">Farming Equipment</option>
+                                </optgroup>
+
+                                <optgroup label="Accommodition">
+                                    <option value="Hotel">Hotels</option>
+                                    <option value="Lodges">Lodges</option>
+                                    <option value="Motels">Motel</option>
+                                    <option value="Caravan">Caravan</option>
+                                </optgroup>
+
+                                <optgroup label="Goverment Institutes">
+                                    <option value="Hotel">Government Ministry</option>
+                                    <option value="Lodges">Municipality</option>
+                                    <option value="Motels">Public Registry Department</option>
+                                </optgroup>
+
+                                <optgroup label="N.G.Os">
+                                    <option value="Aid Agency">Aid Agency</option>
+                                    <option value="Reconciliation Agency">Reconciliation Agency</option>
+                                    <option value="Governmental Agency">Governmental Agency</option>
+                                    <option value="Healthcare Agency">Healthcare Agency</option>
+                                </optgroup>
+
+                                <optgroup label="Consultancy">
+                                    <option value="Insurance Firm">Insurance Firm</option>
+                                    <option value="Law Firm">Law Firm</option>
+                                    <option value="Business Start Up Agency">Business Start Up Agency</option>
+                                    <option value="Taxation Agency">Taxation Agency</option>
+                                    <option value="Accounting Agency">Accounting Agency</option>
+                                    <option value="Writing, editing and translating Agency">Writing, editing and translating Agency</option>
+                                </optgroup>
+
+                                <optgroup label="Information Technology">
+                                    <option value="Internet Cafe">Internet Cafe</option>
+                                    <option value="App Developer">App Developer</option>
+                                    <option value="Website Developer">Website Developer</option>
+                                    <option value="Software Retailer">Software Retailer</option>
+                                    <option value="Programmer">Programmer</option>
+                                </optgroup>
+
+                                <optgroup label="Household Goods">
+                                    <option value="Domestic Furniture Store">Domestic Furniture Store</option>
+                                    <option value="Domestic Accessories">Domestic Accessories</option>
+                                    <option value="Appliances">Appliances</option>
+                                </optgroup>
+
+                                <optgroup label="Manufacturing and Engineering">
+                                    <option value="Domestic Furniture Store">Production Lines</option>
+                                    <option value="Domestic Accessories">Industrial Equipment</option>
+                                </optgroup>
+
+                                <optgroup label="Entertainment and Leisure">
+                                    <option value="Shows / Tours">Shows / Tours</option>
+                                    <option value="Film / Drama">Films / Drama</option>
+                                    <option value="Books">Books</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Resort">Resort</option>
+                                </optgroup>
+
+                                <optgroup label="Brokers">
+                                    <option value="Vendor">Vendor</option>
+                                    <option value="Painter">Painter</option>
+                                    <option value="Driving School">Driving School</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Resort">Resort</option>
+                                </optgroup>
+
+                                <optgroup label="Mining and Constructoin">
+                                    <option value="Mine">Mine</option>
+                                    <option value="Contractor">Contractor</option>
+                                    <option value="Mining Equipment">Mining Equipment</option>
+                                </optgroup>
+
+                                <optgroup label="Advertising and Security">
+                                    <option value="Billboards">Billboards</option>
+                                    <option value="Magazines">Magazines</option>
+                                    <option value="Television">Television</option>
+                                    <option value="Domestic Security">Domestic Security</option>
+                                    <option value="Co-oporate Security">Co-oporate Security</option>
                                 </optgroup>
                             </select>
                         </div>
