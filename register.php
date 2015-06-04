@@ -297,7 +297,7 @@
                                 <optgroup label="Mining and Constructoin">
                                     <option value="Mine">Mine</option>
                                     <option value="Contractor">Contractor</option>
-                                    <option value="Mining Equipment">Mining Equipment</option>
+                                     <option value="Mining Equipment">Mining Equipment</option>
                                 </optgroup>
 
                                 <optgroup label="Advertising and Security">
