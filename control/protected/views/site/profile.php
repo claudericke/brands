@@ -86,8 +86,8 @@ $this->endWidget();
 $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     'id' => 'company-contacts-form',
     'enableClientValidation' => true,
-    'enableAjaxValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
 ?>

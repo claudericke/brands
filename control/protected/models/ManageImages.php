@@ -36,7 +36,7 @@ class ManageImages extends CActiveRecord {
         return array(
             array('originalname, newname, path', 'length', 'max' => 255),
             array('originalname,newname,path', 'safe'),
-                //array('image', 'file', 'types' => 'jpg, gif, png'),
+            array('image', 'file', 'types' => 'jpg, gif, png', 'maxSize' => 1020 * 500, 'tooLarge' => 'Image cannot be greater than 500kb in size'),
         );
     }
 

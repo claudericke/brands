@@ -37,42 +37,41 @@ class Registration {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
 
-        if ($this->checkUserUsingEmail($_POST['emailAddress'])) {
-            $this->setError("{$_POST['companyName']} already exists on the system with email {$_POST['emailAddress']}");
+        if ($this->checkUserUsingEmail($aExactValues['emailAddress'])) {
+            $this->setError("{$aExactValues['companyName']} already exists on the system with email {$aExactValues['emailAddress']}");
             $this->bHasErrors = true;
         } else {
-            $sPassword = $_POST['password'];
+            $sPassword = $aExactValues['password'];
             $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$this->sUsersTable]) . "`";
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
 
-            $aUserDataStrip = array($_POST['companyName'], $_POST['name'], $_POST['surname'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
+            $aUserDataStrip = array($aExactValues['companyName'], $aExactValues['name'], $aExactValues['surname'], $aExactValues['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
             $sTempValues = self::setTempValues(count($aUserDataStrip));
-            //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
 
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], "None", 0, "now()", date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $aExactValues["companyName"], $aExactValues["tradingName"], $aExactValues['industry'], "None", 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
                 $sPreferredLingo = "['English']";
-                if (!empty($_POST["preferredLanguage"])) {
-                    $sPreferredLingo = "['" . implode("','", $_POST["preferredLanguage"]) . "']";
+                if (!empty($aExactValues["preferredLanguage"])) {
+                    $sPreferredLingo = "['" . implode("','", $aExactValues["preferredLanguage"]) . "']";
                 }
 
                 $sPreferredCori = "['Email']";
-                if (!empty($_POST["preferedCorrespondence"])) {
-                    $sPreferredCori = "['" . implode("','", $_POST["preferedCorrespondence"]) . "']";
+                if (!empty($aExactValues["preferedCorrespondence"])) {
+                    $sPreferredCori = "['" . implode("','", $aExactValues["preferedCorrespondence"]) . "']";
                 }
 
-                $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
-                $sThirdPartyMarketing = $_POST["thirdPartMarketing"] == "Yes" ? 1 : 0;
+                $sSubscribe = $aExactValues["magazineSubscription"] == "Yes" ? 1 : 0;
+                $sThirdPartyMarketing = $aExactValues["thirdPartMarketing"] == "Yes" ? 1 : 0;
                 $aCompanyContacts = array(
                     $iCompanyId,
-                    $_POST["emailAddress"],
-                    $_POST["alternativeEmail"],
-                    $_POST["companyPhone"],
+                    $aExactValues["emailAddress"],
+                    $aExactValues["alternativeEmail"],
+                    $aExactValues["companyPhone"],
                     "00000000000",
                     "00000000000",
                     "No address",
@@ -89,7 +88,7 @@ class Registration {
 
                 $this->createCompanyContacts($aCompanyContacts);
 
-                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $_POST["companyName"], $sPassword, $sActivationScript, $sWebTitle), ENT_QUOTES);
+                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $aExactValues["companyName"], $sPassword, $sActivationScript, $sWebTitle), ENT_QUOTES);
                 $sSubject = "$s_username $sWebTitle account activation";
                 $sFromemail = "$sWebTitle <$sAdminMail>";
                 $sContenttype = "text/html";

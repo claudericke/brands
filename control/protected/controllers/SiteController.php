@@ -86,7 +86,9 @@ class SiteController extends Controller {
             }
 
             if (isset($_POST["CompanyDetails"])) {
-                $oCompany->companylogoid = $this->insertImageReturnId();
+                if (($iTempImageId = $this->insertImageReturnId("company")) > 0) {
+                    $oCompany->companylogoid = $iTempImageId;
+                }
                 $oCompany->attributes = $_POST["CompanyDetails"];
                 if ($oCompany->validate()) {
                     $oCompany->dateupdated = date("Y-m-d H:i:s");
@@ -152,7 +154,10 @@ class SiteController extends Controller {
 
                 $oProducts->CompanyID = $oCompany->id;
                 $oProducts->Active = 1;
-                $oProducts->ProductImageId = $this->insertImageReturnId("products");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("products")) > 0) {
+                    $oProducts->ProductImageId = $iTempImageId;
+                }
+
                 $oProducts->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oProducts->id) && $oProducts->id > 0) {
                     $oProducts->update();
@@ -171,24 +176,25 @@ class SiteController extends Controller {
         $oImageManager = new ManageImages();
         if (isset($_POST['ManageImages'])) {
             $oInstanceOfUpload = CUploadedFile::getInstance($oImageManager, 'image');
-            $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
-            $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
-            $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/$sNewFileName";
-            if ($oInstanceOfUpload->saveAs($sImagePath)) {
-                chmod($sImagePath, 777);
-                $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/thumbs/$sNewFileName", 100, 100);
-                $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/$sFolder/";
-                $oImageManager->newname = $sNewFileName;
-                $oImageManager->originalname = $oInstanceOfUpload->name;
-                //unset($oImageManager->image);
-                $oImageManager->save();
+            if (!is_null($oInstanceOfUpload)) {
+                $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
+                $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
+                $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/$sNewFileName";
+                if ($oInstanceOfUpload->saveAs($sImagePath)) {
+                    chmod($sImagePath, 777);
+                    $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/thumbs/$sNewFileName", 100, 100);
+                    $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/$sFolder/";
+                    $oImageManager->newname = $sNewFileName;
+                    $oImageManager->originalname = $oInstanceOfUpload->name;
+                    //unset($oImageManager->image);
+                    $oImageManager->save();
 
-                return $oImageManager->primaryKey;
-            } else {
-                return 0;
+                    return $oImageManager->primaryKey;
+                } else {
+                    return 0;
+                }
             }
         }
-
         return 0;
     }
 
@@ -246,7 +252,6 @@ class SiteController extends Controller {
             if (isset($_POST["Vacancies"])) {
                 $oVacancies->attributes = $_POST["Vacancies"];
                 $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oVacancies->StartDate)));
-
                 $oVacancies->CompanyID = $oCompany->id;
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
@@ -303,7 +308,9 @@ class SiteController extends Controller {
                 $oPromotions->Active = 1;
 
                 //$oPromotions->PromotionImageId = 0;
-                $oPromotions->PromotionImageId = $this->insertImageReturnId("promotions");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("promotions")) > 0) {
+                    $oPromotions->PromotionImageId = $iTempImageId;
+                }
                 $oPromotions->CompanyID = $oCompany->id;
                 $oPromotions->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oPromotions->id) && $oPromotions->id > 0) {
@@ -344,7 +351,9 @@ class SiteController extends Controller {
 
             if (isset($_POST["Management"])) {
                 $oManagement->attributes = $_POST["Management"];
-                $oManagement->ManagementImageId = $this->insertImageReturnId("management");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("management")) > 0) {
+                    $oManagement->ManagementImageId = $iTempImageId;
+                }
                 $oManagement->CompanyID = $oCompany->id;
                 $oManagement->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oManagement->id) && $oManagement->id > 0) {

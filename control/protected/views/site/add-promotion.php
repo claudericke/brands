@@ -8,6 +8,7 @@ $form = $this->beginWidget('CActiveForm', array(
     'id' => 'promotions',
     'enableClientValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
 ?>

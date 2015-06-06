@@ -1,7 +1,6 @@
 <?php
 
 defined('ROOT') || define('ROOT', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
-defined('CROOTFOLDER') || define('CROOTFOLDER', $sMyRootFolder);
 
 spl_autoload_register(function ($sClassName) {
 
