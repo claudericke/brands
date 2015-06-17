@@ -387,13 +387,13 @@ input[type="button"]:hover {
 }
 
 /* Products Page Styling */
-     .single-item {
+.single-item {
 
     border-top : 2px solid #cecece;
-         padding: 5px;
-         background #efefef;
-        font-size:12px;
-     }
+    padding: 5px;
+    background-color: #efefef;
+    font-size:12px;
+}
 
     .itemDescription,
     .itemName{
