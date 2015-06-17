@@ -10,6 +10,11 @@ class User extends CActiveRecord {
      * @var string $email
      * @var string $profile
      */
+    protected function beforeSave() {
+        parent::beforeSave();
+        $this->Password = $this->hashPassword($this->Password);
+    }
+
     protected function beforeLogin() {
         //here could be your condition...
         $this->returnUrl = array('/control/site/');
@@ -40,6 +45,8 @@ class User extends CActiveRecord {
         return array(
             array('Username, Password, Email', 'required'),
             array('Username, Password, Email', 'length', 'max' => 128),
+            array('Email', 'email'),
+            array('Username,FirstName,LastName,Password,Email,Online,lastLogin,DateCreated,DateUpdated', 'safe'),
         );
     }
 
@@ -61,6 +68,8 @@ class User extends CActiveRecord {
         return array(
             'id' => 'Id',
             'Username' => 'Username',
+            'FirstName' => 'Firt Name',
+            'LastName' => 'Last Name',
             'Password' => 'Password',
             'Email' => 'Email',
             'Online' => 'Online',

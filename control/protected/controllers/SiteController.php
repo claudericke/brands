@@ -126,6 +126,31 @@ class SiteController extends Controller {
         }
     }
 
+    public function actionSettings() {
+
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+
+            //$oUser = new User();
+            $oUser = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));
+            if (isset($_POST["User"])) {
+
+                $oUser->attributes = $_POST["User"];
+                if ($oUser->validate()) {
+                    $oUser->DateUpdated = date("Y-m-d H:i:s");
+                    if ($oUser->update()) {
+                        Yii::app()->user->setFlash('success', "Profile successfully updated");
+                    } else {
+                        Yii::app()->user->setFlash('error', "Failed to update profile");
+                    }
+                }
+            }
+
+            $this->render("settings", array("oUser" => $oUser));
+        }
+    }
+
     public function actionProducts() {
         if (Yii::app()->user->isGuest) {
             $this->redirect("/control/login/");

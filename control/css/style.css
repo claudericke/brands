@@ -39,6 +39,34 @@ body {
 .user_profile li {
 }
 
+.successFeedbackMessage,
+.errorFeedbackMessage {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.successFeedbackMessage {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+.errorFeedbackMessage {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+.profilePic {
+    border-radius: 100%;
+    display: block;
+    margin: 15px auto;
+    border: 3px solid #cecece;
+    width: 100px;
+    height: 100px;
+    box-shadow: 1px 1px 3px #1e1e1e;
+}
+
 .user {
     color:#787878;
     font-size: 12px;
