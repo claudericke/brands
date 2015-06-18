@@ -168,3 +168,14 @@ $aTables['br_services'] = array(
     array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
 );
 
+$aTables['br_events'] = array(
+    array("CompanyID", "Link to Company", "int", 11),
+    array("Title", "Event Title", "varchar", 255),
+    array("EventType", "The type of event", "enum", "'Conference','Seminar','Meeting','Celebration','Ceremonies','Team Building','Party','Music','Marketing'"),
+    array("Location", "Where event will occur", "varchar", 255),
+    array("Description", "Details of the event", "text", 0),
+    array("StartDate", "Date on which event starts", "datetime", 0),
+    array("EndDate", "Date on which evcent ends", "datetime", 0),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);

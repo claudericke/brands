@@ -36,7 +36,7 @@
             <p>Update your corporate calendar here</p></a>
     </div>
     <div class="three columns linker events">
-        <a href="#"> <h2>EVENTS</h2>
+        <a href="/control/site/events"> <h2>EVENTS</h2>
             <p>Schedule events related to your business here</p>
     </div></a>
 </div>

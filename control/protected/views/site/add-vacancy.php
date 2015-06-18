@@ -73,14 +73,6 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oVacancies, 'Title', array("class" => "errorFeedbackMessage")) .
-    $form->labelEx($oVacancies, 'Title') .
-    $form->textField($oVacancies, 'Title', array('class' => 'left u-full-width'));
-    ?>
-</div>
-
-<div class="row">
-    <?php
     echo $form->error($oVacancies, 'Description', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oVacancies, 'Description') .
     $form->textArea($oVacancies, 'Description', array('class' => 'left u-full-width'));

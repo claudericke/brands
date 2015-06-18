@@ -59,7 +59,7 @@
                                             </li>
                                             <li><a href="#">Calendar</a>
                                             </li>
-                                            <li><a href="#">Events</a>
+                                            <li><a href="/control/site/events">Events</a>
                                             </li>
                                         </ul>
                                     </li>

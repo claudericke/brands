@@ -1,18 +1,16 @@
 <?php
 
-class Vacancies extends CActiveRecord {
+class Events extends CActiveRecord {
     /**
      * The followings are the available columns in table 'BR_CompanyDetails':
      * @var integer $id
      * @var integer $CompanyID
      * @var string $Title
-     * @var string $VacancyType
+     * @var string $EventType
      * @var string $Location
-     * @var integer $YearsOfExperience
      * @var string $Description
-     * @var integer $DocumentId
-     * @var integer $Active
      * @var string $StartDate
+     * @var string $EndDate
      */
 
     /**
@@ -27,7 +25,7 @@ class Vacancies extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return '{{vacancies}}';
+        return '{{events}}';
     }
 
     /**
@@ -37,9 +35,9 @@ class Vacancies extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('Title,Description', 'required'),
+            array('Title,Description,StartDate,EndDate', 'required'),
             array('Title', 'length', 'max' => 255),
-            array('CompanyID,Title,VacancyType,YearsOfExperience,Location,Description,DocumentId,Active,StartDate,DateCreated,DateUpdated', 'safe'),
+            array('CompanyID,Title,EventType,Location,Description,StartDate,EndDate,DateCreated,DateUpdated', 'safe'),
         );
     }
 
@@ -61,13 +59,12 @@ class Vacancies extends CActiveRecord {
         return array(
             'id' => 'Id',
             'CompanyID' => 'Company Id',
-            'Title' => "Job Title",
-            'VacancyType' => "Vacancy Type",
-            'YearsOfExperience' => "Minimum Number of Years Of Experience",
-            'Location' => "Location of Vacancy",
-            'Description' => 'Job description',
-            "DocumentId" => "Document",
+            'Title' => "Event Title",
+            'VacancyType' => "Event Type",
+            'Location' => "Location of Event",
+            'Description' => 'Event description',
             'StartDate' => 'Start Date',
+            'EndDate' => 'End Date',
         );
     }
 

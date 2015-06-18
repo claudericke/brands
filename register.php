@@ -327,7 +327,7 @@
                     <br/>
                     <br/>
                     <div class="twelve columns">
-                        <h2 class="left large ">APPLICATION<strong class="left bold"> CONFIRMATION</strong></h2>
+                        <h2 class="left large ">TERMS</h2>
                         <ol>
                             <li>We agree that Massive Dynamics may communicate with us electronically or by post (including by E-mail, by SMS through our Company lines or on screen messaging through subscriber Interface for purposes of payment arrears notifications, announcements or otherwise for the purpose of processing my requests for access to Massive Dynamics services and or administering to agreement between us and Massive Dynamics.
                                 <li>Unless and until we notify Massive Dynamics in writing that we withdraw our consent thereto, we agree that Massive Dynamics may communicate with us for the purpose of marketing or promoting its services or the services of its suppliers or affiliates (Direct Marketing Communications.)

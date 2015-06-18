@@ -266,7 +266,7 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
-            if (isset($_GET['pid'])) {
+            if (isset($_GET['vid'])) {
                 $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
             } else {
                 $oVacancies = new Vacancies();
@@ -277,13 +277,15 @@ class SiteController extends Controller {
                 $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oVacancies->StartDate)));
                 $oVacancies->CompanyID = $oCompany->id;
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
-                if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
-                    $oVacancies->update();
-                    Yii::app()->user->setFlash('success', 'Vacancy successfully updated.');
-                } else {
-                    $oVacancies->DateCreated = date("Y-m-d H:i:s");
-                    $oVacancies->save();
-                    Yii::app()->user->setFlash('success', 'Vacancy successfully created.');
+                if ($oVacancies->validate()) {
+                    if (isset($_POST["Vacancies"]['id']) && $_POST["Vacancies"]['id'] > 0) {
+                        $oVacancies->update();
+                        Yii::app()->user->setFlash('success', 'Vacancy successfully updated.');
+                    } else {
+                        $oVacancies->DateCreated = date("Y-m-d H:i:s");
+                        $oVacancies->save();
+                        Yii::app()->user->setFlash('success', 'Vacancy successfully created.');
+                    }
                 }
             }
             $this->render("add-vacancy", array("oCompany" => $oCompany, "oVacancies" => $oVacancies));
@@ -389,6 +391,51 @@ class SiteController extends Controller {
                 }
             }
             $this->render("add-management", array("oCompany" => $oCompany, "oManagement" => $oManagement, "oImageManager" => $oImageManager));
+        }
+    }
+
+    public function actionAddevent() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['eid'])) {
+                $oEvents = Events::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            } else {
+                $oEvents = new Events();
+            }
+
+            if (isset($_POST["Events"])) {
+                $oEvents->attributes = $_POST["Events"];
+                $oEvents->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oEvents->StartDate)));
+                $oEvents->EndDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oEvents->EndDate)));
+                $oEvents->CompanyID = $oCompany->id;
+                $oEvents->DateUpdated = date("Y-m-d H:i:s");
+                if ($oEvents->validate()) {
+                    if (isset($_POST["Events"]['id']) && $_POST["Events"]['id'] > 0) {
+                        $oEvents->update();
+                        Yii::app()->user->setFlash('success', 'Event successfully updated.');
+                    } else {
+                        $oEvents->DateCreated = date("Y-m-d H:i:s");
+                        $oEvents->save();
+                        Yii::app()->user->setFlash('success', 'Event successfully created.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', implode(",", $oEvents->getErrors()));
+                }
+            }
+            $this->render("add-event", array("oCompany" => $oCompany, "oEvents" => $oEvents));
+        }
+    }
+
+    public function actionEvents() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oEvents = new Events();
+            $aEvents = $oEvents::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("events", array("oEvents" => $oEvents, "aEvents" => $aEvents));
         }
     }
 
