@@ -37,6 +37,6 @@
     </div>
     <div class="three columns linker events">
         <a href="/control/site/events"> <h2>EVENTS</h2>
-            <p>Schedule events related to your business here</p>
-    </div></a>
+            <p>Schedule events related to your business here</p></a>
+    </div>
 </div>
