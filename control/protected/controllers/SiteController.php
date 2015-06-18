@@ -131,8 +131,6 @@ class SiteController extends Controller {
         if (Yii::app()->user->isGuest) {
             $this->redirect("/control/login/");
         } else {
-
-            //$oUser = new User();
             $oUser = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));
             if (isset($_POST["User"])) {
 

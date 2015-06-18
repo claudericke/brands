@@ -13,6 +13,7 @@ class User extends CActiveRecord {
     protected function beforeSave() {
         parent::beforeSave();
         $this->Password = $this->hashPassword($this->Password);
+        return true;
     }
 
     protected function beforeLogin() {
