@@ -267,7 +267,7 @@ class SiteController extends Controller {
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
             if (isset($_GET['vid'])) {
-                $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+                $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['vid']));
             } else {
                 $oVacancies = new Vacancies();
             }
@@ -400,7 +400,7 @@ class SiteController extends Controller {
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
             if (isset($_GET['eid'])) {
-                $oEvents = Events::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+                $oEvents = Events::model()->find('id=:id', array(":id" => (int) $_GET['eid']));
             } else {
                 $oEvents = new Events();
             }
