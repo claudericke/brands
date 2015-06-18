@@ -12,7 +12,7 @@ if (count($aEvents) > 0) {
     foreach ($aEvents as $aEvent) {
         ?>
         <div class="row single-item">
-            <div class="itemName"><a href="/control/site/addevent/?eid=<?php echo $aEvent["id"]; ?>" title="<?php echo $aEvent["Title"]; ?>"> <?php echo $aEvent["Title"]; ?>. <?php echo $aEvent["StartDate"]; ?> <?php echo $aEvent["EndDate"]; ?> (<?php echo $aEvent["Location"]; ?>)</a></div>
+            <div class="itemName"><a href="/control/site/addevent/?eid=<?php echo $aEvent["id"]; ?>" title="<?php echo $aEvent["Title"]; ?>"> <?php echo $aEvent["Title"]; ?>. Starting: <?php echo $aEvent["StartDate"]; ?> And Ending:<?php echo $aEvent["EndDate"]; ?> (<?php echo $aEvent["Location"]; ?>)</a></div>
             <div class="itemDescription"><?php echo $aEvent["Description"]; ?></div>
             <br style="clear: both"/>
         </div>

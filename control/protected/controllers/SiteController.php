@@ -274,7 +274,7 @@ class SiteController extends Controller {
 
             if (isset($_POST["Vacancies"])) {
                 $oVacancies->attributes = $_POST["Vacancies"];
-                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oVacancies->StartDate)));
+                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oVacancies->StartDate)));
                 $oVacancies->CompanyID = $oCompany->id;
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
                 if ($oVacancies->validate()) {
@@ -328,8 +328,8 @@ class SiteController extends Controller {
 
             if (isset($_POST["Promotions"])) {
                 $oPromotions->attributes = $_POST["Promotions"];
-                $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->StartDate)));
-                $oPromotions->EndDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->EndDate)));
+                $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oPromotions->StartDate)));
+                $oPromotions->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oPromotions->EndDate)));
                 $oPromotions->Active = 1;
 
                 //$oPromotions->PromotionImageId = 0;
@@ -407,8 +407,8 @@ class SiteController extends Controller {
 
             if (isset($_POST["Events"])) {
                 $oEvents->attributes = $_POST["Events"];
-                $oEvents->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oEvents->StartDate)));
-                $oEvents->EndDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oEvents->EndDate)));
+                $oEvents->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oEvents->StartDate)));
+                $oEvents->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oEvents->EndDate)));
                 $oEvents->CompanyID = $oCompany->id;
                 $oEvents->DateUpdated = date("Y-m-d H:i:s");
                 if ($oEvents->validate()) {

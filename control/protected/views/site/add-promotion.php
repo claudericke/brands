@@ -11,6 +11,8 @@ $form = $this->beginWidget('CActiveForm', array(
     'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
+
+Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
 ?>
 
 <?php if (Yii::app()->user->hasFlash('success')): ?>
@@ -61,17 +63,20 @@ $form = $this->beginWidget('CActiveForm', array(
     echo $form->error($oPromotions, 'StartDate', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oPromotions, 'StartDate');
 
-    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-        'name' => 'Promotions[StartDate]',
-        'id' => 'PromotionsStartDate',
+    $this->widget('CJuiDateTimePicker', array(
+        'model' => $oPromotions,
+        'attribute' => 'StartDate', //
+        'mode' => 'datetime', //
         'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oPromotions->StartDate)),
         'options' => array(
-            'showAnim' => 'fold',
+            'timeFormat' => strtolower(Yii::app()->locale->timeFormat),
+            'showSecond' => true,
             'dateFormat' => 'yy-mm-dd',
         ),
         'htmlOptions' => array(
             'class' => 'left u-full-width'
         ),
+        'language' => ''
     ));
     ?>
 </div>
@@ -81,17 +86,20 @@ $form = $this->beginWidget('CActiveForm', array(
     echo $form->error($oPromotions, 'EndDate', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oPromotions, 'EndDate');
 
-    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-        'name' => 'Promotions[EndDate]',
-        'id' => 'PromotionsEndDate',
+    $this->widget('CJuiDateTimePicker', array(
+        'model' => $oPromotions,
+        'attribute' => 'EndDate', //
+        'mode' => 'datetime', //
         'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oPromotions->EndDate)),
         'options' => array(
-            'showAnim' => 'fold',
+            'timeFormat' => strtolower(Yii::app()->locale->timeFormat),
+            'showSecond' => true,
             'dateFormat' => 'yy-mm-dd',
         ),
         'htmlOptions' => array(
             'class' => 'left u-full-width'
         ),
+        'language' => ''
     ));
     ?>
 </div>
