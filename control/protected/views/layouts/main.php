@@ -57,7 +57,7 @@
                                             </li>
                                             <li><a href="/control/site/management">Management</a>
                                             </li>
-                                            <li><a href="#">Calendar</a>
+                                            <li><a href="/control/site/calendar">Calendar</a>
                                             </li>
                                             <li><a href="/control/site/events">Events</a>
                                             </li>

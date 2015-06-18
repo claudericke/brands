@@ -428,6 +428,51 @@ class SiteController extends Controller {
         }
     }
 
+    public function actionCalendar() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oCalendar = new Calendar();
+            $aCalendar = Calendar::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("calendar", array("oCalendar" => $oCalendar, "aCalendar" => $aCalendar));
+        }
+    }
+
+    public function actionAddcalendar() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['cid'])) {
+                $oCalendar = Calendar::model()->find('id=:id', array(":id" => (int) $_GET['cid']));
+            } else {
+                $oCalendar = new Calendar();
+            }
+
+            if (isset($_POST["Calendar"])) {
+                $oCalendar->attributes = $_POST["Calendar"];
+                $oCalendar->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oCalendar->StartDate)));
+                $oCalendar->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oCalendar->EndDate)));
+                $oCalendar->CompanyID = $oCompany->id;
+                $oCalendar->DateUpdated = date("Y-m-d H:i:s");
+                if ($oCalendar->validate()) {
+                    if (isset($_POST["Calendar"]['id']) && $_POST["Calendar"]['id'] > 0) {
+                        $oCalendar->update();
+                        Yii::app()->user->setFlash('success', 'Calendar successfully updated.');
+                    } else {
+                        $oCalendar->DateCreated = date("Y-m-d H:i:s");
+                        $oCalendar->save();
+                        Yii::app()->user->setFlash('success', 'Calendar successfully created.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', implode(",", $oCalendar->getErrors()));
+                }
+            }
+            $this->render("add-calendar", array("oCompany" => $oCompany, "oCalendar" => $oCalendar));
+        }
+    }
+
     public function actionEvents() {
         if (Yii::app()->user->isGuest) {
             $this->redirect("/control/login/");
