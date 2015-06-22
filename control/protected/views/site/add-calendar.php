@@ -74,19 +74,19 @@ Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
     echo $form->error($oCalendar, 'EndDate', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oCalendar, 'EndDate');
     $this->widget('CJuiDateTimePicker', array(
-        'model' => $oCalendar,
-        'attribute' => 'EndDate', //
-        'mode' => 'datetime', //
-        'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oCalendar->EndDate)),
-        'options' => array(
-            'timeFormat' => strtolower(Yii::app()->locale->timeFormat),
-            'showSecond' => true,
-            'dateFormat' => 'yy-mm-dd',
-        ),
-        'htmlOptions' => array(
-            'class' => 'left u-full-width'
-        ),
-        'language' => ''
+    'model' => $oCalendar,
+    'attribute' => 'EndDate', //
+    'mode' => 'datetime', //
+    'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oCalendar->EndDate)),
+    'options' => array(
+    'timeFormat' => strtolower(Yii::app()->locale->timeFormat),
+    'showSecond' => true,
+    s 'dateFormat' => 'yy-mm-dd',
+    ),
+    'htmlOptions' => array(
+    'class' => 'left u-full-width'
+    ),
+    'language' => ''
     ));
     ?>
 </div>
@@ -98,4 +98,3 @@ Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
 
 <?php
 $this->endWidget();
-?>

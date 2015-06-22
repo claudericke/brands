@@ -190,3 +190,23 @@ $aTables['br_calendar'] = array(
     array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
 );
 
+$aTables['br_forgotpassword'] = array(
+    array("UserID", "Link to User", "int", 11),
+    array("Email", "Email of the user who forgot password", "varchar", 255),
+    array("PasswordChangeToken", "Token to change password", "text", 0),
+    array("Active", "Whether the password has been reset or not", "'Yes','No'"),
+    array("DateActivated", "Date on which password was reset", "datetime", 0),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);
+
+$aTables['br_helpdesk'] = array(
+    array("FirstName", "User's first name", "varchar", 255),
+    array("LastName", "User's last name", "varchar", 255),
+    array("Email", "User's email", "varchar", 255),
+    array("Subject", "Subject of the help required", "varchar", 255),
+    array("Message", "Helpdesk Message", "text", 0),
+    array("DateCreated", "Date on which user details were stored", "timestamp", 0),
+    array("DateUpdated", "Date on which the user profile was updated", "datetime", 0),
+);
+

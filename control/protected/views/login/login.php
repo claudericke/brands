@@ -23,7 +23,7 @@ echo $form->error($model, 'password') .
 ?>
 
 <div class="six columns">
-    <a href="#">Forgot Password?</a><br/>
+    <a href="/control/login/forgotpassword">Forgot Password?</a><br/>
     <a href="#">Forgot Username?</a>
     <p class="left"><a href="/helpdesk">Trouble Logging In?</a></p>
 </div>
