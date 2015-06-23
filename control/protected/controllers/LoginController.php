@@ -71,7 +71,8 @@ class LoginController extends CController {
                     $oForgotPassword->DateCreated = date("Y-m-d H:i:s");
                     $oForgotPassword->DateUpdated = date("Y-m-d H:i:s");
                     $oForgotPassword->save();
-                    if ($oForgotPassword->sendActivation()) {
+                    $sEmailTemplate = file_get_contents($this->getLayoutFile("email"));
+                    if ($oForgotPassword->sendActivation($oUser->FirstName . " " . $oUser->LastName, $sEmailTemplate)) {
                         Yii::app()->user->setFlash('success', 'An email with a link to reset your password has been sent to you.');
                     } else {
                         Yii::app()->user->setFlash('error', 'Could not send Activation link. Server error occurred. Please notify the admin of it.');

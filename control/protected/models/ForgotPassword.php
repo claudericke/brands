@@ -61,17 +61,24 @@ class ForgotPassword extends CActiveRecord {
         );
     }
 
-    public function sendActivation() {
+    public function sendActivation($sCredentials, $sTemplate = NULL) {
+
         $sEol = PHP_EOL;
         $sMailheaders = "From: no-reply@brands$sEol";
-        $sMailheaders .= "1.0";
+        $sMailheaders .= "MIME-Version: 1.0$sEol";
         $sMailheaders .= "Content-Type: text/html; charset=ISO-8859-1$sEol";
         $sMailheaders .= "Reply-To: Brands Admin <admin@brands.co.zw>";
-        $sAdditionalheader = "-fwebmaster@brands.co.zw";
+        $sAdditionalheader = "-fwebmaster@brands.com";
 
-        $sActivationLink = "http://" . Yii::app()->baseUrl . "/control/login/resetpassword?token=" . $this->PasswordToken;
+        $sActivationLink = Yii::app()->getBaseUrl(true) . Yii::app()->baseUrl . "login/resetpassword?token=" . $this->PasswordToken;
         $sMailBody = "<b>Hi</b><br><br> <p>Please click <a href='$sActivationLink'>here</a> to reset password on Brands. If clicking did not work, please copy this: "
                 . "'$sActivationLink' into your browser. Kindly ignore if you did not request any password change</p>";
+
+        if (!is_null($sTemplate)) {
+            $aReplaceables = array("__url__", "__subject__", "__credentials__", "__mail__");
+            $aReplaceWith = array(Yii::app()->getBaseUrl(true), "Brands Password Reset", $sCredentials, $sMailBody);
+            $sMailBody = str_replace($aReplaceables, $aReplaceWith, $sTemplate);
+        }
         return mail($this->Email, "Brands Password Reset", $sMailBody, $sMailheaders, $sAdditionalheader);
     }
 
