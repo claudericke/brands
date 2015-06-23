@@ -147,41 +147,23 @@ class Registration {
         $sSalt = "smartgenericemail+";
         $sEncryptedEmail = base64_encode($sSalt . $sEmail);
         $sSiteUrl = $_SERVER['SERVER_NAME'] . "/";
-
-        $sBody = "<html>
-                        <body>
-                        <table cellpadding='10' align='center' width='550px' style='border: 1px solid #CCC;'>
-                                <tr style='background-color:#EEE'>
-                                        <th colspan='2'>Account confirmation</th>
-                                </tr>
-                                <tr>
-                                    <td colspan='2'>Hi $sPrefferedName<br/><br/>
-                                    Please click on the link below to activate your account, no further information will be required from you, this is your last step of activating you account. :)<br/><br/>
+        $sEmailTemplate = file_get_contents(ROOT . "/email.html");
+        $sMessage = "<p>"
+                . "Please click on the link below to activate your account, no further information will be required from you, this is your last step of activating you account. :)<br/><br/>
 
                                     <a href='$sActivationScript?authenticate=$sEncryptedEmail' title='Activate account'>Activate account</a><br/><br/>
                                     If the link above does not work, please copy the link below into your browser:<br/><br/>
-                                    $sActivationScript?authenticate=$sEncryptedEmail
-                            </td>
-						</tr>
-						<tr>
-							<th colspan='2'>Login Details:</td>
-						</tr>
-						<tr>
-							<td>Email:</td><td>$sEmail</td>
-						</tr>
-						<tr>
-							<td>Password:</td><td>$sPassword</td>
-						</tr>
-                        <tr>
-							<td colspan='2'>&nbsp;&nbsp;</td>
-						</tr>
-                        <tr style='background-color:#EEE'>
-                        	<td colspan='2'><a href='http://{$sSiteUrl}' title='$sWebTitle' style='text-decoration:none; color:#063'>$sWebTitle</a></td>
-                        </tr>
-					</table>
-					</body>
-					</html>
-				";
+                                    $sActivationScript?authenticate=$sEncryptedEmail"
+                . "</p>";
+
+        $sMessage .= "<h4>Login Details:</h4>";
+
+        $sMessage .= "<p>Email: $sEmail<br><br>"
+                . "Password: $sPassword</p>";
+        $aReplaceables = array("__url__", "__subject__", "__credentials__", "__mail__");
+        $aReplaceWith = array("http://$_SERVER[HTTP_HOST]/", "Account confirmation", $sPrefferedName, $sMessage);
+
+        $sBody = str_replace($aReplaceables, $aReplaceWith, $sEmailTemplate);
 
         return $sBody;
     }
