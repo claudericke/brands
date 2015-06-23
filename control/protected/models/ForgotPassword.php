@@ -76,7 +76,7 @@ class ForgotPassword extends CActiveRecord {
 
         if (!is_null($sTemplate)) {
             $aReplaceables = array("__url__", "__subject__", "__credentials__", "__mail__");
-            $aReplaceWith = array(Yii::app()->getBaseUrl(true), "Brands Password Reset", $sCredentials, $sMailBody);
+            $aReplaceWith = array(str_replace("control", "", Yii::app()->getBaseUrl(true)), "Brands Password Reset", $sCredentials, $sMailBody);
             $sMailBody = str_replace($aReplaceables, $aReplaceWith, $sTemplate);
         }
         return mail($this->Email, "Brands Password Reset", $sMailBody, $sMailheaders, $sAdditionalheader);
