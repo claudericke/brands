@@ -21,7 +21,6 @@ $form = $this->beginWidget('CActiveForm', array(
 
     <?php
 else :
-    echo urlencode("spjd4852bsKF441a2cf750a254f7f1e5c4b7bd21fbf9a285ce60elojn8958t7*&^8");
     echo $form->error($model, 'Email') .
     $form->labelEx($model, 'Email') .
     $form->textField($model, 'Email', array('class' => 'left u-full-width'));

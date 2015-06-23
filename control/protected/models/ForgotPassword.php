@@ -70,7 +70,7 @@ class ForgotPassword extends CActiveRecord {
         $sMailheaders .= "Reply-To: Brands Admin <admin@brands.co.zw>";
         $sAdditionalheader = "-fwebmaster@brands.com";
 
-        $sActivationLink = Yii::app()->getBaseUrl(true) . Yii::app()->baseUrl . "login/resetpassword?token=" . $this->PasswordToken;
+        $sActivationLink = Yii::app()->getBaseUrl(true) . Yii::app()->baseUrl . "login/resetpassword?token=" . urlencode($this->PasswordToken);
         $sMailBody = "<b>Hi</b><br><br> <p>Please click <a href='$sActivationLink'>here</a> to reset password on Brands. If clicking did not work, please copy this: "
                 . "'$sActivationLink' into your browser. Kindly ignore if you did not request any password change</p>";
 
