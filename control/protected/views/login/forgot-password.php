@@ -21,7 +21,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
     <?php
 else :
-    echo $form->error($model, 'Email') .
+    echo $form->error($model, 'Email', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($model, 'Email') .
     $form->textField($model, 'Email', array('class' => 'left u-full-width'));
     ?>

@@ -22,12 +22,12 @@ $form = $this->beginWidget('CActiveForm', array(
     <?php
 else :
 
-    echo $form->error($model, 'Password') .
+    echo $form->error($model, 'Password', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($model, 'Password') .
     $form->passwordField($model, 'Password', array('class' => 'left u-full-width'));
 
 
-    echo $form->error($model, 'ConfirmPassword') .
+    echo $form->error($model, 'ConfirmPassword', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($model, 'ConfirmPassword') .
     $form->passwordField($model, 'ConfirmPassword', array('class' => 'left u-full-width'));
     ?>
