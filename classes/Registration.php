@@ -156,12 +156,12 @@ class Registration {
                                     $sActivationScript?authenticate=$sEncryptedEmail"
                 . "</p>";
 
-        $sMessage .= "<h4>Login Details:</h4>";
+        $sMessage .= "<h4>$sWebTitle Login Details:</h4>";
 
         $sMessage .= "<p>Email: $sEmail<br><br>"
                 . "Password: $sPassword</p>";
         $aReplaceables = array("__url__", "__subject__", "__credentials__", "__mail__");
-        $aReplaceWith = array("http://$_SERVER[HTTP_HOST]/", "Account confirmation", $sPrefferedName, $sMessage);
+        $aReplaceWith = array($sSiteUrl, "Account confirmation", $sPrefferedName, $sMessage);
 
         $sBody = str_replace($aReplaceables, $aReplaceWith, $sEmailTemplate);
 
