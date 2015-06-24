@@ -24,7 +24,7 @@ echo $form->error($model, 'password', array("class" => "errorFeedbackMessage")) 
 
 <div class="six columns">
     <a href="/control/login/forgotpassword">Forgot Password?</a><br/>
-    <a href="#">Forgot Username?</a>
+    <a href="/control/login/forgotusername">Forgot Username?</a>
     <p class="left"><a href="/helpdesk">Trouble Logging In?</a></p>
 </div>
 

@@ -105,12 +105,12 @@ class LoginController extends CController {
                     $oUser = User::model()->find('id=:id', array(':id' => $oCompany->UserID));
                     $sEmailTemplate = file_get_contents($this->getLayoutFile("email"));
                     if ($oForgotPassword->sendActivation($oUser->FirstName . " " . $oUser->LastName, $sEmailTemplate, $oUser->Email)) {
-                        Yii::app()->user->setFlash('success', 'An email with a link to reset your password has been sent to you.');
+                        Yii::app()->user->setFlash('success', 'An email with your username has been sent to you.');
                     } else {
-                        Yii::app()->user->setFlash('error', 'Could not send Activation link. Server error occurred. Please notify the admin of it.');
+                        Yii::app()->user->setFlash('error', 'Could not send your username. Server error occurred. Please notify the admin of it.');
                     }
                 } else {
-                    Yii::app()->user->setFlash('error', 'The email address you provided does not exist.');
+                    Yii::app()->user->setFlash('error', 'The email address you provided is not set as alternative email.');
                 }
             }
         }
