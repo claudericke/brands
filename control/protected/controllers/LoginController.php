@@ -86,6 +86,38 @@ class LoginController extends CController {
         $this->render('forgot-password', array('model' => $oForgotPassword));
     }
 
+    public function actionForgotusername() {
+        $oForgotPassword = new ForgotPassword();
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
+            echo CActiveForm::validate($oForgotPassword);
+            Yii::app()->end();
+        }
+
+        if (isset($_POST['ForgotPassword'])) {
+            $oForgotPassword->Email = $_POST['ForgotPassword']['Email'];
+            if ($oForgotPassword->validate()) {
+                $oCompanyContacts = CompanyContacts::model()->find('AlternativeEmail=:AlternativeEmail', array(':AlternativeEmail' => $oForgotPassword->Email));
+
+                if ($oCompanyContacts->CompanyID) {
+                    $oCompany = CompanyDetails::model()->find('id=:id', array(':id' => $oCompanyContacts->CompanyID));
+                    $oUser = User::model()->find('id=:id', array(':id' => $oCompany->UserID));
+                    $sEmailTemplate = file_get_contents($this->getLayoutFile("email"));
+                    if ($oForgotPassword->sendActivation($oUser->FirstName . " " . $oUser->LastName, $sEmailTemplate, $oUser->Email)) {
+                        Yii::app()->user->setFlash('success', 'An email with a link to reset your password has been sent to you.');
+                    } else {
+                        Yii::app()->user->setFlash('error', 'Could not send Activation link. Server error occurred. Please notify the admin of it.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', 'The email address you provided does not exist.');
+                }
+            }
+        }
+
+        $this->render('forgot-username', array('model' => $oForgotPassword));
+    }
+
     /**
      * Resets user password
      */
