@@ -26,7 +26,7 @@ website:   	http://www.themepunch.com
 .rev_slider ul { margin:0px; padding:0px; list-style: none !important; list-style-type: none !important; }
 
 .rev_slider >ul >li { list-style:none; position:absolute; visibility:hidden; margin:0px; padding:0px; overflow-x: visible; overflow-y: visible; list-style-type: none !important; background-image:none !important; }
- .rev_slider .tp-caption, .rev_slider .caption, {
+ .rev_slider .tp-caption, .rev_slider .caption{
  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 -moz-opacity: 0;
 -khtml-opacity: 0;

@@ -13,27 +13,6 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,300,400' rel='stylesheet' type='text/css'/>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.pngFix.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr.js"></script>
-
-        <style type="text/css">
-            .successFeedbackMessage,
-            .errorFeedbackMessage {
-                border: 1px solid;
-                margin: 10px 0px;
-                padding:15px 10px 15px 50px;
-                background-repeat: no-repeat;
-                background-position: 10px center;
-            }
-
-            .successFeedbackMessage {
-                color: #4F8A10;
-                background-color: #DFF2BF;
-            }
-
-            .errorFeedbackMessage {
-                color: #D8000C;
-                background-color: #FFBABA;
-            }
-        </style>
     </head>
 
     <body>
@@ -41,7 +20,7 @@
             <div class="container">
                 <div class="row header">
                     <div class="eight columns"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" /></div>
-                    <div class="two columns "><a href="/settings" class="settings_btn">Settings</a> </div>
+                    <div class="two columns "><a href="/control/site/settings" class="settings_btn">Settings</a> </div>
                     <div class="two columns "><a href="/control/login/logout" class="login_btn">Log Off</a></div>
                 </div>
 
@@ -49,7 +28,7 @@
                     <div class="three columns sidebar">
                         <br style="clear: both"/>
                         <ul class="user_profile">
-                            <li class="user_image"><img src="<?php echo Yii::app()->user->getUserMainImage("thumbs/"); ?>" /></li>
+                            <li class="user_image profilePic" style="background:url(<?php echo Yii::app()->user->getUserMainImage("thumbs/"); ?>) center center; background-size: cover;"></li>
                             <li>
                                 <p class="welcome">Welcome</p>
                                 <p class="user" ><?php echo Yii::app()->user->name; ?></p>
@@ -60,7 +39,7 @@
                                 <ul class="nav accordion">
                                     <li id="v_hm" class="menu_item dash_icon"><a href="/control/site/dashboard">Dashboard</a>
                                     </li>
-                                    <li id="v_hm" class="menu_item settings_icon"><a href="#">Settings</a>
+                                    <li id="v_hm" class="menu_item settings_icon"><a href="/control/site/settings">Settings</a>
                                     </li>
                                     <li id="v_hm" class="menu_item mybusiness_icon"><a href="#">My Business</a>
                                         <ul class="sub-menu">
@@ -78,9 +57,9 @@
                                             </li>
                                             <li><a href="/control/site/management">Management</a>
                                             </li>
-                                            <li><a href="#">Calendar</a>
+                                            <li><a href="/control/site/calendar">Calendar</a>
                                             </li>
-                                            <li><a href="#">Events</a>
+                                            <li><a href="/control/site/events">Events</a>
                                             </li>
                                         </ul>
                                     </li>

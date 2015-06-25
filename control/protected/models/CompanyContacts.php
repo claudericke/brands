@@ -30,6 +30,13 @@ class CompanyContacts extends CActiveRecord {
             $this->PreferredLanguage = array();
     }
 
+    protected function afterSave() {
+        parent::afterSave();
+        $this->PreferredLanguage = CJSON::decode($this->PreferredLanguage);
+        if (!is_array($this->PreferredLanguage))
+            $this->PreferredLanguage = array();
+    }
+
     /**
      * Returns the static model of the specified AR class.
      * @return CActiveRecord the static model class
@@ -54,7 +61,7 @@ class CompanyContacts extends CActiveRecord {
         return array(
             array('Email', 'required'),
             array('Email, PhysicalAddress, PostalAddress, RegistrationNumber, AccountNumber', 'length', 'max' => 255),
-            array('CompanyPhone1,CompanyPhone2,CompanyPhone3,Email,AlternativeEmail,PhysicalAddress,PostalAddress,RegistrationNumber,AccountNumber,PreferredLanguage,Subscription,ThirdpartyMarketing', 'safe'),
+            array('CompanyPhone1,CompanyPhone2,CompanyPhone3,Email,AlternativeEmail,PhysicalAddress,PostalAddress,RegistrationNumber,AccountNumber,PreferredLanguage,Subscription,ThirdpartyMarketing,PreferredCorrespondence', 'safe'),
             array('Email,AlternativeEmail', 'email'),
         );
     }

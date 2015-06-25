@@ -10,6 +10,8 @@ $form = $this->beginWidget('CActiveForm', array(
     'clientOptions' => array('validateOnSubmit' => true),
         )
 );
+
+Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
 ?>
 
 <?php if (Yii::app()->user->hasFlash('success')): ?>
@@ -73,14 +75,6 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
-    echo $form->error($oVacancies, 'Title', array("class" => "errorFeedbackMessage")) .
-    $form->labelEx($oVacancies, 'Title') .
-    $form->textField($oVacancies, 'Title', array('class' => 'left u-full-width'));
-    ?>
-</div>
-
-<div class="row">
-    <?php
     echo $form->error($oVacancies, 'Description', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oVacancies, 'Description') .
     $form->textArea($oVacancies, 'Description', array('class' => 'left u-full-width'));
@@ -92,17 +86,20 @@ $form = $this->beginWidget('CActiveForm', array(
     echo $form->error($oVacancies, 'StartDate', array("class" => "errorFeedbackMessage")) .
     $form->labelEx($oVacancies, 'StartDate');
 
-    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-        'name' => 'Vacancies[StartDate]',
-        'id' => 'Vacancies_StartDate',
+    $this->widget('CJuiDateTimePicker', array(
+        'model' => $oVacancies,
+        'attribute' => 'StartDate', //
+        'mode' => 'datetime', //
         'value' => Yii::app()->dateFormatter->format("yyyy-MM-dd", strtotime($oVacancies->StartDate)),
         'options' => array(
-            'showAnim' => 'fold',
+            'timeFormat' => strtolower(Yii::app()->locale->timeFormat),
+            'showSecond' => true,
             'dateFormat' => 'yy-mm-dd',
         ),
         'htmlOptions' => array(
             'class' => 'left u-full-width'
         ),
+        'language' => ''
     ));
     ?>
 </div>

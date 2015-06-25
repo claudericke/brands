@@ -52,6 +52,105 @@ class LoginController extends CController {
         $this->render('login', array('model' => $model));
     }
 
+    public function actionForgotpassword() {
+        $oForgotPassword = new ForgotPassword();
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
+            echo CActiveForm::validate($oForgotPassword);
+            Yii::app()->end();
+        }
+
+        if (isset($_POST['ForgotPassword'])) {
+            $oForgotPassword->Email = $_POST['ForgotPassword']['Email'];
+            if ($oForgotPassword->validate()) {
+                $oUser = User::model()->find('Email=:Email', array(':Email' => $oForgotPassword->Email));
+                if ($oUser->id) {
+                    $oForgotPassword->UserID = $oUser->id;
+                    $oForgotPassword->Active = "Yes";
+                    $oForgotPassword->DateCreated = date("Y-m-d H:i:s");
+                    $oForgotPassword->DateUpdated = date("Y-m-d H:i:s");
+                    $oForgotPassword->save();
+                    $sEmailTemplate = file_get_contents($this->getLayoutFile("email"));
+                    if ($oForgotPassword->sendActivation($oUser->FirstName . " " . $oUser->LastName, $sEmailTemplate)) {
+                        Yii::app()->user->setFlash('success', 'An email with a link to reset your password has been sent to you.');
+                    } else {
+                        Yii::app()->user->setFlash('error', 'Could not send Activation link. Server error occurred. Please notify the admin of it.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', 'The email address you provided does not exist.');
+                }
+            }
+        }
+
+        $this->render('forgot-password', array('model' => $oForgotPassword));
+    }
+
+    public function actionForgotusername() {
+        $oForgotPassword = new ForgotPassword();
+
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
+            echo CActiveForm::validate($oForgotPassword);
+            Yii::app()->end();
+        }
+
+        if (isset($_POST['ForgotPassword'])) {
+            $oForgotPassword->Email = $_POST['ForgotPassword']['Email'];
+            if ($oForgotPassword->validate()) {
+                $oCompanyContacts = CompanyContacts::model()->find('AlternativeEmail=:AlternativeEmail', array(':AlternativeEmail' => $oForgotPassword->Email));
+
+                if ($oCompanyContacts->CompanyID) {
+                    $oCompany = CompanyDetails::model()->find('id=:id', array(':id' => $oCompanyContacts->CompanyID));
+                    $oUser = User::model()->find('id=:id', array(':id' => $oCompany->UserID));
+                    $sEmailTemplate = file_get_contents($this->getLayoutFile("email"));
+                    if ($oForgotPassword->sendActivation($oUser->FirstName . " " . $oUser->LastName, $sEmailTemplate, $oUser->Email)) {
+                        Yii::app()->user->setFlash('success', 'An email with your username has been sent to you.');
+                    } else {
+                        Yii::app()->user->setFlash('error', 'Could not send your username. Server error occurred. Please notify the admin of it.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', 'The email address you provided is not set as alternative email.');
+                }
+            }
+        }
+
+        $this->render('forgot-username', array('model' => $oForgotPassword));
+    }
+
+    /**
+     * Resets user password
+     */
+    public function actionResetpassword() {
+        $oResetPassword = new ResetPassword();
+
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
+            echo CActiveForm::validate($oResetPassword);
+            Yii::app()->end();
+        }
+        $sHashedEmail = urldecode($_GET['token']);
+        if ($sHashedEmail !== NULL) {
+            $oForgotPass = ForgotPassword::model()->find('PasswordToken=:PasswordToken AND Active=:Active', array(':PasswordToken' => $sHashedEmail, ":Active" => "Yes"));
+            if ($oForgotPass->UserID) {
+                $oResetPassword = ResetPassword::model()->find('id=:id', array(':id' => $oForgotPass->UserID));
+                if (isset($_POST['ResetPassword'])) {
+                    $oResetPassword->Password = $_POST['ResetPassword']["Password"];
+                    $oResetPassword->ConfirmPassword = $_POST['ResetPassword']["ConfirmPassword"];
+                    if ($oResetPassword->validate()) {
+                        $oResetPassword->DateUpdated = date("Y-m-d H:i:s");
+                        $oResetPassword->update();
+                        $oForgotPass->Active = "No";
+                        $oForgotPass->update();
+                        Yii::app()->user->setFlash('success', 'Password successfully updated.');
+                    }
+                }
+            }
+        } else {
+            Yii::app()->user->setFlash('error', 'Incorrect or no password reset token. Please click on the correct reset link');
+        }
+        $this->render('reset-password', array('model' => $oResetPassword));
+    }
+
     /**
      * Logs out the current user and redirect to homepage.
      */

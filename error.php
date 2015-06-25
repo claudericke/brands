@@ -24,17 +24,21 @@ require_once 'common.php';
                             <div class="row content">
                                 <?php Errors::getErrorDescription($_GET['errorCode']); ?>
 
-                                <?php echo $_GET["message"] ?>
+                                <?php
+                                if (array_key_exists('message', $_GET)) {
+                                    echo $_GET["message"];
+                                }
+                                ?>
                             </div>
 
                         </div>
-                                <div class="four columns">&nbsp;</div>
-                            </div>
-                        </div>
+                        <div class="four columns">&nbsp;</div>
+                    </div>
+                    </div>
 
 
 
-                        <?php include('includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>
 
                 </body>
 

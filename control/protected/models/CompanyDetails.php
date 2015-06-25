@@ -25,6 +25,13 @@ class CompanyDetails extends CActiveRecord {
             $this->ProductsAndServices = array();
     }
 
+    protected function afterSave() {
+        parent::afterSave();
+        $this->ProductsAndServices = CJSON::decode($this->ProductsAndServices);
+        if (!is_array($this->ProductsAndServices))
+            $this->ProductsAndServices = array();
+    }
+
     /**
      * Returns the static model of the specified AR class.
      * @return CActiveRecord the static model class

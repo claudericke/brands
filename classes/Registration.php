@@ -37,42 +37,41 @@ class Registration {
         $aExactValues = $this->aPostData;
         extract($aExactValues, EXTR_PREFIX_ALL, 's');
 
-        if ($this->checkUserUsingEmail($_POST['emailAddress'])) {
-            $this->setError("{$_POST['companyName']} already exists on the system with email {$_POST['emailAddress']}");
+        if ($this->checkUserUsingEmail($aExactValues['emailAddress'])) {
+            $this->setError("{$aExactValues['companyName']} already exists on the system with email {$aExactValues['emailAddress']}");
             $this->bHasErrors = true;
         } else {
-            $sPassword = $_POST['password'];
+            $sPassword = $aExactValues['password'];
             $sDatabaseFields = "`" . implode("`,`", $this->aDatabaseFields[$this->sUsersTable]) . "`";
             $oHashObj = HashKeys::getHashInstance($sPassword);
             $sSavedPassword = $oHashObj->getHashedKey();
 
-            $aUserDataStrip = array($_POST['companyName'], $_POST['name'], $_POST['surname'], $_POST['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
+            $aUserDataStrip = array($aExactValues['companyName'], $aExactValues['name'], $aExactValues['surname'], $aExactValues['emailAddress'], $sSavedPassword, 0, 0, strtotime("now"), "now()", date("Y-m-d H:i:s"));
             $sTempValues = self::setTempValues(count($aUserDataStrip));
-            //$qQuery = "INSERT INTO $this->sUsersTable ($sDatabasefields) VALUES ('$s_name','$s_surname','$s_preferredname','$s_dob','$s_email','$s_password','No','$s_datecreated')";
             $qQuery = "INSERT INTO $this->sUsersTable ($sDatabaseFields) VALUES ($sTempValues)";
 
             $iUserid = DatabaseConnection::insertData($qQuery, $aUserDataStrip);
 
             if ($iUserid) {
-                $aCompanyDataStrip = array($iUserid, $_POST["companyName"], $_POST["tradingName"], $_POST['industry'], "None", 0, "now()", date("Y-m-d"),);
+                $aCompanyDataStrip = array($iUserid, $aExactValues["companyName"], $aExactValues["tradingName"], $aExactValues['industry'], "None", 0, "now()", date("Y-m-d"),);
                 $iCompanyId = $this->createCompany($aCompanyDataStrip);
                 $sPreferredLingo = "['English']";
-                if (!empty($_POST["preferredLanguage"])) {
-                    $sPreferredLingo = "['" . implode("','", $_POST["preferredLanguage"]) . "']";
+                if (!empty($aExactValues["preferredLanguage"])) {
+                    $sPreferredLingo = "['" . implode("','", $aExactValues["preferredLanguage"]) . "']";
                 }
 
                 $sPreferredCori = "['Email']";
-                if (!empty($_POST["preferedCorrespondence"])) {
-                    $sPreferredCori = "['" . implode("','", $_POST["preferedCorrespondence"]) . "']";
+                if (!empty($aExactValues["preferedCorrespondence"])) {
+                    $sPreferredCori = "['" . implode("','", $aExactValues["preferedCorrespondence"]) . "']";
                 }
 
-                $sSubscribe = $_POST["magazineSubscription"] == "Yes" ? 1 : 0;
-                $sThirdPartyMarketing = $_POST["thirdPartMarketing"] == "Yes" ? 1 : 0;
+                $sSubscribe = $aExactValues["magazineSubscription"] == "Yes" ? 1 : 0;
+                $sThirdPartyMarketing = $aExactValues["thirdPartMarketing"] == "Yes" ? 1 : 0;
                 $aCompanyContacts = array(
                     $iCompanyId,
-                    $_POST["emailAddress"],
-                    $_POST["alternativeEmail"],
-                    $_POST["companyPhone"],
+                    $aExactValues["emailAddress"],
+                    $aExactValues["alternativeEmail"],
+                    $aExactValues["companyPhone"],
                     "00000000000",
                     "00000000000",
                     "No address",
@@ -89,7 +88,7 @@ class Registration {
 
                 $this->createCompanyContacts($aCompanyContacts);
 
-                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $_POST["companyName"], $sPassword, $sActivationScript, $sWebTitle), ENT_QUOTES);
+                $sEmailbody = htmlspecialchars($this->generateNotification($s_emailAddress, $aExactValues["companyName"], $sPassword, $sActivationScript, $sWebTitle), ENT_QUOTES);
                 $sSubject = "$s_username $sWebTitle account activation";
                 $sFromemail = "$sWebTitle <$sAdminMail>";
                 $sContenttype = "text/html";
@@ -148,41 +147,23 @@ class Registration {
         $sSalt = "smartgenericemail+";
         $sEncryptedEmail = base64_encode($sSalt . $sEmail);
         $sSiteUrl = $_SERVER['SERVER_NAME'] . "/";
-
-        $sBody = "<html>
-                        <body>
-                        <table cellpadding='10' align='center' width='550px' style='border: 1px solid #CCC;'>
-                                <tr style='background-color:#EEE'>
-                                        <th colspan='2'>Account confirmation</th>
-                                </tr>
-                                <tr>
-                                    <td colspan='2'>Hi $sPrefferedName<br/><br/>
-                                    Please click on the link below to activate your account, no further information will be required from you, this is your last step of activating you account. :)<br/><br/>
+        $sEmailTemplate = file_get_contents(ROOT . "/email.html");
+        $sMessage = "<p>"
+                . "Please click on the link below to activate your account, no further information will be required from you, this is your last step of activating you account. :)<br/><br/>
 
                                     <a href='$sActivationScript?authenticate=$sEncryptedEmail' title='Activate account'>Activate account</a><br/><br/>
                                     If the link above does not work, please copy the link below into your browser:<br/><br/>
-                                    $sActivationScript?authenticate=$sEncryptedEmail
-                            </td>
-						</tr>
-						<tr>
-							<th colspan='2'>Login Details:</td>
-						</tr>
-						<tr>
-							<td>Email:</td><td>$sEmail</td>
-						</tr>
-						<tr>
-							<td>Password:</td><td>$sPassword</td>
-						</tr>
-                        <tr>
-							<td colspan='2'>&nbsp;&nbsp;</td>
-						</tr>
-                        <tr style='background-color:#EEE'>
-                        	<td colspan='2'><a href='http://{$sSiteUrl}' title='$sWebTitle' style='text-decoration:none; color:#063'>$sWebTitle</a></td>
-                        </tr>
-					</table>
-					</body>
-					</html>
-				";
+                                    $sActivationScript?authenticate=$sEncryptedEmail"
+                . "</p>";
+
+        $sMessage .= "<h4>$sWebTitle Login Details:</h4>";
+
+        $sMessage .= "<p>Email: $sEmail<br><br>"
+                . "Password: $sPassword</p>";
+        $aReplaceables = array("__url__", "__subject__", "__credentials__", "__mail__");
+        $aReplaceWith = array($sSiteUrl, "Account confirmation", $sPrefferedName, $sMessage);
+
+        $sBody = str_replace($aReplaceables, $aReplaceWith, $sEmailTemplate);
 
         return $sBody;
     }

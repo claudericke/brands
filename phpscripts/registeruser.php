@@ -27,11 +27,7 @@ if (!empty($_POST)) {
         $aValues = $_POST;
 
         $oRegistration = new Registration($aValues, $aTables);
-        if ((int) $s_updateuser > 0) {
-            $oRegistration->updateUser();
-        } else {
-            $oRegistration->createUser($sActivationScript, $sAdminMail, $sWebTitle);
-        }
+        $oRegistration->createUser($sActivationScript, $sAdminMail, $sWebTitle);
         $aErrors = $oRegistration->getErrors();
         if (is_array($aErrors) && count($aErrors) > 0) {
             $sFormErrors .= implode("<br/>", $aErrors);

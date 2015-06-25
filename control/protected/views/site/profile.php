@@ -34,6 +34,11 @@ $form = $this->beginWidget('CActiveForm', array(
 ?>
 <div class="row">
     <?php
+    if ($oCompany->companylogoid > 0) {
+        $aImage = ManageImages::model()->find('id=:id', array(':id' => $oCompany->companylogoid));
+        echo "<img src='{$aImage["path"]}/thumbs/{$aImage["newname"]}' alt='" . $oCompany->CompanyName . "'/>";
+    }
+
     echo $form->labelEx($oImageManager, 'image') .
     $form->fileField($oImageManager, 'image', array('class' => 'left u-full-width')) .
     $form->error($oImageManager, 'image', array("class" => "errorFeedbackMessage"));
@@ -86,8 +91,8 @@ $this->endWidget();
 $oContactInfoForm = $this->beginWidget('CActiveForm', array(
     'id' => 'company-contacts-form',
     'enableClientValidation' => true,
-    'enableAjaxValidation' => true,
     'clientOptions' => array('validateOnSubmit' => true),
+    'htmlOptions' => array('enctype' => 'multipart/form-data'),
         )
 );
 ?>

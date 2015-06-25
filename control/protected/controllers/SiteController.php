@@ -86,7 +86,9 @@ class SiteController extends Controller {
             }
 
             if (isset($_POST["CompanyDetails"])) {
-                $oCompany->companylogoid = $this->insertImageReturnId();
+                if (($iTempImageId = $this->insertImageReturnId("company")) > 0) {
+                    $oCompany->companylogoid = $iTempImageId;
+                }
                 $oCompany->attributes = $_POST["CompanyDetails"];
                 if ($oCompany->validate()) {
                     $oCompany->dateupdated = date("Y-m-d H:i:s");
@@ -124,6 +126,29 @@ class SiteController extends Controller {
         }
     }
 
+    public function actionSettings() {
+
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oUser = User::model()->find('id=:id', array(':id' => Yii::app()->user->id));
+            if (isset($_POST["User"])) {
+
+                $oUser->attributes = $_POST["User"];
+                if ($oUser->validate()) {
+                    $oUser->DateUpdated = date("Y-m-d H:i:s");
+                    if ($oUser->update()) {
+                        Yii::app()->user->setFlash('success', "Profile successfully updated");
+                    } else {
+                        Yii::app()->user->setFlash('error', "Failed to update profile");
+                    }
+                }
+            }
+
+            $this->render("settings", array("oUser" => $oUser));
+        }
+    }
+
     public function actionProducts() {
         if (Yii::app()->user->isGuest) {
             $this->redirect("/control/login/");
@@ -152,7 +177,10 @@ class SiteController extends Controller {
 
                 $oProducts->CompanyID = $oCompany->id;
                 $oProducts->Active = 1;
-                $oProducts->ProductImageId = $this->insertImageReturnId("products");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("products")) > 0) {
+                    $oProducts->ProductImageId = $iTempImageId;
+                }
+
                 $oProducts->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oProducts->id) && $oProducts->id > 0) {
                     $oProducts->update();
@@ -171,24 +199,25 @@ class SiteController extends Controller {
         $oImageManager = new ManageImages();
         if (isset($_POST['ManageImages'])) {
             $oInstanceOfUpload = CUploadedFile::getInstance($oImageManager, 'image');
-            $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
-            $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
-            $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/$sNewFileName";
-            if ($oInstanceOfUpload->saveAs($sImagePath)) {
-                chmod($sImagePath, 777);
-                $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/thumbs/$sNewFileName", 100, 100);
-                $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/$sFolder/";
-                $oImageManager->newname = $sNewFileName;
-                $oImageManager->originalname = $oInstanceOfUpload->name;
-                //unset($oImageManager->image);
-                $oImageManager->save();
+            if (!is_null($oInstanceOfUpload)) {
+                $sExtension = substr($oInstanceOfUpload->name, strrpos($oInstanceOfUpload->name, "."));
+                $sNewFileName = "brands-" . mt_rand(100, 5000000) . "-" . md5(time()) . $sExtension;
+                $sImagePath = Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/$sNewFileName";
+                if ($oInstanceOfUpload->saveAs($sImagePath)) {
+                    chmod($sImagePath, 777);
+                    $oImageManager->resize($sImagePath, Yii::getPathOfAlias('webroot') . "/uploads/images/$sFolder/thumbs/$sNewFileName", 100, 100);
+                    $oImageManager->path = Yii::app()->request->baseUrl . "/uploads/images/$sFolder/";
+                    $oImageManager->newname = $sNewFileName;
+                    $oImageManager->originalname = $oInstanceOfUpload->name;
+                    //unset($oImageManager->image);
+                    $oImageManager->save();
 
-                return $oImageManager->primaryKey;
-            } else {
-                return 0;
+                    return $oImageManager->primaryKey;
+                } else {
+                    return 0;
+                }
             }
         }
-
         return 0;
     }
 
@@ -237,25 +266,26 @@ class SiteController extends Controller {
             $this->redirect("/control/login/");
         } else {
             $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
-            if (isset($_GET['pid'])) {
-                $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['pid']));
+            if (isset($_GET['vid'])) {
+                $oVacancies = Vacancies::model()->find('id=:id', array(":id" => (int) $_GET['vid']));
             } else {
                 $oVacancies = new Vacancies();
             }
 
             if (isset($_POST["Vacancies"])) {
                 $oVacancies->attributes = $_POST["Vacancies"];
-                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oVacancies->StartDate)));
-
+                $oVacancies->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oVacancies->StartDate)));
                 $oVacancies->CompanyID = $oCompany->id;
                 $oVacancies->DateUpdated = date("Y-m-d H:i:s");
-                if (isset($_POST["Vacancies"]['id']) && $_POST["Services"]['id'] > 0) {
-                    $oVacancies->update();
-                    Yii::app()->user->setFlash('success', 'Vacancy successfully updated.');
-                } else {
-                    $oVacancies->DateCreated = date("Y-m-d H:i:s");
-                    $oVacancies->save();
-                    Yii::app()->user->setFlash('success', 'Vacancy successfully created.');
+                if ($oVacancies->validate()) {
+                    if (isset($_POST["Vacancies"]['id']) && $_POST["Vacancies"]['id'] > 0) {
+                        $oVacancies->update();
+                        Yii::app()->user->setFlash('success', 'Vacancy successfully updated.');
+                    } else {
+                        $oVacancies->DateCreated = date("Y-m-d H:i:s");
+                        $oVacancies->save();
+                        Yii::app()->user->setFlash('success', 'Vacancy successfully created.');
+                    }
                 }
             }
             $this->render("add-vacancy", array("oCompany" => $oCompany, "oVacancies" => $oVacancies));
@@ -298,12 +328,14 @@ class SiteController extends Controller {
 
             if (isset($_POST["Promotions"])) {
                 $oPromotions->attributes = $_POST["Promotions"];
-                $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->StartDate)));
-                $oPromotions->EndDate = date("Y-m-d H:i:s", strtotime(str_replace(array('\\', "/"), "-", $oPromotions->EndDate)));
+                $oPromotions->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oPromotions->StartDate)));
+                $oPromotions->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oPromotions->EndDate)));
                 $oPromotions->Active = 1;
 
                 //$oPromotions->PromotionImageId = 0;
-                $oPromotions->PromotionImageId = $this->insertImageReturnId("promotions");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("promotions")) > 0) {
+                    $oPromotions->PromotionImageId = $iTempImageId;
+                }
                 $oPromotions->CompanyID = $oCompany->id;
                 $oPromotions->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oPromotions->id) && $oPromotions->id > 0) {
@@ -344,7 +376,9 @@ class SiteController extends Controller {
 
             if (isset($_POST["Management"])) {
                 $oManagement->attributes = $_POST["Management"];
-                $oManagement->ManagementImageId = $this->insertImageReturnId("management");
+                if ($oImageManager->validate() && ($iTempImageId = $this->insertImageReturnId("management")) > 0) {
+                    $oManagement->ManagementImageId = $iTempImageId;
+                }
                 $oManagement->CompanyID = $oCompany->id;
                 $oManagement->DateUpdated = date("Y-m-d H:i:s");
                 if (isset($oManagement->id) && $oManagement->id > 0) {
@@ -357,6 +391,96 @@ class SiteController extends Controller {
                 }
             }
             $this->render("add-management", array("oCompany" => $oCompany, "oManagement" => $oManagement, "oImageManager" => $oImageManager));
+        }
+    }
+
+    public function actionAddevent() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['eid'])) {
+                $oEvents = Events::model()->find('id=:id', array(":id" => (int) $_GET['eid']));
+            } else {
+                $oEvents = new Events();
+            }
+
+            if (isset($_POST["Events"])) {
+                $oEvents->attributes = $_POST["Events"];
+                $oEvents->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oEvents->StartDate)));
+                $oEvents->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oEvents->EndDate)));
+                $oEvents->CompanyID = $oCompany->id;
+                $oEvents->DateUpdated = date("Y-m-d H:i:s");
+                if ($oEvents->validate()) {
+                    if (isset($_POST["Events"]['id']) && $_POST["Events"]['id'] > 0) {
+                        $oEvents->update();
+                        Yii::app()->user->setFlash('success', 'Event successfully updated.');
+                    } else {
+                        $oEvents->DateCreated = date("Y-m-d H:i:s");
+                        $oEvents->save();
+                        Yii::app()->user->setFlash('success', 'Event successfully created.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', implode(",", $oEvents->getErrors()));
+                }
+            }
+            $this->render("add-event", array("oCompany" => $oCompany, "oEvents" => $oEvents));
+        }
+    }
+
+    public function actionCalendar() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oCalendar = new Calendar();
+            $aCalendar = Calendar::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("calendar", array("oCalendar" => $oCalendar, "aCalendar" => $aCalendar));
+        }
+    }
+
+    public function actionAddcalendar() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            if (isset($_GET['cid'])) {
+                $oCalendar = Calendar::model()->find('id=:id', array(":id" => (int) $_GET['cid']));
+            } else {
+                $oCalendar = new Calendar();
+            }
+
+            if (isset($_POST["Calendar"])) {
+                $oCalendar->attributes = $_POST["Calendar"];
+                $oCalendar->StartDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oCalendar->StartDate)));
+                $oCalendar->EndDate = date("Y-m-d H:i:s", strtotime(str_replace("a", "", $oCalendar->EndDate)));
+                $oCalendar->CompanyID = $oCompany->id;
+                $oCalendar->DateUpdated = date("Y-m-d H:i:s");
+                if ($oCalendar->validate()) {
+                    if (isset($_POST["Calendar"]['id']) && $_POST["Calendar"]['id'] > 0) {
+                        $oCalendar->update();
+                        Yii::app()->user->setFlash('success', 'Calendar successfully updated.');
+                    } else {
+                        $oCalendar->DateCreated = date("Y-m-d H:i:s");
+                        $oCalendar->save();
+                        Yii::app()->user->setFlash('success', 'Calendar successfully created.');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', implode(",", $oCalendar->getErrors()));
+                }
+            }
+            $this->render("add-calendar", array("oCompany" => $oCompany, "oCalendar" => $oCalendar));
+        }
+    }
+
+    public function actionEvents() {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect("/control/login/");
+        } else {
+            $oCompany = CompanyDetails::model()->find('UserID=:UserID', array(':UserID' => Yii::app()->user->id));
+            $oEvents = new Events();
+            $aEvents = $oEvents::model()->findAll('CompanyID=:CompanyID', array(":CompanyID" => $oCompany->id));
+            $this->render("events", array("oEvents" => $oEvents, "aEvents" => $aEvents));
         }
     }
 

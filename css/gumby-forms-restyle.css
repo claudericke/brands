@@ -1,0 +1,14 @@
+
+/*
+    Created on : Jun 24, 2015, 12:59:09 PM
+    Author     : phpDude
+*/
+
+label {
+    line-height: normal !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 13px !important;
+}
