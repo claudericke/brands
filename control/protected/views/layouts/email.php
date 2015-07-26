@@ -21,7 +21,7 @@
         <table cellpadding="10" align="center" width="550px" style="border: 1px solid #CCC;">
             <tbody>
                 <tr style="background-color:#fff">
-                    <th colspan="2" style="color:#fff; text-align:center;"><img src="__url__/images/logo.png" alt="Brands" /></th>
+                    <th colspan="2" style="color:#fff; text-align:center;"><img src="__url__images/logo.png" alt="Brands" /></th>
                 </tr>
                 <tr style="background-color:#cecece">
                     <th colspan="2" style="color:#1e1e1e;">__subject__</th>
@@ -36,7 +36,7 @@
                     <td colspan="2"> </td>
                 </tr>
                 <tr style="background-color:#cecece">
-                    <td colspan="2"><a href="__url__" title="Brands" style="text-decoration:none; color:#1e1e1e; text-align:center;">&copy; Massive Dynamics</a>
+                    <td colspan="2"><a href="__url__brands" title="Brands" style="text-decoration:none; color:#1e1e1e; text-align:center;">&copy; Massive Dynamics</a>
                     </td>
                 </tr>
             </tbody>
