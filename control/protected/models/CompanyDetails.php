@@ -55,8 +55,9 @@ class CompanyDetails extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('CompanyName, TradingName, ProductsAndServices', 'required'),
-            array('CompanyName, TradingName, ProductsAndServices', 'length', 'max' => 255),
-            array('CompanyName,TradingName,Industry,ProductsAndServices,UserID', 'safe'),
+            array('CompanyName, TradingName, ProductsAndServices, Description, Website', 'length', 'max' => 255),
+            array('CompanyName, TradingName, Description, Website, Industry, ProductsAndServices, UserID', 'safe'),
+            array('Website', 'url', 'defaultScheme' => 'http')
         );
     }
 
@@ -80,7 +81,9 @@ class CompanyDetails extends CActiveRecord {
             'UserID' => 'User Id',
             'CompanyName' => 'Company Name',
             'TradingName' => 'Trading Name',
+            'Website' => 'Website URL',
             'Industry' => 'Industry',
+            'Description' => 'Description(255 charecters max)',
             'ProductsAndServices' => 'Products And Services',
         );
     }

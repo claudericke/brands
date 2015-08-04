@@ -62,10 +62,26 @@ $form = $this->beginWidget('CActiveForm', array(
 
 <div class="row">
     <?php
+    echo $form->labelEx($oCompany, 'Website') .
+    $form->textField($oCompany, 'Website', array('class' => 'left u-full-width')) .
+    $form->error($oCompany, 'Website', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+<div class="row">
+    <?php
     $aIndustryData = CHtml::listData($oCompany->getCategoryOptions(), 'text', 'text', 'group');
     echo $form->labelEx($oCompany, 'Industry') .
     $form->dropDownList($oCompany, "Industry", $aIndustryData, array('class' => 'left u-full-width')) .
     $form->error($oCompany, 'Industry', array("class" => "errorFeedbackMessage"));
+    ?>
+</div>
+
+<div class="row">
+    <?php
+    echo $form->error($oCompany, 'Description', array("class" => "errorFeedbackMessage")) .
+    $form->labelEx($oCompany, 'Description') .
+    $form->textArea($oCompany, 'Description', array('class' => 'left u-full-width'));
     ?>
 </div>
 
